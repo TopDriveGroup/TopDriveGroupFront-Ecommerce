@@ -1,0 +1,21 @@
+.container {
+    height: 115px;
+    width: 90px;
+    gap: 5px;
+    bottom: 150px;
+    right: 10px;
+    z-index: 2;
+    transition: 300ms all ease;
+    flex-direction: column;
+}
+.container__Pay {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+.container__Pay:hover {
+    cursor: pointer;
+}
+.pay {
+    width: 65px;
+}

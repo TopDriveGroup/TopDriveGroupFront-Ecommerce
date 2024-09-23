@@ -1,0 +1,80 @@
+.container {
+    min-height: calc(100vh - 120px);
+    color: #495057;
+    margin: 110px auto 0 auto;
+    max-width: 1200px;
+}
+.container__Payment_Method {
+    width: 600px;
+}
+.payment_Method {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.payment_Method:hover {
+    border: 1px solid #e63946;
+    cursor: pointer;
+}
+.active {
+    cursor: pointer;
+    background: #212322;
+    color: #fff;
+}
+
+
+.container__Form_Credit_Card {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: none;
+    width: 600px;
+}
+.label {
+    font-weight: 600;
+}
+.input__Card {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    width: 100%;
+}
+.input__Card:focus {
+    outline-color: #e63946;
+}
+.select {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+.container__Form_Debit_Card {
+    /* border: 1px solid #e63946; */
+    width: 600px;
+}
+.container__Form_PSE {
+    /* border: 1px solid #e63946; */
+    width: 600px;
+}
+
+
+
+.container__Buy_Now {
+    width: 100%;
+}
+.buy__Now {
+    background: #888b8d;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+}
+.buy__Now:hover {
+    background: #212322;
+}
+
+
+
+
+
+

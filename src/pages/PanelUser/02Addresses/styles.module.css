@@ -1,0 +1,56 @@
+.container {
+    min-height: calc(100vh - 200px);
+    margin: 110px auto 0 auto;
+}
+.container__Component {
+    width: calc(100% - 250px);
+}
+.main__Title {
+    font-weight: 600;
+    color: #e4002b;
+}
+.button__Add_Address {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    color: #000;
+    opacity: 0.75;
+    font-weight: 600;
+}
+.button__Add_Address:hover {
+    color: #e4002b;
+}
+.icon__Add {
+    margin: 0 0 0 15px;
+}
+.container__Address {
+    width: 650px;
+}
+.address {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 400px;
+}
+.button__Edit, .button__Delete {
+    color: #000;
+    opacity: 0.75;
+    font-weight: 600;
+}
+.button__Edit:hover, .button__Delete:hover {
+    cursor: pointer;
+    color: #e4002b;
+}
+.divider {
+    font-weight: 600;
+    margin: 0 20px;
+}
+
+
+
+
+
+
+
+
+
+
+

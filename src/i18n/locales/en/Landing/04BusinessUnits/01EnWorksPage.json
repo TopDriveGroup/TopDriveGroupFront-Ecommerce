@@ -1,0 +1,11 @@
+{
+    "works": {
+        "main__Title": "Works",
+        "description": "Our Works business line focuses on executing high-complexity EPC (Engineering, Procurement, and Construction) projects in various areas of engineering and construction. We have extensive experience in developing projects that encompass civil, electrical, mechanical, automation, and communication works, offering comprehensive solutions that ensure the success of each project from its conception to its commissioning.",
+        "description__Civil": "We specialize in building infrastructures, guaranteeing structural solidity and operational efficiency, complying with all current regulations, and using high-quality materials to ensure the durability of the constructions.",
+        "description__Electric": "We develop complete electrical systems, including distribution networks, substations, and energy control systems. Our experience includes the installation of high and low voltage electrical systems as well as the implementation of renewable energy solutions and energy efficiency.",
+        "description__Mechanic": "We offer services in the installation and maintenance of mechanical systems, including HVAC (heating, ventilation, and air conditioning), industrial piping systems, and heavy equipment assembly. Our mechanical projects are designed to maximize operational efficiency and minimize long-term maintenance costs.",
+        "description__Automatization": "In an increasingly digital world, our ability to integrate automation systems into industrial projects is a key differentiator. We implement advanced solutions including the installation of SCADA systems, PLCs, and DCS, allowing our clients to enhance productivity, efficiency, and safety in their operations.",
+        "description__Communications": "We develop and implement robust communication infrastructures that support the continuous and efficient operation of industrial and commercial facilities. This includes the installation of fiber optic networks, telecommunications systems, and connectivity solutions that ensure real-time data transmission."
+    }
+}

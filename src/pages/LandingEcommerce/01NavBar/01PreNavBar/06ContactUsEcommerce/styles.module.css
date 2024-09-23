@@ -1,0 +1,256 @@
+.container {
+    min-height: calc(100vh - 591px);
+    color: #495057;
+    margin: 110px auto 0 auto;
+    max-width: 100%;
+}
+.banner__Page {
+    height: 330px;
+    width: 100%;
+    background-size: cover;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+}
+.image__Banner_Page {
+    width: 100%;
+}
+.container__Message_Glass_Morphism {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur( 0.1px );
+    font-size: 25px;
+    font-weight: 700;
+    color: #e4002b;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    bottom: 10px;
+    left: 10px;
+}
+.container__Component {
+    max-width: 1200px;
+}
+.container__Text_Informative {
+    width: calc(100% - 300px);
+}
+.secundary__Title {
+    font-weight: 700;
+    color: #e4002b;
+}
+.topDriveGroup {
+    font-weight: 800;
+    color: #e4002b;
+}
+.container__ExternalLink {
+    width: 300px;
+}
+.external__Link {
+    color: #495057;
+    height: 60px;
+    width: 60px;
+    transition: all 100ms ease;
+}
+.external__Link:hover {
+
+    .icon__Facebook {
+        color: #3b5998;
+    }
+    .icon__Linkedin {
+        color: #0e76a8;
+    }
+    .icon__Whatsapp {
+        color: #25D366;
+    }
+    .icon__Instagram {
+        color: #E1306C;
+    }
+    .icon__TikTok {
+        color: #ff0050;
+    }
+}
+.icon__Facebook, .icon__Linkedin, .icon__Whatsapp, .icon__Instagram, .icon__TikTok, .icon__Youtube {
+    font-size: 35px;
+}
+.icon__Youtube {
+    font-size: 35px;
+    color: #e4002b;
+}
+
+/* CONTENEDOR DE LOS MAPAS DE LOCALIZACION */
+.container__Maps {
+    max-width: 950px;
+}
+.container__Card_Branch_Office {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: 300px;
+    width: 300px;
+}
+.title__Branch_Office {
+    color: #e4002b;
+}
+.container__Map {
+    height: 150px;
+    width: 100%;
+}
+.title__Country {
+    color: #040714;
+}
+
+/* CONTENEDOR DEL FORMULARIO */
+.container__Form {
+    max-width: 1200px;
+}
+    
+/* CONTENEDOR IZQUIERDO */
+.container__Dates {
+    height: 100%;
+    max-width: 550px;
+}
+.title {
+    font-weight: 700;
+    color: #e4002b;
+}
+.container__Icon {
+    height: 48px;
+    min-width: 48px;
+    border-radius: 10px;
+    background: #e4002b;
+    margin: 15px 10px 0 0;
+}
+.container__Icon:hover {
+    .icon {
+        opacity: 0.75;
+    }
+}
+.icon {
+    font-size: 20px;
+    color: #e9ecef;
+}
+.dates_Contact {
+    height: 75px;
+}
+.subtitle {
+    color: #e4002b;
+}
+.span__Email{
+    width: 100%;
+}
+.email {
+    text-align: center;
+    font-size: 14px;
+    color: #495057;
+    font-weight: 600;
+}
+.email:hover {
+    opacity: 0.75;
+}
+
+
+/* FORMULARIO */
+.form {
+    max-width: 500px;
+}
+.container__Inputs {
+    max-width: 500px;
+}
+.label {
+    margin-bottom: 2px;
+}
+.container__Input {
+    width: 100%;
+    border-radius: 5px;
+}
+.input, .textarea {
+    width: 100%;
+}
+.input:focus, .textarea:focus{
+    outline-color: #e4002b;
+}
+.text__Danger {
+    top: 60px;
+}
+.text__Danger_Textarea {
+    top: 185px;
+}
+.chars__Remaining {
+    width: 100%;
+}
+
+
+
+/* TERMINOS Y CONDICIONES */
+.container__Accepted_Policy {
+    max-width: 450px;
+    padding: 0 20px 20px 20px;
+}
+.text__Accepted_Policy {
+    max-width: 450px;
+}
+.checkbox {
+    height: 35px;
+    max-width: 35px;
+}
+.link {
+    font-weight: 600;
+    color: #e4002b;
+}
+.link:hover {
+    opacity: 0.75;
+}
+.text__Danger_AcceptedPolicy {
+    top: 42px;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #e4002b;
+    color: #f8f9fa;
+}
+
+
+/* ---------- RESPONSIVE (900 PX) ---------- */
+@media screen and (max-width: 900px) {
+    .container__Component {
+        max-width: 500px;                   /* Ajusta el ancho del contenedor principal */
+        flex-direction: column;             /* Cambia la dirección de los elementos a vertical */
+        align-items: center;                /* Centra los elementos verticalmente */
+    }
+    .container__Dates {
+        width: 100%;                        /* El ancho del contenedor de información se expande al 100% */
+        margin-bottom: 20px;                /* Añade margen entre secciones */
+    }
+    .form {
+        width: 100%;                        /* El ancho del formulario se expande al 100% */
+    }
+}
+
+
+
+/* ---------- RESPONSIVE (550 PX) ---------- */
+@media screen and (max-width: 550px) {
+    .sssssss {
+        height: 100%;
+    }
+    .container__Component {
+        max-width: 100%;                    /* El ancho del contenedor principal se expande al 100% */
+        flex-direction: column;             /* Cambia la dirección de los elementos a vertical */
+        align-items: center;                /* Centra los elementos verticalmente */
+    }
+    .container__Dates {
+        width: 100%;                        /* El ancho del contenedor de información se expande al 100% */
+        margin-bottom: 20px;                /* Añade margen entre secciones */
+    }
+    .subtitle {
+        font-size: 14px;
+    }
+    .form {
+        width: 100%;                        /* El ancho del formulario se expande al 100% */
+        height: 100%;
+    }
+    .container__Inputs {
+        flex-direction: column;             /* Cambia la disposición de los inputs a vertical */
+    }
+    .label {
+        margin-bottom: 10px;                /* Aumenta el espacio entre el label y el input */
+    }
+}

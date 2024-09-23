@@ -1,0 +1,16 @@
+{
+    "statistics": {
+        "main__Title": "Datos Relevantes",
+        "more__Than": "Más de",
+        "title__Telecomunication": "Telecomunicaciones",
+        "title__Metrics_Telecomunication": "kms de F.O construidos",
+        "title__Project": "Proyectos",
+        "title__Metrics_Project": "proyectos de alta complejidad",
+        "title__Clients_Served": "Clientes Atendidos",
+        "title__Metrics_Clients_Served": "clientes antendidos",
+        "title__Lighting": "Iluminación",
+        "title__Metrics_Lighting": "millones de lumens en áreas clasificadas",
+        "title__Special_Classes": "Cables Especiales",
+        "title__Metrics_Special_Classes": "millones de metros suministrados"
+    }
+}

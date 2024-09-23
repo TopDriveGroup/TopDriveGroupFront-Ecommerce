@@ -1,0 +1,96 @@
+.container {
+    padding: 0 0 100px 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+.submenu__Option {
+    width: 350px;
+    color: #212322;
+}
+.submenu__Option:hover {
+    color: #212322;
+    background: rgba(255, 255, 255, 0.4);
+    background: #e4002b;
+    color: #f8f9fa;
+
+}
+.title__Class {
+    font-weight: 600;
+    width: 100%;
+    padding: 10px 5px 10px 20px;
+}
+.submenu__Switchgear_Connection,
+.submenu__Switchgear_Energy,
+.submenu__Switchgear_Maneuver,
+.submenu__Switchgear_Protection,
+.submenu__Wiring,
+.submenu__Consumables,
+.submenu__Control_Motor,
+.submenu__Automation_Equipment,
+.submenu__Communication_Equipment,
+.submenu__Energy_Equipment,
+.submenu__Tools,
+.submenu__Lighting,
+.submenu__Machines,
+.submenu__Boards
+{
+    top: 85px;
+    z-index: 2;
+    padding: 0 30px 30px 30px;
+    background: white;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    left: 350px;
+    height: 100vh;
+}
+
+/* SUBMENU EXPANDIDO */
+.container__Title_Submenu {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+}
+.title__Class_Expanded {
+    color: #e4002b;
+    font-weight: 600;
+    width: 100%;
+    margin: 0;
+    cursor: auto;
+    font-size: 24px;
+}
+
+
+
+.see_All_Classes {
+    width: 80px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.see_All_Classes:hover {
+    color: #e4002b;
+}
+
+/* MODAL DEL SUBMENU */
+.title__Category {
+    color: #212322;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+.title__Category:hover {
+    color: #e4002b;
+}
+.container__Types {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+.title__Type {
+    text-decoration: none;
+    color: #495057;
+}
+.title__Type:hover {
+    cursor: pointer;
+    color: #e4002b;
+}

@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Contenedor general del componente */
+.container {
+    height: 110px;
+    width: 100%;
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.2);
+    background: white;
+    z-index: 3;
+}
+.navbar {
+    color: #495057;
+    height: 110px;
+    max-width: 1200px;
+}
+
+
+/* Contenedor de la PreNavBar */
+.preNavBar {
+    height: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* PRE NAVBAR */
+.container__Links_PreNavBar {
+    /* border: 1px solid red; */
+    height: 40px;
+    width: 580px;
+}
+.container__Language {
+    padding: 3px 8px;
+    height: 40px;
+    width: 85px;
+}
+
+.container__IconLanguage {
+    height: 20px;
+    width: 20px;
+}
+.icon__Language {
+    font-size: 16px;
+}
+.text__Language {
+    width: 60px;
+}
+.onlinePayments {
+    /* border: 1px solid red; */
+    font-weight: 400;
+    color: #495057;
+    width: 120px;
+}
+.services {
+    font-weight: 400;
+    color: #495057;
+    width: 75px;
+}
+.portfolio {
+    font-weight: 400;
+    color: #495057;
+    width: 75px;
+}
+.quotation {
+    font-weight: 400;
+    color: #495057;
+    width: 75px;
+}
+.aboutUs {
+    font-weight: 400;
+    color: #495057;
+    width: 75px;
+}
+.contact {
+    color: #495057;
+    height: 40px;
+    width: 75px;
+}
+.container__Language:hover, .onlinePayments:hover, .services:hover, .portfolio:hover, .quotation:hover, .aboutUs:hover, .contact:hover {
+    color: #e4002b;
+    cursor: pointer;
+}
+
+
+/* Contenedor de la NavbarEcommerce */
+.container__Logo_Close {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.container__Logo {
+    height: 70px;
+    min-width: 200px;
+}
+.logo {
+    width: 180px;
+}
+.container__Menu {
+    font-size: 20px;
+    height: 70px;
+    min-width: 115px;
+    color: #e4002b;
+}
+.container__Menu:hover {
+    cursor: pointer;
+}
+.icon__Menu {
+    font-size: 25px;
+}
+.text__Menu {
+    font-size: 16px;
+}
+
+/* MODAL */
+.container__Modal {
+    z-index: 3;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+.modal {
+    width: 350px;
+    height: 100vh;
+    background: white;
+}
+.icon__Close_Modal {
+    font-size: 30px;
+}
+.icon__Close_Modal:hover {
+    cursor: pointer;
+    color: #e4002b;
+}
+
+
+.links__Nemu_Interactions {
+    height: 70px;
+}
+/* Contenedor del Carrito de Compras */
+.shopping__Cart {
+    color: #495057;
+    height: 70px;
+    width: 40px;
+}
+.count__ItemCart {
+    font-size: 12px;
+    color: #f8f9fa;
+    height: 20px;
+    width: 20px;
+    top: 25px;
+    left: 0px;
+    border-radius: 50%;
+    background: #e4002b;
+}
+.icon__Cart {
+    font-size: 25px;
+    margin: 0 0 0 15px;
+}
+.icon__Favorite {
+    font-size: 25px;
+    color: #e4002b;
+    margin: 0 0 0 15px;
+}
+
+/* Contenedor del Registro */
+.register {
+    font-weight: 400;
+    color: #495057;
+    height: 70px;
+    width: 100px;
+}
+.register:hover {
+    color: #e4002b;
+
+}
+
+/* Contenedor del Login */
+.logout {
+    font-weight: 400;
+    color: #495057;
+    height: 70px;
+    width: 75px;
+    color: #e4002b;
+}
+.logout:hover {
+    cursor: pointer;
+}
+.login {
+    font-weight: 400;
+    color: #495057;
+    height: 70px;
+    width: 75px;
+    color: #e4002b;
+}
+.icon__Login {
+    font-size: 25px;
+    color: #e4002b;
+}

@@ -1,0 +1,33 @@
+.container {
+    max-width: 850px;
+    margin: auto;
+}
+.main__Title {
+    color: #495057;
+}
+.container__Informatives {
+    width: 100%;
+}
+.link__Informative {
+    color: #495057;
+    height: 90px;
+    width: 250px;
+    border: 1px solid #495057;
+    transition: 300ms all ease;
+}
+.link__Informative:hover {
+    color: #e4002b;
+    border: 1px solid #e4002b;
+}
+.icon__Informative {
+    font-size: 60px;
+}
+.title__Informative__Pay {
+    width: 150px;
+}
+.title__Informative__Tracking {
+    width: 140px;
+}
+.title__Informative__Change {
+    width: 120px;
+}

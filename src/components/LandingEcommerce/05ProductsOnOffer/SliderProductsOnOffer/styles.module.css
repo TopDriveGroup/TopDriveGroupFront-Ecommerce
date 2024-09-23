@@ -1,0 +1,103 @@
+/* BOTONES DE NEXT Y PREV */
+.container__Button_Prev {
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    left: -40px;
+    padding: 10px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 1px 1px 5px -1px rgb(0 0 0 / 30%);
+}
+.button__Next_Prev {
+    color: #e4002b;
+    font-size: 30px;
+}
+.container__Button_Next {
+    position: absolute;
+    z-index: 1;
+    top: 40%;
+    right: -40px;
+    padding: 10px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 1px 1px 5px -1px rgb(0 0 0 / 30%);
+}
+.container__Button_Prev:hover, .container__Button_Next:hover {
+    cursor: pointer;
+    box-shadow: 1px 2px 10px -1px rgb(0 0 0 / 30%);
+}
+
+/* COMPONENTE */
+.slider {
+    /* border: 1px solid red; */
+    height: 410px;
+    width: 790px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    /* gap: 20px; */
+    padding: 0 20px 0 0;
+    /* margin: 0 0 0 20px; */
+}
+.title__Component {
+    font-size: 20px;
+    font-weight: 800;
+    color: #e4002b;
+    margin: 0;
+}
+.card {
+    border-radius: 5px;
+    padding: 10px;
+    overflow: hidden;
+    max-width: 250px;
+    height: 410px;
+}
+.container__Image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image__Product {
+    height: 200px;
+}
+.percentage__Discount {
+    position: absolute;
+    left: 0;
+    background: #40916c;
+    padding: 5px;
+    border-radius: 5px;
+    bottom: 0;
+    color: #dee2e6;
+}
+.container__Info {
+    margin: 5px 0 0 0;
+    padding: 5px 10px;
+    height: 120px;
+}
+.brand__Product {
+    margin: 0;
+    color: #e4002b;
+    font-size: 14px;
+    font-weight: 700;
+}
+.title__Product {
+    margin: 0;
+    color: #495057;
+}
+.price__Product {
+    margin: 0;
+    color: #3a86ff;
+    font-size: 20px;
+    font-weight: 500;
+}
+.stock__Product {
+    font-size: 14px;
+    color: #495057;
+}
+.star__Score {
+    color: #ffb703;
+}

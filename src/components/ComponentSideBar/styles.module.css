@@ -1,0 +1,36 @@
+.container {
+    position: sticky;
+    top: 110px;
+    height: 100vh;
+    width: 250px;
+}
+.container__PanelUser {
+    background: rgba(0, 0, 0, 0.03);
+    width: 250px;
+}
+.link__Section_Panel {
+    width: 100%;
+    padding: 5px 10px;
+    color: #000;
+}
+.link__Section_Panel:hover {
+    color: #f8f9fa;
+    cursor: pointer;
+    background: #e4002b;
+}
+.active {
+    color: #e4002b;
+    font-weight: 600;
+    border-left: 3px solid #e4002b;
+}
+.logout {
+    width: 100%;
+    padding: 5px 10px;
+    color: #212322;
+    font-weight: 600;
+}
+.logout:hover {
+    color: #f8f9fa;
+    cursor: pointer;
+    background: #e4002b;
+}

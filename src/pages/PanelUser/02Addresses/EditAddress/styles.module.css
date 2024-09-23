@@ -1,0 +1,64 @@
+.container {
+    min-height: calc(100vh - 591px);
+    margin: 110px auto 0 auto;
+}
+.container__Component {
+    width: calc(100% - 250px);
+}
+.button__Back {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    color: #000;
+    opacity: 0.75;
+    font-weight: 600;
+}
+.button__Back:hover {
+    color: #e4002b;
+}
+.icon__Back {
+    margin: 0 15px 0 0;
+}
+.main__Title {
+    font-weight: 600;
+    color: #e4002b;
+}
+.form {
+    width: 600px;
+}
+.container__Inputs {
+    width: 100%;
+}
+.label {
+    margin-bottom: 2px;
+}
+.container__Input {
+    width: 100%;
+    border-radius: 3px;
+}
+.input {
+    height: 50px;
+    width: 100%;
+}
+.input:focus{
+    outline-color: #e4002b;
+}
+.text__Danger {
+    top: 60px;
+}
+.container__Address {
+    width: 650px;
+}
+.address {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 300px;
+}
+.button__Submit {
+    opacity: 0.75;
+    padding: 10px 20px;
+    background: #888b8d;
+}
+.button__Submit:hover {
+    color: #fff;
+    background: #212322;
+}

@@ -1,0 +1,25 @@
+.container {
+    min-height: calc(100vh - 591px);
+    max-width: 1200px;
+    padding: 20px 0;
+    margin: 110px auto 0 auto;
+}
+.main__Title {
+    font-weight: 700;
+    color: #e4002b;
+}
+.externalLink {
+    width: 300px;
+    height: 100px;
+    color: #495057;
+}
+.externalLink:hover {
+    color: #e4002b;
+}
+.conveyor__Logo {
+    height: 50px;
+}
+.logo__Conveyor {
+    color: #e4002b;
+    font-size: 50px;
+}

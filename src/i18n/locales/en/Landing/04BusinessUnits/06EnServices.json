@@ -1,0 +1,8 @@
+{
+    "services": {
+        "main__Title": "Services",
+        "description": "Our Services business line focuses on providing comprehensive solutions that cover all stages of a project's life cycle. From initial design and feasibility studies to installation, maintenance, and ongoing support, we offer a complete and personalized approach that ensures operational excellence and customer satisfaction.",
+        "first__Description": "We offer design engineering services and feasibility studies, working closely with our clients to develop efficient and sustainable designs, from conceptual studies to 3D modeling. We perform technical, economic, and environmental analyses to ensure the long-term viability and sustainability of each project.",
+        "second__Description": "Preventive maintenance to extend the life of equipment and corrective maintenance to quickly repair failures, minimizing downtime. In addition, we provide continuous 24/7 technical support to ensure systems operate smoothly and with maximum efficiency."
+    }
+}

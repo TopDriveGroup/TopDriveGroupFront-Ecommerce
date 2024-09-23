@@ -1,0 +1,87 @@
+.container {
+    min-height: calc(100vh - 591px);
+    margin: 110px auto 0 auto;
+}
+.container__Component {
+    width: calc(100% - 250px);
+}
+.main__Title {
+    font-weight: 600;
+    color: #e4002b;
+}
+.container__Logo_Client {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 150px;
+}
+.container__Logo {
+    min-width: 300px;
+    height: 150px;
+}
+.logo__Client {
+    max-width: 250px;
+    max-height: 130px;
+}
+.container__Warning {
+    width: 350px;
+    font-size: 25px;
+}
+.container__Update {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: white;
+    width: 60px;
+    height: 60px;
+    right: -30px;
+    bottom: -30px;
+}
+.container__Icon_Update {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #6c757d;
+    width: 60px;
+    height: 60px;
+    left: 260px;
+    bottom: 20px;
+    z-index: 1;
+    background: white;
+}
+.container__Icon_Update:hover {
+    cursor: pointer;
+    color: #718bd8;
+}
+.icon__Update {
+    font-size: 30px;
+}
+.menu {
+    z-index: 1;
+    background: #f8f9fa;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+    width: 135px;
+    left: 65px;
+    top: 10px;
+}
+.menu__Update {
+    padding: 0 0 0 10px;
+}
+.menu__Update:hover {
+    background: #dee2e6;
+    cursor: pointer;
+    color: #3a86ff;
+    font-weight: 500;
+    margin: 0;
+}
+.menu__Send_Logo {
+    padding: 0 0 0 10px;
+}
+.menu__Send_Logo:hover {
+    background: #dee2e6;
+    cursor: pointer;
+    color: #3a86ff;
+    font-weight: 500;
+    margin: 0;
+}
+.container__Info_Client {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 500px;
+    height: 100%;
+}

@@ -1,0 +1,13 @@
+.container {
+    min-height: calc(100vh - 591px);
+    color: #495057;
+    margin: 110px auto 0 auto;
+    max-width: 1200px;
+}
+.main__Title {
+    font-weight: 700;
+    color: #e4002b;
+}
+.image {
+    width: 600px;
+}

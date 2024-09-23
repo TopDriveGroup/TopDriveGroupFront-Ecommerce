@@ -1,0 +1,8 @@
+{
+    "services": {
+        "main__Title": "Servicios",
+        "description": "Nuestra línea de negocio de Servicios se enfoca en proporcionar soluciones integrales que cubren todas las etapas del ciclo de vida de un proyecto. Desde el diseño inicial y los estudios de viabilidad hasta la instalación, mantenimiento y soporte continuo, ofrecemos un enfoque completo y personalizado que garantiza la excelencia operativa y la satisfacción del cliente.",
+        "first__Description": "Ofrecemos servicios de ingeniería de diseño y estudios de viabilidad, trabajando en estrecha colaboración con nuestros clientes para desarrollar diseños eficientes y sostenibles, desde estudios conceptuales hasta el modelado 3D. Realizamos análisis técnico, económico y ambiental para asegurar la viabilidad y sostenibilidad a largo plazo de cada proyecto.",
+        "second__Description": "Mantenimiento preventivo para prolongar la vida útil de los equipos, y mantenimiento correctivo para reparar fallas rápidamente, minimizando el tiempo de inactividad. Además, brindamos soporte técnico continuo 24/7 para asegurar que los sistemas operen sin contratiempos y con máxima eficiencia."
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "navBarLanding": {
+        "language": "Español",
+        "national": "Nacional",
+        "signUp": "REGISTRATE",
+        "signIn": "LOGIN",
+        "home": "Inicio",
+        "payment__Gateway": "Pagos en línea",
+        "about__Us": "Nosotros",
+        "industries": "Industrias",
+        "industries__WasteWater": "Aguas Residuales",
+        "industries__FoodBeverages": "Alimentos y Bebidas",
+        "industries__Cement": "Cementos",
+        "industries__Construction": "Construcción",
+        "industries__Energy": "Energía",
+        "industries__RenewableEnergies": "Energías Renovables",
+        "industries__Metallurgy": "Metalurgia",
+        "industries__Mining": "Minería",
+        "industries__OilGas": "Oil & Gas",
+        "industries__Ports": "Puertos",
+        "industries__PulpPaper": "Pulpa & Papel",
+        "industries__Chemicals": "Químicos",
+        "industries__Tablerists": "Tablerístas",
+        "industries__Telecommunications": "Telecomunicaciones",
+
+        "supply__Of_Products": "Suministro",
+        "quotations": "Cotizaciones",
+        "QCCC": "PQRF",
+        "contactUs": "Contáctanos"
+    }
+}

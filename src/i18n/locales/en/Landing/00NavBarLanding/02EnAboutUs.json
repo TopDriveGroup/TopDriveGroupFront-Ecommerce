@@ -1,0 +1,21 @@
+{
+    "aboutUs": {
+        "banner__Title": "About Us",
+        "main__Title": "About Us",
+        "banner__Description": "We are a leading company in the sector, with extensive experience in integrating advanced technological solutions and developing EPC (Engineering, Procurement, and Construction) projects for the main economic sectors.",
+        "first__Paragraph_Description": "Our comprehensive approach covers everything from detailed engineering, equipment, and material supply, to the construction and commissioning of complex projects, ensuring compliance with the highest standards of quality, safety, and operational efficiency.",
+        "second__Paragraph_Description": "We are backed by world-class technological partners, which allows us to offer cutting-edge solutions that incorporate the latest innovations in automation, strengthening our ability to execute large-scale projects and guarantee optimal results for our clients.",
+        "third__Paragraph_Description": "Our track record in executing EPC projects is characterized by the efficient integration of all project phases, from initial design to final delivery, optimizing resources, reducing costs, and minimizing risks. Thanks to our highly skilled multidisciplinary team and our experience in managing complex projects, we have established a reputation for trust and excellence in the market.",
+        "international": "International",
+        "international__Description": "We have a presence in Colombia, Ecuador, the United States, Mexico, Peru, the Dominican Republic, and Venezuela.",
+        "title__Mission": "Mission",
+        "descripcion__Mission": "To be the best solution for electrical and telecommunications projects through the design, assembly, commercialization, and distribution of equipment, electrical materials, instrumentation, lighting, software, and automation. We work consistently to provide value to our customers while offering growth opportunities to our employees, business partners, and the industries in which we operate.",
+        "title__Vision": "Vision",
+        "descripcion__Vision": "By 2025, Top Drive SAS will be one of the largest companies in the commercialization and distribution of electrical equipment and materials in the country. We must focus our leadership and competitiveness on providing comprehensive solutions. A broad product portfolio and consistent work will strengthen our growth, allowing us to generate the expected profitability and recognition.",
+        "title__Corporate_Policy": "Corporate Policy",
+        "descripcion__Corporate_Policy": "Top Drive is a leading company in the design, assembly, commercialization, and distribution of electrical equipment and materials. We work consistently to provide value and fulfill the requirements subscribed with clients and other interested parties. Top Drive continuously improves its management system to respond to new demands, favoring its profitability and sustainability, always supported by human capital.",
+        "title__Corporate_Values": "Corporate Values",
+        "title__Qualified_Technical_Team": "Qualified Technical Team",
+        "descripcion__Qualified_Technical_Team": "We have a highly qualified technical team, constantly trained, always ready to offer the best service in the development of your projects."
+    }
+}

@@ -1,0 +1,55 @@
+.container {
+    border-radius: 10px;
+    max-width: 1200px;
+}
+.container__Campaign {
+    background: #dde5ed;
+    height: 150px;
+    width: 100%;
+}
+.logo__TopDrive {
+    bottom: -100px;
+    right: 30%;
+    height: 250px;
+    transform: rotate(-45deg);
+}
+.campaign {
+    height: 100%;
+    width: 50%;
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+    background: #e4002b;
+}
+.info {
+    margin: 0 0 0 50px;
+}
+.container__Info {
+    width: 250px;
+}
+.campaign__Title {
+    font-weight: 700;
+    color: #f8f9fa;
+}
+.campaign__Description {
+    color: #f8f9fa;
+    font-weight: 400;
+}
+.icon__Tag {
+    color: #f8f9fa;
+    font-size: 100px
+}
+.campaign__Button {
+    background: #e4002b;
+    z-index: 1;
+    right: 30px;
+    top: 50px;
+    color: #f8f9fa;
+    font-weight: 700;
+    font-size: 20px;
+    width: 300px;
+    height: 50px;
+}
+.campaign__Button:hover {
+    font-weight: 700;
+    cursor: pointer;
+    background: #cc0000;
+}

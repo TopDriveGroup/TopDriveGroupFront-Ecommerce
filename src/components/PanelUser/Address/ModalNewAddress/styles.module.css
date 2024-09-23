@@ -1,0 +1,46 @@
+.title__Modal {
+    color: #888b8d;
+}
+.container__Inputs {
+    width: 100%;
+}
+.label {
+    margin-bottom: 2px;
+}
+.input {
+    width: 100%;
+}
+.input:focus{
+    outline-color: #e4002b;
+}
+.text__Danger {
+    top: 60px;
+}
+.alert__Danger {
+    color: #e63946;
+    border-radius: 5px;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    padding: 5px 10px;
+    z-index: 1;
+}
+.alert__Success {
+    color: #4c956c;
+    border-radius: 5px;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    padding: 5px 10px;
+    z-index: 1;
+    font-weight: 600;
+}
+.button__Submit {
+    background: #888b8d;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+}
+.button__Submit:hover {
+    background: #212322;
+}

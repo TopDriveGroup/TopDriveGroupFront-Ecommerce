@@ -1,0 +1,51 @@
+.container {
+    width: 100%;
+    padding: 0 20px 0 0;
+}
+.container__SearchBar {
+    border: 1px solid #e4002b;
+    border-radius: 5px;
+    width: 100%;
+}
+.select__Search {
+    width: 95px;
+    height: 35px;
+}
+.selectedOption {
+    padding: 5px 10px;
+    background-color: white;
+    cursor: pointer;
+    width: 100px;
+}
+.dropdown {
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1;
+    width: 92px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.option {
+    cursor: pointer;
+}
+.option:hover {
+    background-color: #f1f1f1;
+}
+.input__Search {
+    width: 100%;
+    color: #495057;
+    outline: none;
+    height: 35px;
+    border-radius: 10px;
+}
+.icon__Search {
+    color: #495057;
+    height: 25px;
+    width: 25px;
+    top: 5px;
+    right: 5px;
+}
+.icon__Search:hover {
+    cursor: pointer;
+}

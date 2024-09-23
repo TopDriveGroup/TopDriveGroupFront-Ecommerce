@@ -1,0 +1,149 @@
+.container {
+    min-height: calc(100vh - 591px);
+    color: #495057;
+    margin: 110px auto 0 auto;
+    max-width: 1200px;
+}
+.favorite__Product {
+    width: 920px;
+}
+.container__Image {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 400px;
+}
+.image {
+    max-width: 300px;
+    max-height: 200px;
+}
+.info_Data {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 500px;
+}
+.brand__Product {
+    color: #e4002b;
+    font-size: 14px;
+    font-weight: 700;
+}
+.title__Product {
+    color: #495057;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+.price__Product {
+    color: #212322;
+    font-size: 40px;
+    font-weight: 700;
+}
+.stock__Product {
+    font-size: 14px;
+    color: #495057;
+}
+.container__Updated_Cart {
+    height: 40px;
+    width: 100%;
+}
+.container__Count_Favorites {
+    width: 225px;
+}
+.container__Count {
+    height: 40px;
+}
+.container__Icon_Minus_Plus, .container__Favorite {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: 40px;
+    width: 50px;
+}
+.container__Icon_Minus_Plus:hover {
+    cursor: pointer;
+    
+    .icon {
+        color: #e4002b;
+    }    
+}
+.container__Favorite:hover {
+    cursor: pointer;
+    border: 1px solid #e4002b;
+}
+.modal__Delete_Favorites {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 1;
+    top: -50px;
+    width: 190px;
+    padding: 10px 20px;
+    background: white;
+}
+.icon__Favorite {
+    color: #e4002b;
+    font-size: 25px;
+}
+.icon__Favorite:hover {
+    cursor: pointer;
+}
+.icon {
+    font-size: 25px;
+}
+.count {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 40px;
+    width: 50px;
+}
+.button__Cart {
+    height: 40px;
+    background: #e4002b;
+    color: #f8f9fa;
+    width: calc(100% - 250px);
+}
+
+
+
+/* CONTENEDOR DE LA DESCARGA DE LA FICHA TECNICA */
+.container__Meta_Data {
+    width: 100%;
+}
+.meta__Data {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+.title__Meta__Data {
+    font-weight: 700;
+    width: 250px;
+}
+.code__Meta_Data {
+    width: calc(100% - 250px);
+}
+.container__Download_Technical_Data {
+    max-height: 140px;
+    width: 100%;
+}
+.download_Technical_Data {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 320px;
+}
+.download_Technical_Data:hover {
+    cursor: pointer;
+    border: 1px solid #e4002b;
+}
+.pdf {
+    font-size: 16px;
+    color: #e4002b;
+}
+.icon__Download {
+    color: #3a86ff;
+}
+
+
+
+/* MODAL DEL CARRITO */
+.container__Modal {
+    z-index: 2;
+    top: 110px;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}

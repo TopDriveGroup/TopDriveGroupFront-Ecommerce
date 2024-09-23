@@ -1,0 +1,122 @@
+.container {
+    width: 60%;
+}
+.container__Register_Page {
+    width: 60%;
+}
+.logo {
+    height: 100px;
+}
+.errors__Register {
+    color: #e4002b;
+    top: -35px;
+    left: 0;
+}
+.main__Title {
+    font-weight: 700;
+    color: #888b8d;
+}
+.button__Back {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #ced4da;
+    color: #212529;
+}
+.button__Back:hover {
+    background: #495057;
+    transition: 300ms all ease;
+    color: #f8f9fa;
+    cursor: pointer;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #e4002b;
+    color: #f8f9fa;
+}
+.link {
+    font-weight: 600;
+}
+.link:hover {
+    color: #e4002b;
+}
+
+/* ----------UserInformation---------- */
+.tertiary__Title {
+    font-weight: 700;
+    color: #e4002b;
+}
+.container__Inputs {
+    width: 600px;
+}
+.required {
+    color: #e4002b;
+}
+.label {
+    margin-bottom: 2px;
+}
+.container__Input {
+    width: 100%;
+    border-radius: 3px;
+}
+.input {
+    width: 100%;
+}
+.input:focus{
+    outline-color: #e4002b;
+}
+.text__Danger {
+    top: 60px;
+}
+
+/* ----------InfoCredentials---------- */
+.icon {
+    font-size: 20px;
+    z-index: 1;
+    top: 30px;
+    right: 10px;
+    color: #e4002b;
+}
+.icon:hover {
+    cursor: pointer;
+}
+.container__Accepted_Policy {
+    width: 600px;
+    padding: 0 0 20px 0;
+}
+.text__Accepted_Policy {
+    width: 450px;
+}
+.text__Danger_AcceptedPolicy {
+    top: 42px;
+}
+.checkbox {
+    height: 30px;
+    width: 30px;
+}
+.container__Loading {
+    width: 100%;
+    top: 350px;
+}
+
+
+/* ---------- RESPONSIVE (650 PX) ---------- */
+@media screen and (max-width: 650px) {
+    .logo {
+        height: 70px;
+    }
+    .container__Inputs {
+        flex-direction: column;
+        width: 350px;
+    }
+    .container__Accepted_Policy {
+        width: 350px;
+    }
+    .checkbox {
+        margin: 0 0 0 10px;
+        height: 30px;
+        width: 30px;
+    }
+}

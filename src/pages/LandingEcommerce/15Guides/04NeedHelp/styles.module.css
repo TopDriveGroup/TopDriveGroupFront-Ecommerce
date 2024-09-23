@@ -1,0 +1,33 @@
+.container {
+    min-height: calc(100vh - 591px);
+    max-width: 1200px;
+    padding: 20px 0;
+    margin: 110px auto 0 auto;
+}
+.main__Title {
+    font-weight: 700;
+    color: #e4002b;
+}
+.secundary__Title {
+    font-weight: 700;
+    color: #e4002b;
+}
+.container__Icon {
+    background: #1d1d1d;
+    border-radius: 5px;
+}
+.icon {
+    font-size: 30px;
+    color: #f8f9fa;
+}
+.means__Contact {
+    color: #495057;
+    font-weight: 600;
+}
+.means__Contact:hover {
+    color: #e4002b;
+}
+.email__Contact {
+    color: #e4002b;
+    font-weight: 700;
+}
