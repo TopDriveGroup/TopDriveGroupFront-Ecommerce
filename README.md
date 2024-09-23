@@ -66,7 +66,7 @@ Los párrafor no van centrados
 
 ## Altura mínima de cada Page:
 .container {
-  min-height: calc(100vh - 591px);
+  min-height: calc(100vh - 120px);
   max-width: 1200px;
   padding: 20px 0;
 }

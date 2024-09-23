@@ -136,7 +136,7 @@ function NavBarEcommerce() {
                             <span>{t('navBarEcommerce.national')} +57 (601) 8966199</span>
                         </div>
 
-                        <Link to="https://topdrivegroup.com/" className={`${styles.home} p-3 d-flex align-items-center justify-content-center text-decoration-none`} >
+                        <Link to="https://topdrivegroup.com/" target="blank" rel="noopener noreferrer" className={`${styles.home} p-3 d-flex align-items-center justify-content-center text-decoration-none`} >
                             {t('navBarEcommerce.home')}
                         </Link>
                     </div>

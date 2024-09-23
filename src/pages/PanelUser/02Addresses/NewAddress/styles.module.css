@@ -1,5 +1,5 @@
 .container {
-    min-height: calc(100vh - 591px);
+    min-height: calc(100vh - 120px);
     margin: 110px auto 0 auto;
 }
 .container__Component {
@@ -52,6 +52,25 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     width: 300px;
+}
+.alert__Danger {
+    color: #e63946;
+    border-radius: 5px;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    padding: 5px 10px;
+    z-index: 1;
+}
+.alert__Success {
+    color: #4c956c;
+    border-radius: 5px;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    padding: 5px 10px;
+    z-index: 1;
+    font-weight: 600;
 }
 .button__Submit {
     opacity: 0.75;
