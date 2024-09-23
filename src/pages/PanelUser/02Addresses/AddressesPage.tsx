@@ -55,7 +55,7 @@ function AddressesPage() {
                 <div className={`${styles.container__Component} p-4`}>
                     <h2 className={`${styles.main__Title} mb-3`}>Direcciones</h2>
 
-                    <Link to='/panel-user/addresses/new' className={`${styles.button__Add_Address} text-decoration-none`}>Añadir dirección <GoPlus className={`${styles.icon__Add} `}/></Link>
+                    <Link to='/panel-user/addresses/create-address' className={`${styles.button__Add_Address} text-decoration-none`}>Añadir dirección <GoPlus className={`${styles.icon__Add} `}/></Link>
 
                     <div className={`${styles.container__Address} mt-4 d-flex flex-wrap align-items-center justify-content-between gap-4`}>
                         {addressResponse && Array.isArray(addressResponse.result) && addressResponse.result.map((addressItem: IAddress) => (

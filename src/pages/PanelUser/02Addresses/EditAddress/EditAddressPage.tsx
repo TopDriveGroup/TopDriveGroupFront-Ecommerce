@@ -31,14 +31,14 @@ function EditAddressPage() {
 
     // SELECCION DEL PAIS
     const [selectedCountry, setSelectedCountry] = useState<string>('');
-    const [selectedCallSign, setSelectedCallSign] = useState<string>(''); // Añadir estado para el indicativo
+    const [selectedCallSign, setSelectedCallSign] = useState<string>('');
     const [resetCountry, setResetCountry] = useState(false);
 
     // FUNCION PARA MANEJAR LOS DATOS SELECCIONADOS DEL PAIS
-    const handleSelectCountry = (country: string, callSign: string) => { // Añadir callSign a los parámetros
+    const handleSelectCountry = (country: string, callSign: string) => {
         setSelectedCountry(country);
-        setSelectedCallSign(callSign);      // Establecer el indicativo
-        setValue('callsign', callSign);     // Actualizar el valor del input de indicativo
+        setSelectedCallSign(callSign);
+        setValue('callsign', callSign);
     };
 
     // SELECCION DEL DEPARTAMENTO Y CIUDAD
@@ -46,8 +46,7 @@ function EditAddressPage() {
     const [selectedCity, setSelectedCity] = useState('');
     const [selectedCodeDane, setSelectedCodeDane] = useState('');
     const [selectedSubregionCode, setSelectedSubregionCode] = useState('');
-    const [resetDepartmenAndCity, setResetDepartmenAndCity] = useState(false);    //Estado para resetear el componente "DepartmentAndCity" luego de crear el registro
-    // Función para manejar los datos seleccionados del departamento y los municipios
+    const [resetDepartmenAndCity, setResetDepartmenAndCity] = useState(false);
     const handleSelectDepartmentCity = (department: string, city: string, codeDane: string, subregionCodeDane: string) => {
         setSelectedDepartment(department);
         setSelectedCity(city);
