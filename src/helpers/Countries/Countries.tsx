@@ -20,6 +20,9 @@ function Countries({ onSelect, reset, initialCountry }: CountriesProps) {
             const countryOption = countiesSelect.find(option => option.label === initialCountry);
             setSelectedCountry(countryOption || null);
             setCountry(countryOption || null);
+    
+            // Propaga el callsign cuando se selecciona el país inicial
+            if (countryOption) onSelect(countryOption.label, countryOption.callsign);
         }
     }, [initialCountry]);
 

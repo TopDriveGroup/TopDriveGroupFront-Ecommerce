@@ -74,14 +74,14 @@ function UserInformation({ register, errors }: UserInfoSectionProps) {
                             validate: value => {
                                 if (!value) return "El número de identidad es requerido";
                                 const numValue = value.trim();
-                                const pattern = /^\d{1,9}$/;
+                                const pattern = /^\d{1,10}$/;
                                 if (!pattern.test(numValue)) return "El número de identidad debe contener entre 1 y 10 dígitos";
                                 return true;
                             }
                         })}
                         className={`${styles.input} p-2 border rounded`}
                         placeholder='¿Cuál es tu número de identificación?'
-                        maxLength={9} // Limitar la longitud del campo
+                        maxLength={10} // Limitar la longitud del campo
                         onKeyDown={(e) => {
                             if (e.key === '-' || e.key === 'e' || e.key === '+' || e.key === '.') {
                                 e.preventDefault();
@@ -89,9 +89,7 @@ function UserInformation({ register, errors }: UserInfoSectionProps) {
                         }}
                     />
                     {errors.documentId && (
-                        <p className={`${styles.text__Danger} text-danger position-absolute`}>
-                            {errors.documentId.message}
-                        </p>
+                        <p className={`${styles.text__Danger} text-danger position-absolute`}>{errors.documentId.message}</p>
                     )}
                 </div>
 
