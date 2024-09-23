@@ -37,10 +37,8 @@
     color: #f8f9fa;
 }
 .link {
-    font-weight: 600;
-}
-.link:hover {
     color: #e4002b;
+    font-weight: 600;
 }
 
 /* ----------UserInformation---------- */

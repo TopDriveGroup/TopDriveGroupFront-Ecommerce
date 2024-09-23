@@ -1,6 +1,6 @@
 .container__Component {
     width: 100%;
-    min-height: calc(100vh - 591px);
+    min-height: calc(100vh - 120px);
 }
 .main__Title {
     font-weight: 700;

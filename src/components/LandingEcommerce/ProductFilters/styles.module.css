@@ -3,7 +3,7 @@
     color: #495057;
     height: 900px;
     width: 350px;
-    min-height: calc(100vh - 591px);
+    min-height: calc(100vh - 120px);
 }
 .home {
     color: #e4002b;

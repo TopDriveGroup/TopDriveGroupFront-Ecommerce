@@ -1,4 +1,4 @@
-import { useState, SetStateAction } from 'react';
+import { useState, useEffect } from 'react';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import { IClient } from "../../../../../types/client.types";
 import styles from './styles.module.css';
@@ -9,14 +9,20 @@ interface UserInfoSectionProps {
 }
 
 function UserInformation({ register, errors }: UserInfoSectionProps) {
-    const [typeDocument, setTypeDocument] = useState('NIT');
-    const handleTypeDocument = (event: { target: { value: SetStateAction<string> }}) => {
-        setTypeDocument(event.target.value);
+    // Verifica si hay un valor en localStorage y úsalo, o predetermina a 'NIT'
+    const [typeDocument, setTypeDocument] = useState(() => {
+        return localStorage.getItem('typeDocument') || 'NIT';
+    });
+
+    // Actualiza el localStorage cada vez que el usuario cambie el tipo de documento
+    const handleTypeDocument = (event: { target: { value: string }}) => {
+        const selectedType = event.target.value;
+        setTypeDocument(selectedType);
+        localStorage.setItem('typeDocument', selectedType); // Guardar en localStorage
     };
 
     const handleKeyDownCorporateName = (event: React.KeyboardEvent<HTMLInputElement>) => {
         const key = event.key;
-        // Permitir teclas de control, letras, números y espacio
         if (!/[a-zA-Z0-9\s]/.test(key) && key !== 'Backspace' && key !== 'Tab' && key !== 'Enter') {
             event.preventDefault();
         }
@@ -24,11 +30,17 @@ function UserInformation({ register, errors }: UserInfoSectionProps) {
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
         const key = event.key;
-        // Permitir teclas de control, letras y espacio
         if (!/[a-zA-Z\s]/.test(key) && key !== 'Backspace' && key !== 'Tab' && key !== 'Enter') {
             event.preventDefault();
         }
     };
+
+    useEffect(() => {
+        const savedType = localStorage.getItem('typeDocument');
+        if (savedType) {
+            setTypeDocument(savedType);
+        }
+    }, []);
 
     return (
         <div className="d-flex flex-column align-items-center justify-content-center">
@@ -40,6 +52,7 @@ function UserInformation({ register, errors }: UserInfoSectionProps) {
                     {...register('typeDocumentId', { required: true })}
                     className={`${styles.input} p-2 border`}
                     onChange={handleTypeDocument}
+                    value={typeDocument} // Esto asegura que el valor se mantenga después de navegar
                 >
                     <option value='NIT'>NIT</option>
                     <option value='Cedula de Ciudadania'>Cédula de Ciudadanía</option>
@@ -101,6 +114,7 @@ function UserInformation({ register, errors }: UserInfoSectionProps) {
                 </div>
             </div>
 
+            {/* Mostrar campos dependiendo del tipo de documento */}
             {typeDocument === 'NIT' && (
                 <div className={`${styles.container__Inputs} mb-4 d-flex align-items-center justify-content-center gap-3`}>
                     <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
@@ -129,7 +143,7 @@ function UserInformation({ register, errors }: UserInfoSectionProps) {
                 </div>
             )}
 
-            {(typeDocument === 'Cedula de Ciudadania' || typeDocument === 'Cedula de Extranjeria' || typeDocument === 'Pasaporte')  && (                
+            {(typeDocument === 'Cedula de Ciudadania' || typeDocument === 'Cedula de Extranjeria' || typeDocument === 'Pasaporte')  && (
                 <div className={`${styles.container__Inputs} mb-4 d-flex align-items-center justify-content-center gap-3`}>
                     <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
                         <h6 className={styles.label}><span className={`${styles.required}`}>*</span> Nombres</h6>
