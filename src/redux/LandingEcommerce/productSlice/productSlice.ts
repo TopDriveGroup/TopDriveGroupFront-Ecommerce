@@ -5,6 +5,7 @@ interface ProductState {
     products: IProduct | IProduct[] | null;
     bestSellingProducts: IProduct | IProduct[] | null;
     productsOnOffer: IProduct | IProduct[] | null;
+    trendingProducts: IProduct[] | null;
     loading: boolean;
     searchCompleted: boolean;
     totalProducts: number;
@@ -17,6 +18,7 @@ const initialState: ProductState = {
     products: null,
     bestSellingProducts: null,
     productsOnOffer: null,
+    trendingProducts: null,
     loading: false,
     searchCompleted: false,
     totalProducts: 0,
@@ -67,12 +69,19 @@ const productsSlice = createSlice({
             state.loading = false;
             state.bestSellingProducts = action.payload;
         },
-        setProductsOnOffer(state) {
+        setProductsOnOfferStart(state) {
             state.loading = true;
         },
         getProductsOnOfferStart(state, action: PayloadAction<IProduct[]>) {
             state.loading = false;
             state.productsOnOffer = action.payload;
+        },
+        setTrendingProductsStart(state) {
+            state.loading = true;
+        },
+        getTrendingProductsStart(state, action: PayloadAction<IProduct[]>) {
+            state.loading = false;
+            state.trendingProducts = action.payload;
         },
         getProductByQrStart(state, action: PayloadAction<IProduct>) {
             state.loading = false;
@@ -89,5 +98,5 @@ const productsSlice = createSlice({
     },
 });
 
-export const { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, resetSearchCompleted, getBestSellingProductSuccessStart, setProductsOnOffer, getProductsOnOfferStart, getProductByQrStart, putProductStart, deleteProductStart } = productsSlice.actions;
+export const { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, resetSearchCompleted, getBestSellingProductSuccessStart, setProductsOnOfferStart, getProductsOnOfferStart, setTrendingProductsStart, getTrendingProductsStart, getProductByQrStart, putProductStart, deleteProductStart } = productsSlice.actions;
 export default productsSlice.reducer;

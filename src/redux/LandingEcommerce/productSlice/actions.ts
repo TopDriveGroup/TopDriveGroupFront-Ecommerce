@@ -2,7 +2,7 @@
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
 import { IProduct } from '../../../types/product.types';
-import { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, getBestSellingProductSuccessStart, setProductsOnOffer, getProductsOnOfferStart, getProductByQrStart, putProductStart, deleteProductStart } from './productSlice';
+import { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, getBestSellingProductSuccessStart, setProductsOnOfferStart, getProductsOnOfferStart, setTrendingProductsStart, getTrendingProductsStart, getProductByQrStart, putProductStart, deleteProductStart } from './productSlice';
 
 //OBTENER TODOS LOS PRODUCTO SIN BORRADO LOGICO
 export const getAllProductsWithoutLogicalDeletionService = (page: number, limit: number) => async (dispatch: AppDispatch) => {
@@ -92,10 +92,25 @@ export const getBestSellingProductsClient = () => async (dispatch: AppDispatch) 
 
 //BUSCA TODOS LOS PRODUCTOS EN OFERTA
 export const getProductsOnOffer = () => async (dispatch: AppDispatch) => {
-    dispatch(setProductsOnOffer());
+    dispatch(setProductsOnOfferStart());
     try {
         const response = await axiosInstance.get(`/ecommerce/products-on-offer`);
         dispatch(getProductsOnOfferStart(response.data.result));
+    } catch (error: any) {
+        if (error.response && error.response.status === 401) {
+            dispatch(setErrorProduct(error.response?.data.message));
+        } else {
+            dispatch(setErrorProduct(error.message));
+        }
+    }
+};
+
+//OBTENER TODOS LOS PRODUCTOS EN TENDENCIA
+export const getTrendingProducts = () => async (dispatch: AppDispatch) => {
+    dispatch(setTrendingProductsStart());
+    try {
+        const response = await axiosInstance.get(`/ecommerce/trending-products`);
+        dispatch(getTrendingProductsStart(response.data.result));
     } catch (error: any) {
         if (error.response && error.response.status === 401) {
             dispatch(setErrorProduct(error.response?.data.message));
