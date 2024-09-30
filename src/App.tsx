@@ -6,6 +6,7 @@ import PaymentButton from './components/ComponentPaymentButton/PaymentButton';
 import LinkedIn from './components/ComponentLinkedIn/LinkedIn';
 import WhatsApp from './components/ComponentWhatsApp/WhatsApp';
 import Scroll from './components/ComponentScroll/Scroll';
+import SessionManager from './SessionManager';
 
 // LANDINGPAGE
 import RegisterPage from './pages/LandingEcommerce/01NavBar/02NavBar/03Register/00RegisterPage';
@@ -30,16 +31,16 @@ import BannerThirdPage from './pages/LandingEcommerce/02Banner/03BannerThirdPage
 import BannerFourthPage from './pages/LandingEcommerce//02Banner/04BannerFourthPage/BannerFourthPage';
 
 // TOPSELLERS ECOMMERCE
-import TopSellersPage from './pages/LandingEcommerce/03TopSellers/TopSellersPage';
+import BestSellingProductsPage from './pages/LandingEcommerce/03BestSellingProducts/BestSellingProductsPage';
 
 // CAMPAIGN ECOMMERCE
 import CampaignPage from './pages/LandingEcommerce/04Campaign/CampaignPage';
 
 // OFFERS
-import OffersPage from './pages/LandingEcommerce/05Offers/OffersPage';
+import ProductsOnOfferPage from './pages/LandingEcommerce/05ProductsOnOffer/ProductsOnOfferPage';
 
 // BRANDWEEK
-import BrandWeekPage from './pages/LandingEcommerce/09BrandWeek/BrandWeekPage';
+import BrandWeekPage from './pages/LandingEcommerce/06BrandWeek/BrandWeekPage';
 
 // GUIDES
 import MeansPaymentPage from './pages/LandingEcommerce/15Guides/01MeansPayment/MeansPaymentPage';
@@ -95,6 +96,7 @@ function App() {
                 <LinkedIn />
                 <WhatsApp />
                 <Scroll />
+                <SessionManager />
                 <Routes>
                     <Route path="/" element={<Navigate to="/ecommerce" replace />} />
                     <Route path="/ecommerce" element={<LandingEcommerce />} />
@@ -115,11 +117,11 @@ function App() {
                     <Route path='/ecommerce/third' element={<BannerThirdPage />} />
                     <Route path='/ecommerce/fourth' element={<BannerFourthPage />} />
                     {/* ----------TOPSELLERS ECOMMERCE---------- */}
-                    <Route path='/ecommerce/all-top-sellers' element={<TopSellersPage />} />
+                    <Route path='/ecommerce/all-top-sellers' element={<BestSellingProductsPage />} />
                     {/* ----------CAMPAIGN ECOMMERCE---------- */}
                     <Route path='/ecommerce/campaign' element={<CampaignPage />} />
                     {/* ----------OFFERS ECOMMERCE---------- */}
-                    <Route path='/ecommerce/offers' element={<OffersPage />} />
+                    <Route path='/ecommerce/offers' element={<ProductsOnOfferPage />} />
                     {/* ----------SOLUTIONS ECOMMERCE---------- */}
                     <Route path='/ecommerce/brand-week' element={<BrandWeekPage />} />
                     {/* ----------GUIDES ECOMMERCE---------- */}

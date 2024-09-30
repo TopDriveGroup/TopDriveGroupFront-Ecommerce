@@ -95,8 +95,13 @@ const productsSlice = createSlice({
             state.loading = true;
             state.errorProduct = null;
         },
+        //REGISTRA LA ACTIVIDAD DEL CLIENTE POR CONSULTA DE PRODUCTOS
+        postTrackProductViewStart: (state) => {
+            state.loading = true;
+            state.errorProduct = null;
+        },
     },
 });
 
-export const { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, resetSearchCompleted, getBestSellingProductSuccessStart, setProductsOnOfferStart, getProductsOnOfferStart, setTrendingProductsStart, getTrendingProductsStart, getProductByQrStart, putProductStart, deleteProductStart } = productsSlice.actions;
+export const { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, resetSearchCompleted, getBestSellingProductSuccessStart, setProductsOnOfferStart, getProductsOnOfferStart, setTrendingProductsStart, getTrendingProductsStart, getProductByQrStart, putProductStart, deleteProductStart, postTrackProductViewStart } = productsSlice.actions;
 export default productsSlice.reducer;
