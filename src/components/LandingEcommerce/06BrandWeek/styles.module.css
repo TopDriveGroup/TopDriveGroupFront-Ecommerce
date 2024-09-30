@@ -42,6 +42,11 @@
 
 /* CONTENEDOR DEL LOGO */
 .container__Logo {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-top-right-radius: 10px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom-right-radius: 10px;
     background: white;
     width: 800px;
     max-width: 800px;
