@@ -79,10 +79,8 @@ function InspiredByLastSaw() {
   
     return (
         <div className={`${styles.container} mb-5 mt-5`}>
-            <div>
-                <h4 className={`${styles.main__Title} mt-4 mx-4`}>Inspirado en lo último que viste</h4>
-            </div>
-
+            <h4 className={`${styles.main__Title} mt-4 mx-4`}>Inspirado en lo que viste</h4>
+ 
             <Slider {...settings} className="d-flex gap-4">
                 <Link to='/details' className='text-decoration-none'>
                     <div className={`${styles.card__Slider} overflow-hidden`}>
