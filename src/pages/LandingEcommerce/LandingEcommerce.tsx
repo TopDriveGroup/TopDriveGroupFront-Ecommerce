@@ -6,7 +6,7 @@ import ProductsOnOffer from '../../components/LandingEcommerce/05ProductsOnOffer
 import BrandWeek from '../../components/LandingEcommerce/06BrandWeek/BrandWeek';
 import InspiredByLastSaw from '../../components/LandingEcommerce/07InspiredByLastSaw/InspiredByLastSaw';
 import Trends from '../../components/LandingEcommerce/08Trends/Trends';
-import Allies from '../../components/07Allies/Allies';
+import Allies from '../../components/LandingEcommerce/09Allies/Allies';
 import Guides from '../../components/LandingEcommerce/10Guides/Guides';
 import Footer from '../../components/LandingEcommerce/Footer/Footer';
 import styles from './styles.module.css';
