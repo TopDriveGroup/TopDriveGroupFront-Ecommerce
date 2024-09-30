@@ -2,7 +2,8 @@
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
 import { IProduct } from '../../../types/product.types';
-import { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, getBestSellingProductSuccessStart, setProductsOnOfferStart, getProductsOnOfferStart, setTrendingProductsStart, getTrendingProductsStart, getProductByQrStart, putProductStart, deleteProductStart } from './productSlice';
+import { IInspiredByLastSaw } from '../../../types/InspiredByLastSaw.types';
+import { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, getBestSellingProductSuccessStart, setProductsOnOfferStart, getProductsOnOfferStart, setTrendingProductsStart, getTrendingProductsStart, getProductByQrStart, putProductStart, deleteProductStart, postTrackProductViewStart } from './productSlice';
 
 //OBTENER TODOS LOS PRODUCTO SIN BORRADO LOGICO
 export const getAllProductsWithoutLogicalDeletionService = (page: number, limit: number) => async (dispatch: AppDispatch) => {
@@ -166,6 +167,20 @@ export const deleteProduct = (idProduct: string, token: string) => async (dispat
             }
         });
         dispatch(setProductData(response.data));
+    } catch (error: any) {
+        if (error.response && error.response.status === 500) {
+            dispatch(setErrorProduct(error.response?.data.message));
+        } else {
+            dispatch(setErrorProduct(error.message));
+        }
+    }
+};
+
+//REGISTRA LA ACTIVIDAD DEL CLIENTE POR CONSULTA DE PRODUCTOS
+export const postTrackProductView = (formData: IInspiredByLastSaw) => async (dispatch: AppDispatch) => {
+    try {
+        dispatch(postTrackProductViewStart());
+        return await axiosInstance.post('/ecommerce/track-product-view', formData);
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorProduct(error.response?.data.message));
