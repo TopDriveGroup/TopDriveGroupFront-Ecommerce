@@ -2,10 +2,10 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './styles.css';
 
 // GENERALES
-import PaymentButton from './components/ComponentPaymentButton/PaymentButton';
-import LinkedIn from './components/ComponentLinkedIn/LinkedIn';
-import WhatsApp from './components/ComponentWhatsApp/WhatsApp';
-import Scroll from './components/ComponentScroll/Scroll';
+import PaymentButton from './components/GeneralComponents/ComponentPaymentButton/PaymentButton';
+import LinkedIn from './components/GeneralComponents/ComponentLinkedIn/LinkedIn';
+import WhatsApp from './components/GeneralComponents/ComponentWhatsApp/WhatsApp';
+import Scroll from './components/GeneralComponents/ComponentScroll/Scroll';
 import SessionManager from './SessionManager';
 
 // LANDINGPAGE
