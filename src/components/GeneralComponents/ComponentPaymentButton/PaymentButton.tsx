@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Pago from '../../assets/Pago.png'
+import Pago from '../../../assets/Pago.png'
 import styles from "./styles.module.css";
 
 export default function PaymentButton() {

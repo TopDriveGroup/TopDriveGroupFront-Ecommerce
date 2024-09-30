@@ -17,7 +17,7 @@ function Trends() {
     }, [dispatch]);
 
     return (
-        <div className={`${styles.container} position-relative`}>
+        <div className={`${styles.container} mt-5 mb-5 position-relative`}>
             <h3 className={`${styles.main__Title} m-0 text-center`}>Tendencias en <span className={styles.topDriveGroup}>Top Drive Group</span></h3>
 
             <div className={`${styles.container__Trends} d-flex align-items-start justify-content-center gap-4`}>
