@@ -5,6 +5,7 @@ interface ProductState {
     products: IProduct | IProduct[] | null;
     bestSellingProducts: IProduct | IProduct[] | null;
     productsOnOffer: IProduct | IProduct[] | null;
+    inspiredByLastSawProducts: IProduct[] | null;
     trendingProducts: IProduct[] | null;
     loading: boolean;
     searchCompleted: boolean;
@@ -18,6 +19,7 @@ const initialState: ProductState = {
     products: null,
     bestSellingProducts: null,
     productsOnOffer: null,
+    inspiredByLastSawProducts: null,
     trendingProducts: null,
     loading: false,
     searchCompleted: false,
@@ -76,21 +78,34 @@ const productsSlice = createSlice({
             state.loading = false;
             state.productsOnOffer = action.payload;
         },
+        //REGISTRA LA ACTIVIDAD DEL CLIENTE POR CONSULTA DE PRODUCTOS
         setTrendingProductsStart(state) {
             state.loading = true;
         },
+        //OBTENER TODOS LOS PRODUCTOS EN TENDENCIA
         getTrendingProductsStart(state, action: PayloadAction<IProduct[]>) {
             state.loading = false;
             state.trendingProducts = action.payload;
+        },
+        //REGISTRA LA ACTIVIDAD DEL CLIENTE POR CONSULTA DE PRODUCTOS
+        setInspiredByLastSawStart(state) {
+            state.loading = true;
+        },
+        //INSPIRADO EN LO QUE VISTE, RETORNA PRODUCTOS RELACIONADOS DE ACUEDO CON EL HABITO DE CONSULTA
+        getInspiredByLastSawStart(state, action: PayloadAction<IProduct[]>) {
+            state.loading = false;
+            state.inspiredByLastSawProducts = action.payload;
         },
         getProductByQrStart(state, action: PayloadAction<IProduct>) {
             state.loading = false;
             state.products = action.payload;
         },
+        //ACTUALIZAR UN PRODUCTO
         putProductStart: (state) => {
             state.loading = true;
             state.errorProduct = null;
         },
+        //ELIMINAR UN PRODUCTO
         deleteProductStart: (state) => {
             state.loading = true;
             state.errorProduct = null;
@@ -103,5 +118,5 @@ const productsSlice = createSlice({
     },
 });
 
-export const { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, resetSearchCompleted, getBestSellingProductSuccessStart, setProductsOnOfferStart, getProductsOnOfferStart, setTrendingProductsStart, getTrendingProductsStart, getProductByQrStart, putProductStart, deleteProductStart, postTrackProductViewStart } = productsSlice.actions;
+export const { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, resetSearchCompleted, getBestSellingProductSuccessStart, setProductsOnOfferStart, getProductsOnOfferStart, setTrendingProductsStart, getTrendingProductsStart, setInspiredByLastSawStart, getInspiredByLastSawStart, getProductByQrStart, putProductStart, deleteProductStart, postTrackProductViewStart } = productsSlice.actions;
 export default productsSlice.reducer;
