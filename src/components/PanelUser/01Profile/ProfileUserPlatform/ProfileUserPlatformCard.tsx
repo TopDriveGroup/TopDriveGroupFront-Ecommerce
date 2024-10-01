@@ -13,9 +13,9 @@ import styles from './styles.module.css';
 
 function ProfileUserPlatformCard() {
     const token = jsCookie.get("token") || '';
-    const dispatch: AppDispatch = useDispatch();
-
+    
     // Estado de Redux
+    const dispatch: AppDispatch = useDispatch();
     const user = useSelector((state: RootState) => state.user.user);
     const [userPlatformUser, UserPlatform] = useState<IUserPlatform>();
 
