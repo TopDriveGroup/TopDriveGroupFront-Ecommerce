@@ -3,7 +3,7 @@ import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
 import { IProduct } from '../../../types/product.types';
 import { IInspiredByLastSaw } from '../../../types/InspiredByLastSaw.types';
-import { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, getBestSellingProductSuccessStart, setProductsOnOfferStart, getProductsOnOfferStart, setTrendingProductsStart, getTrendingProductsStart, getProductByQrStart, putProductStart, deleteProductStart, postTrackProductViewStart } from './productSlice';
+import { setProductData, setErrorProduct, getAllProductsWithoutLogicalDeletionStart, getAllProductsStart, getProductByIdStart, getSearchProductsStart, getBestSellingProductSuccessStart, setProductsOnOfferStart, getProductsOnOfferStart, setTrendingProductsStart, getTrendingProductsStart, setInspiredByLastSawStart, getInspiredByLastSawStart, getProductByQrStart, putProductStart, deleteProductStart, postTrackProductViewStart } from './productSlice';
 
 //OBTENER TODOS LOS PRODUCTO SIN BORRADO LOGICO
 export const getAllProductsWithoutLogicalDeletionService = (page: number, limit: number) => async (dispatch: AppDispatch) => {
@@ -121,7 +121,7 @@ export const getTrendingProducts = () => async (dispatch: AppDispatch) => {
     }
 };
 
-//OBTENER UN PRODUCTO POR ID
+//OBTENER UN PRODUCTO POR QR
 export const getProductByQr = (idProduct: string) => async (dispatch: AppDispatch) => {
     dispatch(setProductData());
     try {
@@ -183,6 +183,26 @@ export const postTrackProductView = (formData: IInspiredByLastSaw) => async (dis
         return await axiosInstance.post('/ecommerce/track-product-view', formData);
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
+            dispatch(setErrorProduct(error.response?.data.message));
+        } else {
+            dispatch(setErrorProduct(error.message));
+        }
+    }
+};
+
+//REGISTRA LA ACTIVIDAD DEL CLIENTE POR CONSULTA DE PRODUCTOS
+export const getInspiredByLastSaw = (token: string, sessionId: string) => async (dispatch: AppDispatch) => {
+    dispatch(setInspiredByLastSawStart());
+    try {
+        const response = await axiosInstance.get(`/ecommerce/track-product-view/${sessionId}`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            }
+        });
+        dispatch(getInspiredByLastSawStart(response.data.result.products));
+    } catch (error: any) {
+        if (error.response && error.response.status === 401) {
             dispatch(setErrorProduct(error.response?.data.message));
         } else {
             dispatch(setErrorProduct(error.message));

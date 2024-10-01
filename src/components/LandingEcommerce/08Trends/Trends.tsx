@@ -8,6 +8,7 @@ import { getTrendingProducts } from '../../../redux/LandingEcommerce/productSlic
 import styles from './styles.module.css';
 
 function Trends() {
+    // REDUX
     const dispatch: AppDispatch = useDispatch();
     const { trendingProducts, loading } = useSelector((state: RootState) => state.products);
 
@@ -18,7 +19,7 @@ function Trends() {
 
     return (
         <div className={`${styles.container} mt-5 mb-5 position-relative`}>
-            <h3 className={`${styles.main__Title} m-0 text-center`}>Tendencias en <span className={styles.topDriveGroup}>Top Drive Group</span></h3>
+            <h3 className={`${styles.main__Title} mb-3 text-center`}>Tendencias en <span className={styles.topDriveGroup}>Top Drive Group</span></h3>
 
             <div className={`${styles.container__Trends} d-flex align-items-start justify-content-center gap-4`}>
                 {loading ? (

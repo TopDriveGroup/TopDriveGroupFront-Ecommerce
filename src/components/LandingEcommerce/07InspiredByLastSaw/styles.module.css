@@ -38,15 +38,16 @@
     color: #495057;
 }
 .card__Slider {
+    /* border: 1px solid red; */
     border-radius: 5px;
-    height: 350px;
+    max-height: 390px;
     width: 200px;
 }
 .card__Slider:hover {
     .brand__Product {
         color: #e4002b;
     }
-    .title__Product {
+    .title__Description {
         color: #212322;
     }
 }
@@ -57,14 +58,19 @@
     height: 130px;
 }
 .container__Info {
-    height: 120px;
+    /* border: 1px solid teal; */
+    height: 160px;
 }
 .brand__Product {
     color: #212322;
+    width: 100%;
     font-size: 14px;
     font-weight: 700;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
 }
-.title__Product {
+.title__Description {
     color: #495057;
     display: -webkit-box;
     -webkit-box-orient: vertical;
