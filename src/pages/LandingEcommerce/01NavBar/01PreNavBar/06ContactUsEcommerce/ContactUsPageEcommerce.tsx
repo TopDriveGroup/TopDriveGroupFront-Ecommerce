@@ -21,9 +21,9 @@ import styles from './styles.module.css';
 
 function ContactUsEcommercePage() {
     const { t } = useTranslation('contactUs');
+    
+    // REDUX
     const dispatch: AppDispatch = useDispatch();
-
-    // Estado de Redux
     const errorContactUs = useSelector((state: RootState) => state.contactUs.errorContactUs);
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm<IContactUs>();
@@ -218,6 +218,7 @@ function ContactUsEcommercePage() {
                                     )}
                                 </div>
                             </div>
+
                             <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
                                 <h6 className={styles.label}>{t('contactUs.label_Email')}</h6>
                                 <div className={styles.container__Input}>
@@ -232,6 +233,7 @@ function ContactUsEcommercePage() {
                                     )}
                                 </div>
                             </div>
+
                             <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
                                 <h6 className={styles.label}>{t('contactUs.label_Phone')}</h6>
                                 <div className={styles.container__Input}>
@@ -246,6 +248,7 @@ function ContactUsEcommercePage() {
                                     )}
                                 </div>
                             </div>
+
                             <div className={`${styles.container__Inputs} d-flex flex-column align-items-start justify-content-start position-relative`}>
                                 <h6 className={styles.label}>{t('contactUs.label_Message_Textarea')}</h6>
                                 <div className={styles.container__Input}>
@@ -264,6 +267,7 @@ function ContactUsEcommercePage() {
                                     )}
                                 </div>
                             </div>
+
                             <div className={`${styles.container__Accepted_Policy} d-flex align-items-center justify-content-center position-relative`}>
                                 <p className={`${styles.text__Accepted_Policy} text-center m-0`}>{t('contactUs.label_Acepted_Conditions')} <Link to="/personalDataPolicy" className={`${styles.link} text-decoration-none text-sky-500`}>{t('contactUs.label_Continue_Acepted_Conditions')}</Link></p>
                                 <input

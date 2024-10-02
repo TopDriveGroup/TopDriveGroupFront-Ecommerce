@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import userReducer from './LandingEcommerce/userSlice/userSlice';
 import contactUsReducer from './LandingEcommerce/contactUs/contactUsSlice';
+import documentRequestReducer from './PanelTopDriveGroup/08DocumentRequest/documentRequestSlice';
 import addressReducer from './LandingEcommerce/addressSlice/addressSlice';
 import productReducer from './UserPlatform/02ProductSlice/productSlice';
 import bestSellingProductsReducer from './LandingEcommerce/productSlice/productSlice';
@@ -15,6 +16,7 @@ export const store = configureStore({
     reducer: {
         user: userReducer,
         contactUs: contactUsReducer,
+        documentRequest: documentRequestReducer,
         address: addressReducer,
         productPlatform: productReducer,
         products: bestSellingProductsReducer,
