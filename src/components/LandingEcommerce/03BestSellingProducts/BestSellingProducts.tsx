@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps, @typescript-eslint/no-explicit-any */
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
 //REDUX
@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../redux/store';
 import { getBestSellingProductsClient } from '../../../redux/LandingEcommerce/productSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import { formatNumber } from '../../../helpers/FormatNumber/FormatNumber';
+import { SliderProductCard } from '../SliderProductCard/SliderProductCard';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import styles from './styles.module.css';
 
@@ -40,9 +40,8 @@ function NextBtn(props: any) {
 }
 
 function BestSellingProducts() {
+    // REDUX
     const dispatch: AppDispatch = useDispatch();
-
-    // ESTADO DE REDUX
     const { bestSellingProducts, loading, errorProduct } = useSelector((state: RootState) => state.products);
 
     useEffect(() => {
@@ -92,9 +91,7 @@ function BestSellingProducts() {
     return (
         <div className={`${styles.container} mt-5 mb-5`}>
             <div className="d-flex align-items-center justify-content-between">
-                <div>
-                    <h4 className={`${styles.main__Title} mt-4 mx-4`}>Los más vendidos de la semana</h4>
-                </div>
+                <h4 className={`${styles.main__Title} mt-4 mx-4`}>Los más vendidos de la semana</h4>
                 <Link to='/ecommerce/all-top-sellers' className={`${styles.link__Offers} mt-4 mx-4 text-decoration-none`}>Ver todo</Link>
             </div>
 
@@ -102,41 +99,11 @@ function BestSellingProducts() {
                 {Array.isArray(bestSellingProducts) && bestSellingProducts.map((product, index) => (
                     <div key={index}>
                         <Link to={`/details/${product._id}`} className='text-decoration-none'>
-                            <ProductCard product={product} />
+                            <SliderProductCard product={product} />
                         </Link>
                     </div>
                 ))}
             </Slider>
-        </div>
-    );
-}
-
-const ProductCard = ({ product }: { product: any }) => {
-    const [imageIndex, setImageIndex] = useState(0);
-
-    const handleMouseEnter = () => {
-        setImageIndex(1);
-    };
-
-    const handleMouseLeave = () => {
-        setImageIndex(0);
-    };
-
-    return (
-        <div className={`${styles.card__Slider} overflow-hidden`}>
-            <div
-                className={`${styles.container__Image} position-relative overflow-hidden d-flex align-items-center justify-content-center`}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-            >
-                <img src={imageIndex === 0 ? product.mainImage : product.secondaryImage} alt="Item" className={styles.image__Product} loading="lazy" />
-            </div>
-            <div className={`${styles.container__Info} `}>
-                <p className={`${styles.brand__Product} m-0`}>{product.manufacturer}</p>
-                <p className={`${styles.title__Product} m-0 overflow-hidden`}>{product.description}</p>
-                <p className={`${styles.price__Product} m-0`}><span className={`${styles.currency__Sign}`}>$</span>{formatNumber(product.sellingPriceFinalUser)}</p>
-                <p className={`${styles.stock__Product} m-0`}>{product.inventory} unidades en stock</p>
-            </div>
         </div>
     );
 }
