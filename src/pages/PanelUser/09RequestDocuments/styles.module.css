@@ -9,3 +9,62 @@
     font-weight: 600;
     color: #e4002b;
 }
+
+/* CONTENEDOR DEL FORMULARIO */
+.container__Form {
+    max-width: 800px;
+}
+.form {
+    width: 100%;
+}
+.container__Inputs {
+    max-width: 800px;
+}
+.label {
+    margin-bottom: 2px;
+}
+.required {
+    color: #e4002b;
+}
+.container__Input {
+    width: 100%;
+    border-radius: 5px;
+}
+.input, .textarea {
+    width: 100%;
+}
+.input:focus, .textarea:focus{
+    outline-color: #e4002b;
+}
+.text__Danger {
+    top: 60px;
+}
+.alert__Success {
+    color: #4c956c;
+    border-radius: 5px;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    padding: 5px 10px;
+    z-index: 1;
+    font-weight: 600;
+}
+.alert__Danger {
+    color: #e63946;
+    border-radius: 5px;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    padding: 5px 10px;
+    z-index: 1;
+}
+.container__Loading {
+    width: 100%;
+}
+.button__Submit {
+    padding: 7px 25px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background: #e4002b;
+    color: #f8f9fa;
+}

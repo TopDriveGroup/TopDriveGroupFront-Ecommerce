@@ -33,6 +33,8 @@ export interface AddressResponse {
 
 function ShoppingCartPage() {
     const token = jsCookie.get('token') || '';
+
+        // REDUX
     const dispatch: AppDispatch = useDispatch();
     const user = useSelector((state: RootState) => state.user.user) as IClient;
     const order = useSelector((state: RootState) => state.orders.orders);
