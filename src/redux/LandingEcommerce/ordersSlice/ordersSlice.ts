@@ -5,6 +5,7 @@ import { IGouOrderResult } from '../../../types/gouOrder.types';
 interface OrdersState {
     orders: IGouOrderResult | null;
     ordersPending: IGouOrderResult[] | null;
+    paymentsPending: IGouOrderResult[] | null;
     loading: boolean;
     errorOrder: string[] | null;
 }
@@ -12,6 +13,7 @@ interface OrdersState {
 const initialState: OrdersState = {
     orders: null,
     ordersPending: null,
+    paymentsPending: null,
     loading: false,
     errorOrder: null,
 };
@@ -49,8 +51,15 @@ const orderSlice = createSlice({
             state.loading = false;
             state.ordersPending = action.payload;
         },
+        setPaymentsPendingStatusStart(state) {
+            state.loading = true;
+        },
+        getPaymentsPendingStatusStart: (state, action: PayloadAction<IGouOrderResult[]>) => {
+            state.loading = false;
+            state.paymentsPending = action.payload;
+        },
     },
 });
 
-export const { setOrderData, setErrorOrder, postGouPaymentOrderStart, postStatusConsultSessionServiceStart, getConsultTransactionIdStart, getOrdersHistoryStart, getConsultTransactionsPendingStart } = orderSlice.actions;
+export const { setOrderData, setErrorOrder, postGouPaymentOrderStart, postStatusConsultSessionServiceStart, getConsultTransactionIdStart, getOrdersHistoryStart, getConsultTransactionsPendingStart, setPaymentsPendingStatusStart, getPaymentsPendingStatusStart } = orderSlice.actions;
 export default orderSlice.reducer;

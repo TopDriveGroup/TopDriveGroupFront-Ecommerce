@@ -79,7 +79,8 @@ import EditProductTopDriveGroupPage from './pages/PanelTopDriveGroup/02Products/
 import ActiveCustomerQuotationsPage from './pages/PanelTopDriveGroup/03CustomerQuotes/01ActiveCustomerQuotations/ActiveCustomerQuotationsPage';
 import HistoryCustomerQuotationsPage from './pages/PanelTopDriveGroup/03CustomerQuotes/02HistoryCustomerQuotations/HistoryCustomerQuotationsPage';
 import ActiveCustomerOrdersPage from './pages/PanelTopDriveGroup/04CustomerOrders/01ActiveCustomerOrders/ActiveCustomerOrdersPage';
-import HistoryCustomerOrdersPage from './pages/PanelTopDriveGroup/04CustomerOrders/02HistoryCustomerOrders/HistoryCustomerOrders';
+import PaymentsPendingStatusPage from './pages/PanelTopDriveGroup/04CustomerOrders/02PaymentsPendingStatus/PaymentsPendingStatusPage';
+import HistoryCustomerOrdersPage from './pages/PanelTopDriveGroup/04CustomerOrders/03HistoryCustomerOrders/HistoryCustomerOrders';
 import AllCustomersPage from './pages/PanelTopDriveGroup/07Clients/01AllCustomers/AllCustomersPage';
 import DocumentRequestTopDriveGroupPage from './pages/PanelTopDriveGroup/08DocumentRequest/DocumentRequestTopDriveGroupPage';
 import ElectronicInvoicesTopDriveGroupPage from './pages/PanelTopDriveGroup/09ElectronicInvoices/ElectronicInvoicesTopDriveGroupPage';
@@ -166,6 +167,7 @@ function App() {
                         <Route path='/panel-top-drive-group/quotes-clients/history-customer-quotations' element={<HistoryCustomerQuotationsPage />} />
                         {/* ----------SIDEBAR TOP DRIVE - CUSTOMER ORDERS---------- */}
                         <Route path='/panel-top-drive-group/customer-orders/active-customer-orders' element={<ActiveCustomerOrdersPage />} />
+                        <Route path='/panel-top-drive-group/customer-orders/payments-pending-status' element={<PaymentsPendingStatusPage />} />
                         <Route path='/panel-top-drive-group/customer-orders/history-customer-orders' element={<HistoryCustomerOrdersPage />} />
                         {/* ----------SIDEBAR TOP DRIVE - CLIENTS---------- */}
                         <Route path='/panel-top-drive-group/customers/all-customers' element={<AllCustomersPage />} />
