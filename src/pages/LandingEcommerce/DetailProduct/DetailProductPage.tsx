@@ -38,7 +38,7 @@ function DetailProductPage() {
     const [downloadPdf, setDownloadPdf] = React.useState(false);
 
     // ESTADO DE REDUX
-    const productsState = useSelector((state: RootState) => state.products.products);
+    const productsState = useSelector((state: RootState) => state.products.products) as IProduct;
     const user = useSelector((state: RootState) => state.user.user);
     const errorProduct = useSelector((state: RootState) => state.products.errorProduct);
     
@@ -71,7 +71,6 @@ function DetailProductPage() {
         }
     }, [idProduct]);
     
-    
     const handleIncrement = () => {
         setCount(prevCount => prevCount + 1);
     };
@@ -102,7 +101,6 @@ function DetailProductPage() {
                 sellingPrice: sellingPrice,
                 subtotal: count * sellingPrice,
             };
-            
             setSelectedProducts(prevState => ({
                 ...prevState,
                 products: [mainProduct],
@@ -112,12 +110,12 @@ function DetailProductPage() {
     }, [productsState, count]);
 
     const handleAddToCart = () => {
-        const storedCart = localStorage.getItem('order');               // Obtener carrito desde el localStorage
+        const storedCart = localStorage.getItem('order');                                                       // Obtener carrito desde el localStorage
         const cart = storedCart ? JSON.parse(storedCart) : { products: [], total: 0, client: idUser };
-        const product = selectedProducts.products[0];                   // Agregar el producto actual al carrito
+        const product = selectedProducts.products[0];                                                           // Agregar el producto actual al carrito
         const existingProductIndex = cart.products.findIndex((p: { productId: string | undefined; }) => p.productId === product.productId);
         
-        if (existingProductIndex !== -1) {                              // Si el producto ya existe, incrementar la cantidad y actualizar subtotal
+        if (existingProductIndex !== -1) {                                                                      // Si el producto ya existe, incrementar la cantidad y actualizar subtotal
             cart.products[existingProductIndex].quantity += product.quantity;
             cart.products[existingProductIndex].subtotal += product.subtotal;
         } else {
@@ -192,8 +190,9 @@ function DetailProductPage() {
     }, [downloadPdf, product]);
     
     if (errorProduct) return <div>Error: {errorProduct}</div>;
-    if (!productsState || Array.isArray(productsState)) return <Loading />;
     
+    if (!productsState || (Array.isArray(productsState) && productsState.length === 0)) return <Loading />;
+
     // Construir el array de imágenes asegurando que otras imágenes existan
     const images = [
         productsState.mainImage,
