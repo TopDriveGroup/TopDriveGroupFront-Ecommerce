@@ -98,8 +98,8 @@ function RequestDocumentsPage() {
                                     className={`${styles.input} mb-4 p-2 border rounded`}
                                     onChange={handleTypeDocumentRequest}
                                 >
-                                    <option value='Primero'>Primero</option>
-                                    <option value='Segundo'>Segundo</option>
+                                    <option value='Rete IVA'>Rete IVA</option>
+                                    <option value='Rete ICA'>Rete ICA</option>
                                 </select>
                                 {errors.documentRequest && (
                                     <p className={`${styles.text__Danger} text-danger position-absolute`}>El tipo de documento del usuario es requerido</p>
@@ -113,9 +113,9 @@ function RequestDocumentsPage() {
                                     className={`${styles.input} p-2 border rounded`}
                                     onChange={handleDocumentFiscalYear}
                                 >
-                                    <option value='2022'>2022</option>
                                     <option value='2023'>2023</option>
-                                    <option value='2024'>2024</option>
+                                    <option value='2022'>2022</option>
+                                    <option value='2021'>2021</option>
                                 </select>
                                 {errors.documentFiscalYear && (
                                     <p className={`${styles.text__Danger} text-danger position-absolute`}>El tipo de documento del usuario es requerido</p>

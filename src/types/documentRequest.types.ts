@@ -4,7 +4,7 @@ export interface IDocumentRequest {
     documentId: string;
     email: string;
     phone: string;
-    documentRequest: string;
-    documentFiscalYear: string;
+    documentRequest: 'Rete IVA' | 'Rete ICA';
+    documentFiscalYear: '2023' | '2022' | '2021';
     dateRequest: string;
 }
