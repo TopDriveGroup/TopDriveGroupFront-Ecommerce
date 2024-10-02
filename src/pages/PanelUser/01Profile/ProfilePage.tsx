@@ -16,6 +16,8 @@ import styles from './styles.module.css';
 
 function ProfilePage() {
     const token = jsCookie.get("token") || '';
+
+    // REDUX
     const dispatch: AppDispatch = useDispatch();
     const user = useSelector((state: RootState) => state.user.user);
 

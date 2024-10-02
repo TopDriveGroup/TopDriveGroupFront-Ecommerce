@@ -168,6 +168,12 @@ function SideBarPanelTopDriveGroup() {
                             Pedidos activos
                         </Link>
                         <Link
+                            to='/panel-top-drive-group/customer-orders/payments-pending-status'
+                            className={`${styles.link__Sub_Menu} ${location.pathname === '/panel-top-drive-group/customer-orders/payments-pending-status' ? styles.active__Sub_Menu : ''} text-decoration-none`}
+                        >
+                            Pagos en estado pendiente
+                        </Link>
+                        <Link
                             to='/panel-top-drive-group/customer-orders/history-customer-orders'
                             className={`${styles.link__Sub_Menu} ${location.pathname === '/panel-top-drive-group/customer-orders/history-customer-orders' ? styles.active__Sub_Menu : ''} text-decoration-none`}
                         >

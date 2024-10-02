@@ -2,7 +2,7 @@
 import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
 import { IGouOrderRequest } from '../../../types/gouOrder.types';
-import { setErrorOrder, postGouPaymentOrderStart, getConsultTransactionIdStart, getOrdersHistoryStart, getConsultTransactionsPendingStart } from './ordersSlice';
+import { setErrorOrder, postGouPaymentOrderStart, getConsultTransactionIdStart, getOrdersHistoryStart, getConsultTransactionsPendingStart, setPaymentsPendingStatusStart, getPaymentsPendingStatusStart } from './ordersSlice';
 // import { setErrorOrder, postGouPaymentOrderStart, postStatusConsultSessionServiceStart, getConsultTransactionIdStart } from './ordersSlice';
 
 //CREA UNA SESION DE PAGO PARA LA ORDEN
@@ -72,6 +72,26 @@ export const getConsultTransactionsPending = (token: string) => async (dispatch:
             }
         });
         dispatch(getConsultTransactionsPendingStart(response.data.result));
+    } catch (error: any) {
+        if (error.response && error.response.status === 500) {
+            dispatch(setErrorOrder([error.response?.data.message]));
+        } else {
+            dispatch(setErrorOrder([error.message]));
+        }
+    }
+};
+
+//CONTULTA TODAS LAS ORDENES EN ESTADO PENDIENTE
+export const getPaymentsPendingStatus = (token: string) => async (dispatch: AppDispatch) => {
+    dispatch(setPaymentsPendingStatusStart()); // Indicar que la carga ha comenzado
+    try {
+        const response = await axiosInstance.get(`/gou-web-checkout/cron-pending-orders`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+            },
+        });
+        dispatch(getPaymentsPendingStatusStart(response.data.result)); // Enviar los datos y detener la carga
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorOrder([error.response?.data.message]));

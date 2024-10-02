@@ -32,60 +32,13 @@
 .container {
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    max-width: 1190px;
+    max-width: 1200px;
+    height: 420px;
 }
 .main__Title {
     color: #495057;
 }
-.card__Slider {
-    /* border: 1px solid red; */
-    border-radius: 5px;
-    max-height: 390px;
-    width: 200px;
-}
-.card__Slider:hover {
-    .brand__Product {
-        color: #e4002b;
-    }
-    .title__Description {
-        color: #212322;
-    }
-}
-.container__Image {
-    height: 200px;
-}
-.image__Product {
-    height: 130px;
-}
-.container__Info {
-    /* border: 1px solid teal; */
-    height: 160px;
-}
-.brand__Product {
-    color: #212322;
-    width: 100%;
-    font-size: 14px;
-    font-weight: 700;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-}
-.title__Description {
-    color: #495057;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-}
-.price__Product {
+.link__Offers {
     color: #e4002b;
-    font-size: 20px;
-    font-weight: 500;
-}
-.stock__Product {
-    font-size: 14px;
-    color: #495057;
-}
-.star__Score {
-    color: #ffb703;
+    font-weight: 700;
 }
