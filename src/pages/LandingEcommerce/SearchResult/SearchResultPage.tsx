@@ -39,7 +39,7 @@ function SearchResultPage() {
             try {
                 await dispatch(getSearchProducts(desc, page, limit, sortBy, filters));
             } catch (error) {
-                console.error('Error al traer los productos', error);
+                throw new Error('Error al hacer el cierre de sesión');
             }
         };
 
@@ -134,9 +134,8 @@ function SearchResultPage() {
                     ) : filteredProducts.length > 0 ? (
                         <div>
                             <div className={`${styles.container__Header_Result_and_See} d-flex align-items-center justify-content-between`}>
-                                <div>
-                                    {filteredProducts.length === 1 ? `${filteredProducts.length} resultado` : `${filteredProducts.length} resultados`}
-                                </div>
+                                {filteredProducts.length === 1 ? `${filteredProducts.length} resultado` : `${filteredProducts.length} resultados`}
+
                                 <div className={`${styles.container__Order_And_view} d-flex`}>
                                     <div className={`${styles.container__Order_By} d-flex align-items-center justify-content-center`}>
                                         <span>Ordenar por:</span>

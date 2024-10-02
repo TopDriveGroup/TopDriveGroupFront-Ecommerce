@@ -1,5 +1,5 @@
 import { useEffect, useState, SetStateAction } from "react";
-import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 // REDUX
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,28 +12,31 @@ import styles from './styles.module.css';
 
 function SearchBar() {
     const dispatch: AppDispatch = useDispatch();
+    const navigate = useNavigate();
     const { t } = useTranslation('navBarEcommerce');
 
     const [description, setDescription] = useState('');
     const { searchCompleted } = useSelector((state: RootState) => state.products);
 
+    // Redirección si la búsqueda se completa
     useEffect(() => {
         if (searchCompleted) {
             clearSearch();
             dispatch(resetSearchCompleted());
+            navigate(`/search-result?term=${description}`);  // Redirige usando navigate
         }
-    }, [searchCompleted, dispatch]);
+    }, [searchCompleted, description, dispatch, navigate]);
 
     function handleInputChange(e: { target: { value: SetStateAction<string>; }; }) {
         setDescription(e.target.value);
     }
-  
+
     function handleSubmit(e: { preventDefault: () => void; }) {
         e.preventDefault();
         localStorage.setItem('searchDescription', description);         // Guardar la descripción en localStorage
         dispatch(getSearchProducts(description));
     }
-  
+
     function clearSearch() {
         setDescription('');
     }
@@ -51,7 +54,6 @@ function SearchBar() {
                 <button type="submit" className="border-0">
                     <IoIosSearch className={`${styles.icon__Search} position-absolute`} />
                 </button>
-                {searchCompleted && <Navigate to={`/search-result?term=${description}`} />}
             </form>
         </div>
     );

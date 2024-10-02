@@ -49,8 +49,15 @@ export const getProductById = (idProduct: string) => async (dispatch: AppDispatc
 };
 
 //BUSCA TODOS LOS PRODUCTOS POR REFERENCIA, DESCRIPCION, CLASE, CATEGORIA, TIPO O FABRICANTE
-export const getSearchProducts = (description: string, page: number = 1, limit?: number, sortBy?: string, filters?: { id: string; label: string; property: string }[]) => async (dispatch: AppDispatch) => {
+export const getSearchProducts = (
+    description: string, 
+    page: number = 1, 
+    limit: number = 10, 
+    sortBy: string = 'A-Z', 
+    filters?: { id: string; label: string; property: string }[]
+) => async (dispatch: AppDispatch) => {
     dispatch(setProductData());
+    
     try {
         const response = await axiosInstance.get(`/ecommerce/search-product`, {
             params: {
@@ -61,6 +68,7 @@ export const getSearchProducts = (description: string, page: number = 1, limit?:
                 filters,
             }
         });
+
         dispatch(getSearchProductsStart({
             products: response.data.result,
             totalProducts: response.data.totalProducts,
@@ -68,11 +76,8 @@ export const getSearchProducts = (description: string, page: number = 1, limit?:
             currentPage: page,
         }));
     } catch (error: any) {
-        if (error.response && error.response.status === 401) {
-            dispatch(setErrorProduct(error.response.data.message));
-        } else {
-            dispatch(setErrorProduct(error.message));
-        }
+        const errorMessage = error.response?.data?.message || error.message;
+        dispatch(setErrorProduct(errorMessage));
     }
 };
 
