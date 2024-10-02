@@ -20,7 +20,6 @@ function PaymentsPendingStatusPage() {
     paymentsPending: state.orders.paymentsPending,
     loading: state.orders.loading,
   }));
-  console.log('paymentsPending: ', paymentsPending)
 
   useEffect(() => {
     if (token) {

@@ -178,7 +178,6 @@ function ShoppingCartPage() {
             documentType = 'CE';
         }
         try {
-            console.log('user:', user);
             const formData: IGouOrderRequest = {
                 locale: savedLanguage === 'es' ? 'es_CO' : 'en_US',
                 buyer: {
@@ -219,7 +218,6 @@ function ShoppingCartPage() {
                 noBuyerFill: false,
                 captureAddress: false,
             };
-            console.log('formData: ', formData)
             await dispatch(postGouPaymentOrder(formData, token));
         } catch (error) {
             throw new Error('Error al enviar la orden');
