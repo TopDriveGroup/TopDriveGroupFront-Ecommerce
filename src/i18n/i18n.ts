@@ -1,8 +1,10 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 // INGLES - ECOMMERCE
-import enNavBar from './locales/en/Landing/01NavBar/01EnNavBar.json';
-import enQuotation from './locales/en/Landing/01NavBar/03EnQuotation.json';
+import enNavBar from './locales/en/Landing/01NavBar/EnNavBar.json';
+import enQuotation from './locales/en/Landing/01NavBar/EnQuotation.json';
+import enRegister from './locales/en/Landing/01NavBar/EnRegister.json';
+import enLogin from './locales/en/Landing/01NavBar/EnLogin.json';
 import enBestSellingProducts from './locales/en/Landing/03BestSellingProducts/EnBestSellingProducts.json';
 import enProductsOnOffer from './locales/en/Landing/05ProductsOnOffer/EnProductsOnOffer.json';
 import enInspiredByLastSaw from './locales/en/Landing/07InspiredByLastSaw/EnInspiredByLastSaw.json';
@@ -17,8 +19,10 @@ import enFooter from './locales/en/Landing/11Footer/EnFooter.json';
 import enDepartmentAndCity from './locales/en/helpers/DepartmentAndCity/EnDepartmentAndCity.json';
 
 // ESPAÑOL - ECOMMERCE
-import esNavBar from './locales/es/Landing/01NavBar/01EsNavBar.json';
-import esQuotation from './locales/es/Landing/01NavBar/03EsQuotation.json';
+import esNavBar from './locales/es/Landing/01NavBar/EsNavBar.json';
+import esQuotation from './locales/es/Landing/01NavBar/EsQuotation.json';
+import esRegister from './locales/es/Landing/01NavBar/EsRegister.json';
+import esLogin from './locales/es/Landing/01NavBar/EsLogin.json';
 import esBestSellingProducts from './locales/es/Landing/03BestSellingProducts/EsBestSellingProducts.json';
 import esProductsOnOffer from './locales/es/Landing/05ProductsOnOffer/EsProductsOnOffer.json';
 import esInspiredByLastSaw from './locales/es/Landing/07InspiredByLastSaw/EsInspiredByLastSaw.json';
@@ -37,6 +41,8 @@ const resources = {
         // ECOMMERCE
         navBar: enNavBar,
         quotation: enQuotation,
+        register: enRegister,
+        login: enLogin,
         bestSellingProducts: enBestSellingProducts,
         productsOnOffer: enProductsOnOffer,
         inspiredByLastSaw: enInspiredByLastSaw,
@@ -56,6 +62,8 @@ const resources = {
         // ECOMMERCE
         navBar: esNavBar,
         quotation: esQuotation,
+        register: esRegister,
+        login: esLogin,
         bestSellingProducts: esBestSellingProducts,
         productsOnOffer: esProductsOnOffer,
         inspiredByLastSaw: esInspiredByLastSaw,
