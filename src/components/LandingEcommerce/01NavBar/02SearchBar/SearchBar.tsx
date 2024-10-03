@@ -11,19 +11,21 @@ import { IoIosSearch } from "react-icons/io";
 import styles from './styles.module.css';
 
 function SearchBar() {
-    const dispatch: AppDispatch = useDispatch();
     const navigate = useNavigate();
-    const { t } = useTranslation('navBarEcommerce');
+    const { t } = useTranslation('navBar');
+
+    // REDUX
+    const dispatch: AppDispatch = useDispatch();
+    const { searchCompleted } = useSelector((state: RootState) => state.products);
 
     const [description, setDescription] = useState('');
-    const { searchCompleted } = useSelector((state: RootState) => state.products);
 
     // Redirección si la búsqueda se completa
     useEffect(() => {
         if (searchCompleted) {
             clearSearch();
             dispatch(resetSearchCompleted());
-            navigate(`/search-result?term=${description}`);  // Redirige usando navigate
+            navigate(`/search-result?term=${description}`);
         }
     }, [searchCompleted, description, dispatch, navigate]);
 
@@ -33,7 +35,7 @@ function SearchBar() {
 
     function handleSubmit(e: { preventDefault: () => void; }) {
         e.preventDefault();
-        localStorage.setItem('searchDescription', description);         // Guardar la descripción en localStorage
+        localStorage.setItem('searchDescription', description);
         dispatch(getSearchProducts(description));
     }
 
@@ -47,7 +49,7 @@ function SearchBar() {
                 <input
                     type="text"
                     className={`${styles.input__Search} pt-1 pb-1 px-2 border-0`}
-                    placeholder={`${t('navBarEcommerce.placeholder')}`}
+                    placeholder={`${t('navBar.placeholder')}`}
                     onChange={handleInputChange}
                     value={description}
                 />
