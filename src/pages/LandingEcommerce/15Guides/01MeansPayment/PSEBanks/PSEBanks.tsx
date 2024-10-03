@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+//ELEMENTOS DEL COMPONENTE
 import AlianzaFiduciaria from '../../../../../assets/LandingEcommerce/MediosPago/Bancos/AlianzaFiduciaria.png';
 import AVVillas from '../../../../../assets/LandingEcommerce/MediosPago/Bancos/AVVillas.png';
 import Ban100 from '../../../../../assets/LandingEcommerce/MediosPago/Bancos/Ban100.png';
@@ -41,6 +43,7 @@ import Uala from '../../../../../assets/LandingEcommerce/MediosPago/Bancos/Uala.
 import styles from './styles.module.css';
 
 function PSEBanks() {
+    const { t } = useTranslation('meansPayment');
 
     return (
         <div className={`${styles.container} mb-2 mt-2`}>
@@ -292,7 +295,7 @@ function PSEBanks() {
             </div>
 
             <div>
-                <p className='text-center'>Puedes realizar tus pagos en casi cualquier entidad registrada en el Sistema Financiero Colombiano</p>
+                <p className='text-center'>{t('meansPayment.text__Payments')}</p>
             </div>
         </div>
     );

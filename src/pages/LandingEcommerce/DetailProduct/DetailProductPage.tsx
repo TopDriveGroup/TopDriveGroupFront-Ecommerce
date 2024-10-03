@@ -15,7 +15,7 @@ import Footer from '../../../components/LandingEcommerce/Footer/Footer';
 import DownloadDataSheet from '../../../components/LandingEcommerce/DetailProduct/DownloadDataSheet';
 import ModalShopingCard from '../../../components/LandingEcommerce/DetailProduct/ModalShopingCard';
 // import Accesories from '../../../components/LandingEcommerce/Accesories/Accesories';
-import Loading from '../../../components/ComponentLoading/Loading';
+import Loading from '../../../components/GeneralComponents/ComponentLoading/Loading';
 import { IProduct } from '../../../types/product.types';
 import { IInspiredByLastSaw } from '../../../types/InspiredByLastSaw.types';
 import { ICartProduct } from '../../../types/cartProduct';

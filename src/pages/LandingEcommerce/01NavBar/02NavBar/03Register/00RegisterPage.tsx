@@ -8,7 +8,7 @@ import type { RootState, AppDispatch } from '../../../../../redux/store';
 import { postRegisterClient } from '../../../../../redux/LandingEcommerce/userSlice/actions';
 //ELEMENTOS DE COMPONENTE
 import { IClient } from "../../../../../types/client.types";
-import Loading from '../../../../../components/ComponentLoading/Loading';
+import Loading from '../../../../../components/GeneralComponents/ComponentLoading/Loading';
 import UserInformation from './01UserInformation';
 import UserCredentials from './02UserCredentials';
 import LogoTopDriveGroup from '../../../../../assets/TopDriveGroup/LogoTopDrive.svg';
