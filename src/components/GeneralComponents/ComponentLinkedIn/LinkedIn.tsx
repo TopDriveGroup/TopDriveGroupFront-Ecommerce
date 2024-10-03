@@ -1,4 +1,4 @@
-import linkedinLogo from '../../../assets/Landing/SocialNetwork/LinkedIn.png';
+import linkedinLogo from '../../../assets/Landing/SocialNetwork/LinkedIn2.png';
 import styles from "./styles.module.css";
 
 export default function LinkedIn() {
