@@ -4,6 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import jsCookie from 'js-cookie';
 import { jwtDecode } from 'jwt-decode';
+import { useTranslation } from 'react-i18next';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../redux/store';
@@ -20,6 +21,7 @@ interface DecodedToken {
 }
 
 function LoginPage() {
+    const { t } = useTranslation('login');
     const token = jsCookie.get("token");
     const navigate = useNavigate();
     
@@ -83,10 +85,10 @@ function LoginPage() {
                                     type="email"
                                     {...register('email', { required: true })}
                                     className={`${styles.input} p-2 mb-3 border rounded`}
-                                    placeholder='Email del usuario'
+                                    placeholder={`${t('login.email__Placeholder')}`}
                                 />
                                 {errors.email && (
-                                    <p className={`${styles.text__Danger} text-danger position-absolute`}>El email del usuario es requerido</p>
+                                    <p className={`${styles.text__Danger} text-danger position-absolute`}>{t('login.email__Error')}</p>
                                 )}
                             </div>
 
@@ -96,7 +98,7 @@ function LoginPage() {
                                         type={showPassword ? "text" : "password"}
                                         {...register('password', { required: true })}
                                         className={`${styles.input} p-2 mb-3 border rounded`}
-                                        placeholder='Contraseña'
+                                        placeholder={`${t('login.password__Placeholder')}`}
                                     />
                                     {showPassword ? (
                                         <RiEyeOffFill className={`${styles.icon} position-absolute`} onClick={toggleShowPassword} />
@@ -104,7 +106,7 @@ function LoginPage() {
                                         <RiEyeFill className={`${styles.icon} position-absolute`} onClick={toggleShowPassword} />
                                     )}
                                     {errors.password && (
-                                        <p className={`${styles.text__Danger} text-danger position-absolute`}>La contraseña es requerida</p>
+                                        <p className={`${styles.text__Danger} text-danger position-absolute`}>{t('login.password__Error')}</p>
                                     )}
                                 </div>
                             </div>
@@ -122,8 +124,8 @@ function LoginPage() {
                             </div>
                         </form>
 
-                        <p className='m-0 text-center'>¿No tienes cuenta? <Link to="/register" className={`${styles.link} text-sky-500 text-decoration-none`}>Regístrate acá</Link></p>
-                        <p className='text-center'><Link to="/reset-password" className={`${styles.link} text-sky-500 text-decoration-none`}>¿Has olvidado la contraseña?</Link></p>
+                        <p className='m-0 text-center'>{t('login.SignUp')} <Link to="/register" className={`${styles.link} text-sky-500 text-decoration-none`}>{t('login.link__SignUp')}</Link></p>
+                        <p className='text-center'><Link to="/reset-password" className={`${styles.link} text-sky-500 text-decoration-none`}>{t('login.forgotten__Password')}</Link></p>
                     </div>
                 </div>
             </div>
