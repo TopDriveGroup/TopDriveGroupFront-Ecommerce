@@ -68,8 +68,8 @@ function NavBarEcommerce() {
                 setCountCartProducts(0);
             }
         };
-        updateCartCount();                                          // Initialize cart count on component mount
-        window.addEventListener('storage', updateCartCount);        // Update cart count when localStorage changes
+        updateCartCount();
+        window.addEventListener('storage', updateCartCount);
         return () => {
             window.removeEventListener('storage', updateCartCount);
         };

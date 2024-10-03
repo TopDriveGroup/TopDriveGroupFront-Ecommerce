@@ -83,7 +83,6 @@ function QuotationEcommercePage() {
                 city: selectedCity ? selectedCity : null,
                 dateQuoteCreation: new Date().toISOString(),
             } as IQuote;
-    
             await dispatch(postQuote(formData));
             setFormSubmitted(true);
             setMessage('');
@@ -105,7 +104,7 @@ function QuotationEcommercePage() {
             <NavBar />
             <div className={`${styles.container} d-flex flex-column align-items-center justify-content-center`}>
                 <header>
-                    <h1 className={`${styles.title} text-center`}>Cotizaciones</h1>
+                    <h1 className={`${styles.title} text-center`}>{t('quotation.title_Section')}</h1>
                 </header>
 
                 <div className={`${styles.container__Component} m-auto p-2 d-flex flex-column align-items-start justify-content-center gap-4`}>

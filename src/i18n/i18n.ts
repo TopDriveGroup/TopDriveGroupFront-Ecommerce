@@ -2,6 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 // INGLES - ECOMMERCE
 import enNavBar from './locales/en/Landing/01NavBar/01EnNavBar.json';
+import enQuotation from './locales/en/Landing/01NavBar/03EnQuotation.json';
 import enBestSellingProducts from './locales/en/Landing/03BestSellingProducts/EnBestSellingProducts.json';
 import enProductsOnOffer from './locales/en/Landing/05ProductsOnOffer/EnProductsOnOffer.json';
 import enInspiredByLastSaw from './locales/en/Landing/07InspiredByLastSaw/EnInspiredByLastSaw.json';
@@ -17,6 +18,7 @@ import enDepartmentAndCity from './locales/en/helpers/DepartmentAndCity/EnDepart
 
 // ESPAÑOL - ECOMMERCE
 import esNavBar from './locales/es/Landing/01NavBar/01EsNavBar.json';
+import esQuotation from './locales/es/Landing/01NavBar/03EsQuotation.json';
 import esBestSellingProducts from './locales/es/Landing/03BestSellingProducts/EsBestSellingProducts.json';
 import esProductsOnOffer from './locales/es/Landing/05ProductsOnOffer/EsProductsOnOffer.json';
 import esInspiredByLastSaw from './locales/es/Landing/07InspiredByLastSaw/EsInspiredByLastSaw.json';
@@ -34,6 +36,7 @@ const resources = {
     en: {
         // ECOMMERCE
         navBar: enNavBar,
+        quotation: enQuotation,
         bestSellingProducts: enBestSellingProducts,
         productsOnOffer: enProductsOnOffer,
         inspiredByLastSaw: enInspiredByLastSaw,
@@ -52,6 +55,7 @@ const resources = {
     es: {
         // ECOMMERCE
         navBar: esNavBar,
+        quotation: esQuotation,
         bestSellingProducts: esBestSellingProducts,
         productsOnOffer: esProductsOnOffer,
         inspiredByLastSaw: esInspiredByLastSaw,
