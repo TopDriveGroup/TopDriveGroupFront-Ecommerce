@@ -1,6 +1,6 @@
 //ELEMENTOS DEL COMPONENTE
 import NavBarClient from '../../../../components/PanelTopDriveGroup/01NavBarTopDriveGroup/NavBarTopDriveGroup';
-import Footer from '../../../../components/LandingEcommerce/Footer/Footer';
+import Footer from '../../../../components/Landing/Footer/Footer';
 import SideBarPanelClient from '../../../../components/PanelUser/SideBarPanelClient/SideBarPanelClient';
 import styles from './styles.module.css';
 

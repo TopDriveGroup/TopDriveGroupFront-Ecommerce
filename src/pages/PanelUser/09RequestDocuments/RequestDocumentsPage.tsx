@@ -6,12 +6,12 @@ import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../redux/store';
 import { postDocumentRequest } from '../../../redux/PanelTopDriveGroup/08DocumentRequest/actions';
-import { getProfileUser } from '../../../redux/LandingEcommerce/userSlice/actions';
+import { getProfileUser } from '../../../redux/Landing/userSlice/actions';
 //ELEMENTOS DEL COMPONENTE
 import { IClient } from '../../../types/client.types';
 import { IDocumentRequest } from '../../../types/documentRequest.types';
 import NavBarClient from '../../../components/PanelTopDriveGroup/01NavBarTopDriveGroup/NavBarTopDriveGroup';
-import Footer from '../../../components/LandingEcommerce/Footer/Footer';
+import Footer from '../../../components/Landing/Footer/Footer';
 import SideBarPanelClient from '../../../components/PanelUser/SideBarPanelClient/SideBarPanelClient';
 import Loading from '../../../components/GeneralComponents/ComponentLoading/Loading';
 import styles from './styles.module.css';

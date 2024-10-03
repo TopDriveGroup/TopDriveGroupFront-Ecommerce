@@ -1,5 +1,5 @@
-import NavBar from '../../../../components/LandingEcommerce/01NavBar/NavBar';
-import Footer from '../../../../components/LandingEcommerce/Footer/Footer';
+import NavBar from '../../../../components/Landing/01NavBar/NavBar';
+import Footer from '../../../../components/Landing/Footer/Footer';
 import SideBarPanelClient from '../../../../components/PanelUser/SideBarPanelClient/SideBarPanelClient';
 import styles from './styles.module.css';
 

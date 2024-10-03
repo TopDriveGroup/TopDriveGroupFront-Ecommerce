@@ -1,7 +1,7 @@
 //ELEMENTOS DEL COMPONENTE
 import NavBarTopDriveGroup from '../../../components/PanelTopDriveGroup/01NavBarTopDriveGroup/NavBarTopDriveGroup';
 import SideBarPanelTopDriveGroup from '../../../components/PanelTopDriveGroup/SideBarTopDriveGroup/SideBarPanelTopDriveGroup';
-import Footer from '../../../components/LandingEcommerce/Footer/Footer';
+import Footer from '../../../components/Landing/Footer/Footer';
 import styles from './styles.module.css';
 
 function ConfigurationTopDriveGroupPage() {

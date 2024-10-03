@@ -6,12 +6,12 @@ import { Modal } from 'react-bootstrap';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../redux/store';
-import { getAddressClient } from '../../../redux/LandingEcommerce/addressSlice/actions';
+import { getAddressClient } from '../../../redux/Landing/addressSlice/actions';
 //ELEMENTOS DEL COMPONENTE
 import { IAddress } from '../../../types/address.types';
 import NavBarClient from '../../../components/PanelTopDriveGroup/01NavBarTopDriveGroup/NavBarTopDriveGroup';
 import SideBarPanelClient from '../../../components/PanelUser/SideBarPanelClient/SideBarPanelClient';
-import Footer from '../../../components/LandingEcommerce/Footer/Footer';
+import Footer from '../../../components/Landing/Footer/Footer';
 import ConfirmDeleteAddress from '../../../components/PanelUser/Address/ConfirmDeleteAddress/ConfirmDeleteAddress';
 import { GoPlus } from "react-icons/go";
 import styles from './styles.module.css';

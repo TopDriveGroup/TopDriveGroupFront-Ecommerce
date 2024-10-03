@@ -4,10 +4,10 @@ import jsCookie from 'js-cookie';
 // REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../redux/store';
-import { getPaymentsPendingStatus } from '../../../../redux/LandingEcommerce/ordersSlice/actions';
+import { getPaymentsPendingStatus } from '../../../../redux/Landing/ordersSlice/actions';
 // COMPONENTES
 import NavBarTopDriveGroup from '../../../../components/PanelTopDriveGroup/01NavBarTopDriveGroup/NavBarTopDriveGroup';
-import Footer from '../../../../components/LandingEcommerce/Footer/Footer';
+import Footer from '../../../../components/Landing/Footer/Footer';
 import SideBarPanelTopDriveGroup from '../../../../components/PanelTopDriveGroup/SideBarTopDriveGroup/SideBarPanelTopDriveGroup';
 import styles from './styles.module.css';
 

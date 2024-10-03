@@ -1,5 +1,5 @@
 import Error_404 from '../../assets/Error404/Error404.svg';
-import NavBar from '../../components/LandingEcommerce/01NavBar/NavBar';
+import NavBar from '../../components/Landing/01NavBar/NavBar';
 import styles from './styles.module.css';
 
 function Error404() {
