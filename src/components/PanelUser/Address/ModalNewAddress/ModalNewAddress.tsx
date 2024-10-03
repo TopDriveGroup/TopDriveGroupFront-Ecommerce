@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
-import { postAddressClient, getAddressClient } from '../../../../redux/LandingEcommerce/addressSlice/actions';
+import { postAddressClient, getAddressClient } from '../../../../redux/Landing/addressSlice/actions';
 import type { RootState, AppDispatch } from '../../../../redux/store';
 //ELEMENTOS DEL COMPONENTE
 import { IAddress } from '../../../../types/address.types';

@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../redux/store';
-import { logoutUser } from '../../../redux/LandingEcommerce/userSlice/actions';
+import { logoutUser } from '../../../redux/Landing/userSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import SearchBar from '../../../components/LandingEcommerce/01NavBar/02SearchBar/SearchBar';
-import TypesFilters from '../../../components/LandingEcommerce/01NavBar/03TypesFilters/TypesFilters';
+import SearchBar from '../../../components/Landing/01NavBar/02SearchBar/SearchBar';
+import TypesFilters from '../../../components/Landing/01NavBar/03TypesFilters/TypesFilters';
 import LogoTopDrive from '../../../../assets/TopDriveGroup/LogoTopDrive.svg';
 import { IoCartOutline, IoClose } from "react-icons/io5";
 import { GrLanguage } from "react-icons/gr";

@@ -1,13 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import userReducer from './LandingEcommerce/userSlice/userSlice';
-import contactUsReducer from './LandingEcommerce/contactUs/contactUsSlice';
+import userReducer from './Landing/userSlice/userSlice';
+import contactUsReducer from './Landing/contactUs/contactUsSlice';
 import documentRequestReducer from './PanelTopDriveGroup/08DocumentRequest/documentRequestSlice';
-import addressReducer from './LandingEcommerce/addressSlice/addressSlice';
+import addressReducer from './Landing/addressSlice/addressSlice';
 import productReducer from './UserPlatform/02ProductSlice/productSlice';
-import bestSellingProductsReducer from './LandingEcommerce/productSlice/productSlice';
-import pqrfReducer from './LandingEcommerce/pqrf/pqrfSlice';
-import quotesReducer from './LandingEcommerce/quotesSlice/quotesSlice';
-import orderReducer from './LandingEcommerce/ordersSlice/ordersSlice';
+import bestSellingProductsReducer from './Landing/productSlice/productSlice';
+import pqrfReducer from './Landing/pqrf/pqrfSlice';
+import quotesReducer from './Landing/quotesSlice/quotesSlice';
+import orderReducer from './Landing/ordersSlice/ordersSlice';
 
 // Define RootState
 export type RootState = ReturnType<typeof store.getState>;

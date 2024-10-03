@@ -4,7 +4,7 @@ import axios from 'axios';
 import jsCookie from 'js-cookie';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
-import { getProfileUser, logoChangeClient, deleteLogoClient } from '../../../../redux/LandingEcommerce/userSlice/actions';
+import { getProfileUser, logoChangeClient, deleteLogoClient } from '../../../../redux/Landing/userSlice/actions';
 import type { RootState, AppDispatch } from '../../../../redux/store';
 //ELEMENTOS DEL COMPONENTE
 import { IUserPlatform } from '../../../../types/userPlatform.types';

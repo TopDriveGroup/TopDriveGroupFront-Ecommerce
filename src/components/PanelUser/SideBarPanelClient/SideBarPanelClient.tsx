@@ -4,7 +4,7 @@ import { Link, useLocation, useMatch } from 'react-router-dom';
 // REDUX
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../../../redux/store';
-import { logoutUser } from '../../../redux/LandingEcommerce/userSlice/actions';
+import { logoutUser } from '../../../redux/Landing/userSlice/actions';
 // ELEMENTOS DEL COMPONENTE
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import styles from './styles.module.css';

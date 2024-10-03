@@ -4,12 +4,12 @@ import jsCookie from 'js-cookie';
 import { useForm } from 'react-hook-form';
 // REDUX
 import { useDispatch, useSelector } from 'react-redux';
-import { postAddressClient } from '../../../../redux/LandingEcommerce/addressSlice/actions';
+import { postAddressClient } from '../../../../redux/Landing/addressSlice/actions';
 import type { RootState, AppDispatch } from '../../../../redux/store';
 // ELEMENTOS DEL COMPONENTE
 import { IAddress } from '../../../../types/address.types';
 import NavBarClient from '../../../../components/PanelTopDriveGroup/01NavBarTopDriveGroup/NavBarTopDriveGroup';
-import Footer from '../../../../components/LandingEcommerce/Footer/Footer';
+import Footer from '../../../../components/Landing/Footer/Footer';
 import SideBarPanelClient from '../../../../components/PanelUser/SideBarPanelClient/SideBarPanelClient';
 import Countries from '../../../../helpers/Countries/Countries';
 import DepartmentAndCity from '../../../../helpers/DepartmentAndCity/DepartmentAndCity';
