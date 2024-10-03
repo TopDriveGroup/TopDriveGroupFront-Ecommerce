@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
 //ELEMENTOS DEL COMPONENTE
+import TermsAndConditions from '../../../../public/TÉRMINOS Y CONDICIONES GENERALES DE VENTA TOP DRIVE GROUP Julio 2024.pdf';
+import PrivacyPolicy from '../../../../public/GGE-PO-006-V4 POLÍTICA  PRIVACIDAD Y TRATAMIENTO DE DATOS PERSONALES.pdf';
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
@@ -39,8 +41,8 @@ function Footer() {
                     </div>
                 </div>
                 <div className={`${styles.container__Polity} d-flex flex-column align-items-end justify-content-start`}>
-                    <a href="https://drive.google.com/file/d/1XufHAZKxBe_8KuNUO_M2OT0rK1_osD3Y/view" target="blank" rel="noopener noreferrer" className={`${styles.link} text-decoration-none`}>{t('footer.terms__Conditions')}</a>
-                    <a href="https://drive.google.com/file/d/1WeMBgLj1SIb21gcVqOT2Ft3gOKLCK_R3/view" target="blank" rel="noopener noreferrer" className={`${styles.link} text-decoration-none`}>{t('footer.privacy__Policy')}</a>
+                    <a href={TermsAndConditions} target="blank" rel="noopener noreferrer" className={`${styles.link} text-decoration-none`}>{t('footer.terms__Conditions')}</a>
+                    <a href={PrivacyPolicy} target="blank" rel="noopener noreferrer" className={`${styles.link} text-decoration-none`}>{t('footer.privacy__Policy')}</a>
                     <p className="m-0">© Copyright 2024 Top Drive Group</p>
                     <p className="m-0">{t('footer.all__Rights_Reserved')}</p>
                 </div>
