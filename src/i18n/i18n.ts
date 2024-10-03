@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 // INGLES - ECOMMERCE
 import enNavBar from './locales/en/Landing/01NavBar/EnNavBar.json';
 import enQuotation from './locales/en/Landing/01NavBar/EnQuotation.json';
+import enContactUs from './locales/en/Landing/01NavBar/EnContactUs.json';
 import enRegister from './locales/en/Landing/01NavBar/EnRegister.json';
 import enLogin from './locales/en/Landing/01NavBar/EnLogin.json';
 import enBestSellingProducts from './locales/en/Landing/03BestSellingProducts/EnBestSellingProducts.json';
@@ -21,6 +22,7 @@ import enDepartmentAndCity from './locales/en/helpers/DepartmentAndCity/EnDepart
 // ESPAÑOL - ECOMMERCE
 import esNavBar from './locales/es/Landing/01NavBar/EsNavBar.json';
 import esQuotation from './locales/es/Landing/01NavBar/EsQuotation.json';
+import esContactUs from './locales/es/Landing/01NavBar/EsContactUs.json';
 import esRegister from './locales/es/Landing/01NavBar/EsRegister.json';
 import esLogin from './locales/es/Landing/01NavBar/EsLogin.json';
 import esBestSellingProducts from './locales/es/Landing/03BestSellingProducts/EsBestSellingProducts.json';
@@ -41,6 +43,7 @@ const resources = {
         // ECOMMERCE
         navBar: enNavBar,
         quotation: enQuotation,
+        contactUs: enContactUs,
         register: enRegister,
         login: enLogin,
         bestSellingProducts: enBestSellingProducts,
@@ -62,6 +65,7 @@ const resources = {
         // ECOMMERCE
         navBar: esNavBar,
         quotation: esQuotation,
+        contactUs: esContactUs,
         register: esRegister,
         login: esLogin,
         bestSellingProducts: esBestSellingProducts,
