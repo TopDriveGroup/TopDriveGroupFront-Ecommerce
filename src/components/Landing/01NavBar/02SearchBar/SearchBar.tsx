@@ -45,15 +45,17 @@ function SearchBar() {
 
     return (
         <div className={styles.container}>
-            <form onSubmit={handleSubmit} className={`${styles.container__SearchBar} d-flex position-relative`}>
+            <form onSubmit={handleSubmit} className={`${styles.container__SearchBar} d-flex position-relative`} role="search">
                 <input
                     type="text"
+                    id="search-input"
                     className={`${styles.input__Search} pt-1 pb-1 px-2 border-0`}
-                    placeholder={`${t('navBar.placeholder')}`}
+                    placeholder={t('navBar.placeholder')}
                     onChange={handleInputChange}
                     value={description}
+                    aria-label={t('navBar.placeholder')}
                 />
-                <button type="submit" className="border-0">
+                <button type="submit" className="border-0" aria-label={t('navBar.search')}>
                     <IoIosSearch className={`${styles.icon__Search} position-absolute`} />
                 </button>
             </form>
