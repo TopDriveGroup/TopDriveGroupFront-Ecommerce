@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import jsCookie from 'js-cookie';
 import Slider from "react-slick";
+import { useTranslation } from 'react-i18next';
 // REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../redux/store';
@@ -41,6 +42,7 @@ function NextBtn(props: any) {
 }
 
 function InspiredByLastSaw() {
+    const { t } = useTranslation('inspiredByLastSaw');
     const token = jsCookie.get("token") || '';
 
     // REDUX
@@ -95,7 +97,7 @@ function InspiredByLastSaw() {
     return (
         <div className={`${styles.container} mb-5 mt-5`}>
             <div>
-                <h4 className={`${styles.main__Title} mt-4 mx-4`}>Inspirado en lo que viste</h4>
+                <h4 className={`${styles.main__Title} mt-4 mx-4`}>{t('bestSellingProducts.inspiredByLastSaw')}</h4>
             </div>
             
             <Slider {...settings} className="d-flex gap-4">

@@ -28,10 +28,12 @@ interface DecodedToken {
 function NavBarEcommerce() {
     const token = jsCookie.get("token");
     const location = useLocation();
-    const dispatch: AppDispatch = useDispatch();
-    const { t, i18n } = useTranslation('navBarEcommerce');
+    const { t, i18n } = useTranslation('navBar');
 
-    const isAuthenticated = useSelector((state: RootState) => state.user.isAuthenticated);  //Se actualiza con el "getProfileUser"
+    // REDUX
+    const dispatch: AppDispatch = useDispatch();
+    const isAuthenticated = useSelector((state: RootState) => state.user.isAuthenticated);
+
     const [typeRole, setTypeRole] = useState('');
 
     useEffect(() => {
@@ -121,7 +123,7 @@ function NavBarEcommerce() {
                                 <BiWorld />
                             </div>
                             <div className={`${styles.text__Language} mx-1 p-0`}>
-                                {t('navBarEcommerce.language')}
+                                {t('navBar.language')}
                             </div>
                             {languageMenuVisible && (
                                 <div ref={languageMenuRef} className={`${styles.dropdown__Language} p-3 d-flex flex-column position-absolute overflow-hidden`}>
@@ -133,26 +135,26 @@ function NavBarEcommerce() {
 
                         <div className={`${styles.container__Phone_Lines} px-3 d-flex align-items-center justify-content-center gap-2`}>
                             <FaPhone />
-                            <span>{t('navBarEcommerce.national')} +57 (601) 8966199</span>
+                            <span>{t('navBar.national')} +57 (601) 8966199</span>
                         </div>
 
                         <Link to="https://topdrivegroup.com/" target="blank" rel="noopener noreferrer" className={`${styles.home} p-3 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.home')}
+                            {t('navBar.home')}
                         </Link>
                     </div>
 
                     <div className={`${styles.container__Links_PreNavBar} d-flex`}>
                         <Link to="https://micrositios.goupagos.com.co/top-drive-ma" target="blank" rel="noopener noreferrer" className={`${styles.online__Payments} ${location.pathname === 'https://micrositios.goupagos.com.co/top-drive-ma' ? styles.active : ''} p-3 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.online__Payments')} {/* Pagos en línea */}
+                            {t('navBar.online__Payments')} {/* Pagos en línea */}
                         </Link>
                         <Link to="/portfolio" className={`${styles.portfolio} ${location.pathname === '/portfolio' ? styles.active : ''} p-2 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.portfolio')} {/* Portafolio */}
+                            {t('navBar.portfolio')} {/* Portafolio */}
                         </Link>
                         <Link to="/ecommerce/quotation" className={`${styles.quotation} ${location.pathname === '/ecommerce/quotation' ? styles.active : ''} p-2 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.quotations')} {/* Cotiza */}
+                            {t('navBar.quotations')} {/* Cotiza */}
                         </Link>
                         <Link to="/ecommerce/contact-us" className={`${styles.contactUs} ${location.pathname === '/ecommerce/contact-us' ? styles.active : ''} px-2 d-flex align-items-center justify-content-end text-decoration-none`} >
-                            {t('navBarEcommerce.contactUs')} {/* Contacto */}
+                            {t('navBar.contactUs')} {/* Contacto */}
                         </Link>
                     </div>
                 </div>
@@ -163,7 +165,7 @@ function NavBarEcommerce() {
                     </Link>
 
                     <div className={`${styles.container__Menu} d-flex align-items-center justify-content-center`} onClick={toggleModal}>
-                        <LuMenu className={styles.icon__Menu} /> <span className={styles.text__Menu}>{t('navBarEcommerce.menu')}</span>
+                        <LuMenu className={styles.icon__Menu} /> <span className={styles.text__Menu}>{t('navBar.menu')}</span>
                     </div>
 
                     {showModal && (
@@ -196,30 +198,30 @@ function NavBarEcommerce() {
                                 {typeRole === 'Superadmin' && (
                                     <Link to="/panel-user/profile" className={`${styles.panel} px-2 d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} >
                                         <AiOutlineUser className={styles.icon__User_Panel} />
-                                        {t('navBarEcommerce.panel')} {/* PANEL DE CLIENTE*/}
+                                        {t('navBar.panel')} {/* PANEL DE CLIENTE*/}
                                     </Link>
                                 )}
                                 {((typeRole === 'CEO') || (typeRole === 'CTO') || (typeRole === 'Director') || (typeRole === 'Programador') || (typeRole === 'Validador') || (typeRole === 'Contador') || (typeRole === 'Auxiliar de contabilidad')) && (
                                     <Link to="/panel-top-drive-group/configuration/user-management" className={`${styles.panel} ${location.pathname === '/panel-top-drive-group/configuration' ? styles.active : ''} d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} >
                                         <AiOutlineUser className={styles.icon__User_Panel} />
-                                        {t('navBarEcommerce.panel')} {/* PANEL COLABORADOR TOP DRIVE */}
+                                        {t('navBar.panel')} {/* PANEL COLABORADOR TOP DRIVE */}
                                     </Link>
                                 )}
                                 <div className={`${styles.logout} px-2 d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} onClick={logout} >
-                                    {t('navBarEcommerce.exit')} {/* SALIR */}
+                                    {t('navBar.exit')} {/* SALIR */}
                                 </div>
                             </div>
                         ): (
                             <div className='d-flex'>
                                 {!isAuthenticated && (
                                     <Link to="/register" className={`${styles.register} px-2 d-flex align-items-center justify-content-center text-center text-decoration-none`} >
-                                        {t('navBarEcommerce.signUp')} {/* REGISTRATE */}
+                                        {t('navBar.signUp')} {/* REGISTRATE */}
                                     </Link>
                                 )}
                                 {!isAuthenticated && (
                                     <Link to="/login" className={`${styles.login} px-2 d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} >
                                         <AiOutlineUser className={styles.icon__User} />
-                                        {t('navBarEcommerce.signIn')} {/* LOGIN */}
+                                        {t('navBar.signIn')} {/* LOGIN */}
                                     </Link>
                                 )}
                             </div>

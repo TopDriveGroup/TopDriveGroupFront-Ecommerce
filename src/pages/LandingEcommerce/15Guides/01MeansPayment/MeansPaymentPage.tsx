@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+//ELEMENTOS DEL COMPONENTE
 import NavBar from '../../../../components/LandingEcommerce/01NavBar/NavBar';
 import Footer from '../../../../components/LandingEcommerce/Footer/Footer';
 import PSEBanks from './PSEBanks/PSEBanks';
@@ -11,6 +13,7 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 import styles from './styles.module.css';
 
 function MeansPaymentPage() {
+    const { t } = useTranslation('meansPayment');
     const [ showBanks, setShowBanks ] = useState(false);
     const handleShowBanks = () => {
         setShowBanks(true);
@@ -25,14 +28,14 @@ function MeansPaymentPage() {
             <NavBar />
             <div className={`${styles.container} `}>
                 <div>
-                    <h1 className={`${styles.main__Title} m-0 text-center`}>Medios de pago</h1>
-                    <p>www.topdrivegroup.com acepta las siguientes Formas de Pago electrónicas por medio de nuestro proveedor de servicios certificado, PAYU Latam.</p>
+                    <h1 className={`${styles.main__Title} m-0 text-center`}>{t('meansPayment.main__Title')}</h1>
+                    <p>www.topdrivegroup.com {t('meansPayment.introduction__Page')}.</p>
                 </div>
 
                 <div>
                     <div className="pb-2 pt-2">
-                        <h4 className={`${styles.tertiary__Title} m-0`}>Tarjetas de crédito</h4>
-                        <p>Una vez que tu pedido ha sido confirmado, tu tarjeta de crédito o débito será cargada. No nos hacemos responsables de errores tipográficos de digitación en el sitio de nuestro proveedor del sistema de pagos electrónicos autorizado Payu.</p>
+                        <h4 className={`${styles.tertiary__Title} m-0`}>{t('meansPayment.title__Credit_Card')}</h4>
+                        <p>{t('meansPayment.text__Credit_Card')}</p>
                         <div className="p-4 d-flex align-items-center justify-content-center gap-4">
                             <div className='d-flex flex-column align-items-center justify-content-between'>
                                 <img src={Visa} alt="Visa" className={styles.creditCard} loading="lazy" />
@@ -51,8 +54,8 @@ function MeansPaymentPage() {
                     </div>
 
                     <div className="pb-2 pt-2">
-                        <h4 className={`${styles.tertiary__Title} m-0`}>Débitos a Cuentas de Ahorro y Cuentas Corrientes</h4>
-                        <p>Puedes hacer tus pagos a través de PSE, desde cualquiera de las siguentes entidades:</p>
+                        <h4 className={`${styles.tertiary__Title} m-0`}>{t('meansPayment.title__Accounts_Debit')}</h4>
+                        <p>{t('meansPayment.text__Accounts_Debit')}</p>
 
                         <div className="m-auto d-flex flex-column align-items-center justify-content-between">
                             <div className="m-auto d-flex align-items-center justify-content-center">
@@ -63,7 +66,7 @@ function MeansPaymentPage() {
 
                             <div className={`${styles.showBanks} m-auto`}>
                                 <div className="d-flex align-items-center justify-content-between">
-                                    <h4 className={`${styles.question} m-0`}>{showBanks ? 'Ocultar lista completa de Entidades Financieras' : 'Ver lista completa de Entidades Financieras'}</h4>
+                                    <h4 className={`${styles.question} m-0`}>{showBanks ? `${t('meansPayment.hide__List_Finantial_Entity')}` : `${t('meansPayment.see__List_Finantial_Entity')}`}</h4>
                                     {showBanks === false && (
                                         <FiPlus className={`${styles.icon__Show} `} onClick={handleShowBanks}/>
                                     )}
@@ -117,13 +120,12 @@ function MeansPaymentPage() {
                                     </div>
                                 )}
                             </div>
-
                         </div>
                     </div>
 
                     <div className="pb-2 pt-2">
-                        <h4 className={`${styles.tertiary__Title} m-0`}>Pago en Bancos</h4>
-                        <p>Imprime tu recibo de consignación con código de barras y preséntalo en cualquier sucursal de Banco Davivienda. El plazo para realizar el pago es de 24 horas, pasado este plazo tu pedido será cancelado automáticamente.</p>
+                        <h4 className={`${styles.tertiary__Title} m-0`}>{t('meansPayment.title__Banks')}</h4>
+                        <p>{t('meansPayment.text__Banks')}</p>
                     </div>
                 </div>
             </div>

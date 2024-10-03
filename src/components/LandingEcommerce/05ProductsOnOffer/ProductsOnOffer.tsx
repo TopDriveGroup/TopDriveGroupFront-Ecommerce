@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import { useTranslation } from 'react-i18next';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../redux/store';
@@ -40,9 +41,10 @@ function NextBtn(props: any) {
 }
 
 function ProductsOnOffer() {
+    const { t } = useTranslation('productsOnOffer');
+    
+    // REDUX
     const dispatch: AppDispatch = useDispatch();
-
-    // ESTADO DE REDUX
     const productsOnOffer = useSelector((state: RootState) => state.products.productsOnOffer);
 
     useEffect(() => {
@@ -102,7 +104,7 @@ function ProductsOnOffer() {
                     <Link to={`/details/${productsOnOffer[0]?._id}`} className='text-decoration-none'>
                         <div className={`${styles.card} p-4 overflow-hidden`}>
                             <div>
-                                <h4 className={`${styles.main__Title} m-0`}>Oferta del día</h4>
+                                <h4 className={`${styles.main__Title} m-0`}>{t('productsOnOffer.offer__Day')}</h4>
                             </div>
                             <div className={`${styles.card__Offer} overflow-hidden`}
                                 onMouseEnter={() => handleMouseEnter(0)}
@@ -116,7 +118,7 @@ function ProductsOnOffer() {
                                     <p className={`${styles.brand__Product} m-0`}>{productsOnOffer[0]?.manufacturer}</p>
                                     <p className={`${styles.title__Product} m-0 overflow-hidden`}>{productsOnOffer[0]?.description}</p>
                                     <p className={`${styles.price__Product} m-0`}><span className={`${styles.price__Discount}`}>$ {formatNumber(productsOnOffer[0]?.sellingPriceFinalUser)}</span> <span className={`${styles.currency__Sign}`}>$</span>{formatNumber(productsOnOffer[0]?.promotionalPrice)}</p>
-                                    <p className={`${styles.stock__Product} m-0`}>{productsOnOffer[0]?.inventory} unidades en stock</p>
+                                    <p className={`${styles.stock__Product} m-0`}>{productsOnOffer[0]?.inventory} {t('productsOnOffer.inventory')}</p>
                                 </div>
                             </div>
                         </div>
@@ -127,9 +129,9 @@ function ProductsOnOffer() {
             <div className={`${styles.container__Slider} pt-4 pb-4 px-4`}>
                 <div className="d-flex align-items-center justify-content-between">
                     <div>
-                        <h4 className={`${styles.main__Title} m-0`}>Ofertas</h4>
+                        <h4 className={`${styles.main__Title} m-0`}>{t('productsOnOffer.offer__Day')}</h4>
                     </div>
-                    <Link to='/ecommerce/offers' className={`${styles.link__Offers} text-decoration-none`}>Todas las ofertas</Link>
+                    <Link to='/ecommerce/offers' className={`${styles.link__Offers} text-decoration-none`}>{t('productsOnOffer.all__Offers')}</Link>
                 </div>
 
                 <Slider {...settings} className={`${styles.slider} m-auto`}>

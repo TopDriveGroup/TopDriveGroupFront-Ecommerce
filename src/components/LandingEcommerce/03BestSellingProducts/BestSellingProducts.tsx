@@ -2,6 +2,7 @@
 import { useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import { useTranslation } from 'react-i18next';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../redux/store';
@@ -40,6 +41,8 @@ function NextBtn(props: any) {
 }
 
 function BestSellingProducts() {
+    const { t } = useTranslation('bestSellingProducts');
+
     // REDUX
     const dispatch: AppDispatch = useDispatch();
     const { bestSellingProducts, loading, errorProduct } = useSelector((state: RootState) => state.products);
@@ -91,8 +94,8 @@ function BestSellingProducts() {
     return (
         <div className={`${styles.container} mt-5 mb-5`}>
             <div className="d-flex align-items-center justify-content-between">
-                <h4 className={`${styles.main__Title} mt-4 mx-4`}>Los más vendidos de la semana</h4>
-                <Link to='/ecommerce/all-top-sellers' className={`${styles.link__Offers} mt-4 mx-4 text-decoration-none`}>Ver todo</Link>
+                <h4 className={`${styles.main__Title} mt-4 mx-4`}>{t('bestSellingProducts.best__Sellers')}</h4>
+                <Link to='/ecommerce/all-top-sellers' className={`${styles.link__Offers} mt-4 mx-4 text-decoration-none`}>{t('bestSellingProducts.see__All')}</Link>
             </div>
 
             <Slider {...settings} className="d-flex gap-4">

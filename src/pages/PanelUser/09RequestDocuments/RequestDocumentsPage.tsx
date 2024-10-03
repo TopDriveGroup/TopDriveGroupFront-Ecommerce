@@ -13,7 +13,7 @@ import { IDocumentRequest } from '../../../types/documentRequest.types';
 import NavBarClient from '../../../components/PanelTopDriveGroup/01NavBarTopDriveGroup/NavBarTopDriveGroup';
 import Footer from '../../../components/LandingEcommerce/Footer/Footer';
 import SideBarPanelClient from '../../../components/PanelUser/SideBarPanelClient/SideBarPanelClient';
-import Loading from '../../../components/ComponentLoading/Loading';
+import Loading from '../../../components/GeneralComponents/ComponentLoading/Loading';
 import styles from './styles.module.css';
 
 function RequestDocumentsPage() {
