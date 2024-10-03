@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../redux/store';
@@ -21,6 +22,7 @@ enum RegistrationStep {
 }
 
 function RegisterPage() {
+    const { t } = useTranslation('register');
     const navigate = useNavigate();
     const dispatch: AppDispatch = useDispatch();
     const isAuthenticated = useSelector((state: RootState) => state.user.isAuthenticated);
@@ -90,7 +92,7 @@ function RegisterPage() {
                                         onClick={handleBack}
                                         className={`${styles.button__Back} mb-2 border-0 rounded text-decoration-none`}
                                     >
-                                        Atrás
+                                        {t('register.button__Back')}
                                     </button>
                                 )}
                                 <div className="d-flex mb-2">
@@ -98,14 +100,14 @@ function RegisterPage() {
                                         type='submit'
                                         className={`${styles.button__Submit} border-0 rounded text-decoration-none`}
                                     >
-                                        {currentStep === RegistrationStep.UserCredentials ? 'Enviar' : 'Siguiente'}
+                                        {currentStep === RegistrationStep.UserCredentials ? `${t('register.button__Send')}` : `${t('register.button__Next')}`}
                                     </button>
                                 </div>
                             </div>
                         </form>
 
                         <p className='m-0 text-center'>
-                            ¿Ya tienes una cuenta? <Link to="/login" className={`${styles.link} text-decoration-none text-sky-500`}>Sign In</Link>
+                            {t('register.have__Account')} <Link to="/login" className={`${styles.link} text-decoration-none text-sky-500`}>Sign In</Link>
                         </p>
 
                         <div className={`${styles.container__Loading} d-flex align-items-center justify-content-center position-absolute`}>
