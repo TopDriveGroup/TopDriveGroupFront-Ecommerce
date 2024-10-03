@@ -9,7 +9,9 @@ import enLogin from './locales/en/Landing/01NavBar/EnLogin.json';
 import enResetPassword from './locales/en/Landing/01NavBar/EnResetPassword.json';
 import enSendEmailResetPassword from './locales/en/Landing/01NavBar/EnSendEmailResetPassword.json';
 import enBestSellingProducts from './locales/en/Landing/03BestSellingProducts/EnBestSellingProducts.json';
+import enCampaign from './locales/en/Landing/04Campaign/EnCampaign.json';
 import enProductsOnOffer from './locales/en/Landing/05ProductsOnOffer/EnProductsOnOffer.json';
+import enBrandWeek from './locales/en/Landing/06BrandWeek/EnBrandWeek.json';
 import enInspiredByLastSaw from './locales/en/Landing/07InspiredByLastSaw/EnInspiredByLastSaw.json';
 import enTrends from './locales/en/Landing/08Trends/EnTrends.json';
 import enAllies from './locales/en/Landing/09Allies/EnAllies.json';
@@ -30,7 +32,9 @@ import esLogin from './locales/es/Landing/01NavBar/EsLogin.json';
 import esResetPassword from './locales/es/Landing/01NavBar/EsResetPassword.json';
 import esSendEmailResetPassword from './locales/es/Landing/01NavBar/EsSendEmailResetPassword.json';
 import esBestSellingProducts from './locales/es/Landing/03BestSellingProducts/EsBestSellingProducts.json';
+import esCampaign from './locales/es/Landing/04Campaign/EsCampaign.json';
 import esProductsOnOffer from './locales/es/Landing/05ProductsOnOffer/EsProductsOnOffer.json';
+import esBrandWeek from './locales/es/Landing/06BrandWeek/EsBrandWeek.json';
 import esInspiredByLastSaw from './locales/es/Landing/07InspiredByLastSaw/EsInspiredByLastSaw.json';
 import esTrends from './locales/es/Landing/08Trends/EsTrends.json';
 import esAllies from './locales/es/Landing/09Allies/EsAllies.json';
@@ -53,7 +57,9 @@ const resources = {
         resetPassword: enResetPassword,
         sendEmailResetPassword: enSendEmailResetPassword,
         bestSellingProducts: enBestSellingProducts,
+        campaign: enCampaign,
         productsOnOffer: enProductsOnOffer,
+        brandWeek: enBrandWeek,
         inspiredByLastSaw: enInspiredByLastSaw,
         trends: enTrends,
         allies: enAllies,
@@ -77,7 +83,9 @@ const resources = {
         resetPassword: esResetPassword,
         sendEmailResetPassword: esSendEmailResetPassword,
         bestSellingProducts: esBestSellingProducts,
+        campaign: esCampaign,
         productsOnOffer: esProductsOnOffer,
+        brandWeek: esBrandWeek,
         inspiredByLastSaw: esInspiredByLastSaw,
         trends: esTrends,
         allies: esAllies,
