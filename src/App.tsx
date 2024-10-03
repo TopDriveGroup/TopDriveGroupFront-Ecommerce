@@ -12,7 +12,7 @@ import SessionManager from './SessionManager';
 // LANDINGPAGE
 import RegisterPage from './pages/LandingEcommerce/01NavBar/02NavBar/03Register/00RegisterPage';
 import LoginPage from './pages/LandingEcommerce/01NavBar/02NavBar/04Login/LoginPage';
-import SendEmailResetPassword from './pages/LandingEcommerce/01NavBar/02NavBar/04Login/SendEmailResetPassword/SendEmailResetPasswordUser';
+import SendEmailResetPasswordPage from './pages/LandingEcommerce/01NavBar/02NavBar/04Login/SendEmailResetPassword/SendEmailResetPasswordPage';
 import ResetPasswordPage from './pages/LandingEcommerce/01NavBar/02NavBar/04Login/ResetPassword/ResetPasswordPage';
 
 // LANDINGPAGE ECOMMERCE
@@ -112,7 +112,7 @@ function App() {
 
                     <Route path='/register' element={<RegisterPage />} />
                     <Route path='/login' element={<LoginPage />} />
-                    <Route path='/reset-password' element={<SendEmailResetPassword />} />
+                    <Route path='/reset-password' element={<SendEmailResetPasswordPage />} />
                     <Route path='/reset-password/complete/:idUser/:passwordResetCode' element={<ResetPasswordPage />} />
                     {/* ----------BANNER ECOMMERCE---------- */}
                     <Route path='/ecommerce/first' element={<BannerFirstPage />} />

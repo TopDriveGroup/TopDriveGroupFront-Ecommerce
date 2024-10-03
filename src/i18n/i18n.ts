@@ -6,6 +6,8 @@ import enQuotation from './locales/en/Landing/01NavBar/EnQuotation.json';
 import enContactUs from './locales/en/Landing/01NavBar/EnContactUs.json';
 import enRegister from './locales/en/Landing/01NavBar/EnRegister.json';
 import enLogin from './locales/en/Landing/01NavBar/EnLogin.json';
+import enResetPassword from './locales/en/Landing/01NavBar/EnResetPassword.json';
+import enSendEmailResetPassword from './locales/en/Landing/01NavBar/EnSendEmailResetPassword.json';
 import enBestSellingProducts from './locales/en/Landing/03BestSellingProducts/EnBestSellingProducts.json';
 import enProductsOnOffer from './locales/en/Landing/05ProductsOnOffer/EnProductsOnOffer.json';
 import enInspiredByLastSaw from './locales/en/Landing/07InspiredByLastSaw/EnInspiredByLastSaw.json';
@@ -25,6 +27,8 @@ import esQuotation from './locales/es/Landing/01NavBar/EsQuotation.json';
 import esContactUs from './locales/es/Landing/01NavBar/EsContactUs.json';
 import esRegister from './locales/es/Landing/01NavBar/EsRegister.json';
 import esLogin from './locales/es/Landing/01NavBar/EsLogin.json';
+import esResetPassword from './locales/es/Landing/01NavBar/EsResetPassword.json';
+import esSendEmailResetPassword from './locales/es/Landing/01NavBar/EsSendEmailResetPassword.json';
 import esBestSellingProducts from './locales/es/Landing/03BestSellingProducts/EsBestSellingProducts.json';
 import esProductsOnOffer from './locales/es/Landing/05ProductsOnOffer/EsProductsOnOffer.json';
 import esInspiredByLastSaw from './locales/es/Landing/07InspiredByLastSaw/EsInspiredByLastSaw.json';
@@ -46,6 +50,8 @@ const resources = {
         contactUs: enContactUs,
         register: enRegister,
         login: enLogin,
+        resetPassword: enResetPassword,
+        sendEmailResetPassword: enSendEmailResetPassword,
         bestSellingProducts: enBestSellingProducts,
         productsOnOffer: enProductsOnOffer,
         inspiredByLastSaw: enInspiredByLastSaw,
@@ -68,6 +74,8 @@ const resources = {
         contactUs: esContactUs,
         register: esRegister,
         login: esLogin,
+        resetPassword: esResetPassword,
+        sendEmailResetPassword: esSendEmailResetPassword,
         bestSellingProducts: esBestSellingProducts,
         productsOnOffer: esProductsOnOffer,
         inspiredByLastSaw: esInspiredByLastSaw,

@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../../redux/store';
@@ -13,11 +14,13 @@ import { RiEyeFill, RiEyeOffFill } from 'react-icons/ri';
 import styles from './styles.module.css';
 
 function ResetPasswordPage() {
+    const { t } = useTranslation('resetPassword');
+
     const { idUser, passwordResetCode } = useParams();
     const navigate = useNavigate();
+    
+    // REDUX
     const dispatch: AppDispatch = useDispatch();
-
-    // Utiliza useSelector para obtener la información del usuario del estado de Redux
     const userErrors = useSelector((state: RootState) => state.user.userErrors);
 
     const { register, formState: { errors }, handleSubmit } = useForm<IResetPassword>();
@@ -82,7 +85,7 @@ function ResetPasswordPage() {
                         )}
                     </div>
 
-                    <h3 className={`${styles.secundary__Title } `}>Restablecer tu contraseña</h3>
+                    <h3 className={`${styles.secundary__Title } `}>{t('resetPassword.main__Title')}</h3>
                     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                         <div className='mb-2 d-flex align-items-center justify-content-center position-relative'>
                             <input
@@ -91,7 +94,7 @@ function ResetPasswordPage() {
                                 className={`${styles.input} p-2 mb-3 border rounded`}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                placeholder='Nueva contraseña'
+                                placeholder={`${t('resetPassword.new__Password_Placeholder')}`}
                             />
                             {showPassword ? (
                                 <RiEyeOffFill className={`${styles.icon} position-absolute`} onClick={toggleShowPassword} />
@@ -99,7 +102,7 @@ function ResetPasswordPage() {
                                 <RiEyeFill className={`${styles.icon} position-absolute`} onClick={toggleShowPassword} />
                             )}
                             {errors.password && (
-                                <p className={`${styles.text__Danger} text-danger position-absolute`}>La nueva contraseña es requerida</p>
+                                <p className={`${styles.text__Danger} text-danger position-absolute`}>{t('resetPassword.new__Password_Error')}</p>
                             )}
                         </div>
 
@@ -110,7 +113,7 @@ function ResetPasswordPage() {
                                 className={`${styles.input} p-2 mb-3 border rounded`}
                                 value={replyPassword}
                                 onChange={(e) => setReplyPassword(e.target.value)}
-                                placeholder='Confirma la nueva contraseña'
+                                placeholder={`${t('resetPassword.confirm__New_Password_Placeholder')}`}
                             />
                             {showReplayPassword ? (
                                 <RiEyeOffFill className={`${styles.icon} position-absolute`} onClick={toggleShowReplayPassword} />
@@ -118,18 +121,18 @@ function ResetPasswordPage() {
                                 <RiEyeFill className={`${styles.icon} position-absolute`} onClick={toggleShowReplayPassword} />
                             )}
                             {errors.replyPassword && (
-                                <p className={`${styles.text__Danger} text-danger position-absolute`}>La confirmación de tu nueva contraseña es requerida</p>
+                                <p className={`${styles.text__Danger} text-danger position-absolute`}>{t('resetPassword.confirm__New_Password_Error')}</p>
                             )}
                         </div>
 
                         {messageErrorPassword && <div className="userErrors-message">{messageErrorPassword}</div>}
 
                         <div className="d-flex mb-4">
-                            <button className={`${styles.button__Submit} border-0 rounded m-auto text-decoration-none`} type='submit' >Enviar</button>
+                            <button className={`${styles.button__Submit} border-0 rounded m-auto text-decoration-none`} type='submit' >{t('resetPassword.button__Send')}</button>
                         </div>
 
                         {passwordUpdated && (
-                            <div className="success-message">Contraseña actualizada exitosamente</div>
+                            <div className="success-message">{t('resetPassword.alert__Success')}</div>
                         )}
                     </form>
                 </div>
