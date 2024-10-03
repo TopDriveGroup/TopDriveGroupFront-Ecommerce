@@ -1,7 +1,7 @@
 import jsCookie from 'js-cookie';
 //REDUX
 import { useDispatch } from 'react-redux';
-import { deleteAddressClient, getAddressClient } from '../../../../redux/LandingEcommerce/addressSlice/actions';
+import { deleteAddressClient, getAddressClient } from '../../../../redux/Landing/addressSlice/actions';
 import type { AppDispatch } from '../../../../redux/store';
 import styles from './styles.module.css';
 

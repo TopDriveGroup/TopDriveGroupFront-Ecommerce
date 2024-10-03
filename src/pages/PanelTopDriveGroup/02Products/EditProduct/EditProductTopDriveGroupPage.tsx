@@ -5,11 +5,11 @@ import { useForm } from 'react-hook-form';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../redux/store';
-import { putProduct } from '../../../../redux/LandingEcommerce/productSlice/actions';
+import { putProduct } from '../../../../redux/Landing/productSlice/actions';
 //ELEMENTOS DEL COMPONENTE
 import { IProduct } from '../../../../types/product.types';
 import NavBarTopDriveGroup from '../../../../components/PanelTopDriveGroup/01NavBarTopDriveGroup/NavBarTopDriveGroup';
-import Footer from '../../../../components/LandingEcommerce/Footer/Footer';
+import Footer from '../../../../components/Landing/Footer/Footer';
 import SideBarPanelTopDriveGroup from '../../../../components/PanelTopDriveGroup/SideBarTopDriveGroup/SideBarPanelTopDriveGroup';
 import SelectProductClass from '../../../../helpers/CreateProducts/SelectProductClass/SelectProductClass';
 import SelectProductGroups from '../../../../helpers/CreateProducts/SelectProductGroups/SelectProductGroups';

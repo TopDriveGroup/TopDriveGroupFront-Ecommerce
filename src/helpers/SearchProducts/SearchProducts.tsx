@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import Select from 'react-select';
 // REDUX
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllProducts } from '../../redux/LandingEcommerce/productSlice/actions';
+import { getAllProducts } from '../../redux/Landing/productSlice/actions';
 import type { RootState, AppDispatch } from '../../redux/store';
 // ELEMENTOS DEL COMPONENTE
 import { IProduct } from "../../types/product.types";

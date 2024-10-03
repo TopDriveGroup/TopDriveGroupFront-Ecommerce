@@ -10,51 +10,51 @@ import ScrollToTop from './components/GeneralComponents/ScrollToTop/ScrollToTop'
 import SessionManager from './SessionManager';
 
 // LANDINGPAGE
-import RegisterPage from './pages/LandingEcommerce/01NavBar/02NavBar/03Register/00RegisterPage';
-import LoginPage from './pages/LandingEcommerce/01NavBar/02NavBar/04Login/LoginPage';
-import SendEmailResetPasswordPage from './pages/LandingEcommerce/01NavBar/02NavBar/04Login/SendEmailResetPassword/SendEmailResetPasswordPage';
-import ResetPasswordPage from './pages/LandingEcommerce/01NavBar/02NavBar/04Login/ResetPassword/ResetPasswordPage';
+import RegisterPage from './pages/Landing/01NavBar/02NavBar/03Register/00RegisterPage';
+import LoginPage from './pages/Landing/01NavBar/02NavBar/04Login/LoginPage';
+import SendEmailResetPasswordPage from './pages/Landing/01NavBar/02NavBar/04Login/SendEmailResetPassword/SendEmailResetPasswordPage';
+import ResetPasswordPage from './pages/Landing/01NavBar/02NavBar/04Login/ResetPassword/ResetPasswordPage';
 
 // LANDINGPAGE ECOMMERCE
-import LandingEcommerce from './pages/LandingEcommerce/LandingEcommerce';
+import LandingEcommerce from './pages/Landing/LandingEcommerce';
 
 // NAVBAR ECOMMERCE
-import QuotationEcommercePage from './pages/LandingEcommerce/01NavBar/01PreNavBar/03QuotationEcommercePage/QuotationEcommercePage';
-import ContactUsEcommercePage from './pages/LandingEcommerce/01NavBar/01PreNavBar/06ContactUsEcommerce/ContactUsPageEcommerce';
-import ShoppingCartPage from './pages/LandingEcommerce/01NavBar/02NavBar/01ShoppingCart/ShoppingCartPage';
-import CheckoutPage from './pages/LandingEcommerce/01NavBar/02NavBar/01ShoppingCart/Checkout/CheckoutPage';
-import Favorites from './pages/LandingEcommerce/01NavBar/02NavBar/02Favorites/Favorites';
+import QuotationEcommercePage from './pages/Landing/01NavBar/01PreNavBar/03QuotationEcommercePage/QuotationEcommercePage';
+import ContactUsEcommercePage from './pages/Landing/01NavBar/01PreNavBar/06ContactUsEcommerce/ContactUsPageEcommerce';
+import ShoppingCartPage from './pages/Landing/01NavBar/02NavBar/01ShoppingCart/ShoppingCartPage';
+import CheckoutPage from './pages/Landing/01NavBar/02NavBar/01ShoppingCart/Checkout/CheckoutPage';
+import Favorites from './pages/Landing/01NavBar/02NavBar/02Favorites/Favorites';
 
 // BANNER ECOMMERCE
-import BannerFirstPage from './pages/LandingEcommerce/02Banner/01BannerFirstPage/BannerFirstPage';
-import BannerSecondPage from './pages/LandingEcommerce/02Banner/02BannerSecondPage/BannerSecondPage';
-import BannerThirdPage from './pages/LandingEcommerce/02Banner/03BannerThirdPage/BannerThirdPage';
-import BannerFourthPage from './pages/LandingEcommerce//02Banner/04BannerFourthPage/BannerFourthPage';
+import BannerFirstPage from './pages/Landing/02Banner/01BannerFirstPage/BannerFirstPage';
+import BannerSecondPage from './pages/Landing/02Banner/02BannerSecondPage/BannerSecondPage';
+import BannerThirdPage from './pages/Landing/02Banner/03BannerThirdPage/BannerThirdPage';
+import BannerFourthPage from './pages/Landing/02Banner/04BannerFourthPage/BannerFourthPage';
 
 // TOPSELLERS ECOMMERCE
-import BestSellingProductsPage from './pages/LandingEcommerce/03BestSellingProducts/BestSellingProductsPage';
+import BestSellingProductsPage from './pages/Landing/03BestSellingProducts/BestSellingProductsPage';
 
 // CAMPAIGN ECOMMERCE
-import CampaignPage from './pages/LandingEcommerce/04Campaign/CampaignPage';
+import CampaignPage from './pages/Landing/04Campaign/CampaignPage';
 
 // OFFERS
-import ProductsOnOfferPage from './pages/LandingEcommerce/05ProductsOnOffer/ProductsOnOfferPage';
+import ProductsOnOfferPage from './pages/Landing/05ProductsOnOffer/ProductsOnOfferPage';
 
 // BRANDWEEK
-import BrandWeekPage from './pages/LandingEcommerce/06BrandWeek/BrandWeekPage';
+import BrandWeekPage from './pages/Landing/06BrandWeek/BrandWeekPage';
 
 // GUIDES
-import MeansPaymentPage from './pages/LandingEcommerce/15Guides/01MeansPayment/MeansPaymentPage';
-import TrackingOrdersPage from './pages/LandingEcommerce/15Guides/02TrackingOrders/TrackingOrdersPage';
-import ReturnsExchangesPage from './pages/LandingEcommerce/15Guides/03ReturnsExchanges/ReturnsExchangesPage';
-import NeedHelpPage from './pages/LandingEcommerce/15Guides/04NeedHelp/NeedHelpPage';
+import MeansPaymentPage from './pages/Landing/15Guides/01MeansPayment/MeansPaymentPage';
+import TrackingOrdersPage from './pages/Landing/15Guides/02TrackingOrders/TrackingOrdersPage';
+import ReturnsExchangesPage from './pages/Landing/15Guides/03ReturnsExchanges/ReturnsExchangesPage';
+import NeedHelpPage from './pages/Landing/15Guides/04NeedHelp/NeedHelpPage';
 
 // DETAILS PRODUCT
-import DetailProductPage from './pages/LandingEcommerce/DetailProduct/DetailProductPage';
-import DetailProductByQrPage from './pages/LandingEcommerce/DetailProduct/DetailProductByQr/DetailProductByQrPage';
+import DetailProductPage from './pages/Landing/DetailProduct/DetailProductPage';
+import DetailProductByQrPage from './pages/Landing/DetailProduct/DetailProductByQr/DetailProductByQrPage';
 
 // RESULTADOS DEBUSQUEDA
-import SearchResultPage from './pages/LandingEcommerce/SearchResult/SearchResultPage';
+import SearchResultPage from './pages/Landing/SearchResult/SearchResultPage';
 
 // PROTECTEDROUTES
 import ProtectedRoute from './ProtectedRoute';

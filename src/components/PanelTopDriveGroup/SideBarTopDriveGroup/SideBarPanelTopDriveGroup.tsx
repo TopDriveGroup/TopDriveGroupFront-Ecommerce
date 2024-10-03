@@ -5,7 +5,7 @@ import jsCookie from 'js-cookie';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../redux/store';
-import { getProfileUser, logoutUser } from '../../../redux/LandingEcommerce/userSlice/actions';
+import { getProfileUser, logoutUser } from '../../../redux/Landing/userSlice/actions';
 //ELEMENTOS DEL COMPONENTE
 import { IUserPlatform } from '../../../types/userPlatform.types';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";

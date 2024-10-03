@@ -1,4 +1,4 @@
-import logo from '../../../assets/Landing/SocialNetwork/WhatsApp.png';
+import logo from '../../../assets/Landing/SocialNetwork/LinkedIn.png';
 import styles from "./WhatsApp.module.css";
 
 export default function WhatsApp () {

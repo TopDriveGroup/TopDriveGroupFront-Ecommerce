@@ -5,11 +5,11 @@ import jsCookie from 'js-cookie';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../redux/store';
-import { getProfileUser, logoChangeClient, deleteLogoClient } from '../../../redux/LandingEcommerce/userSlice/actions';
+import { getProfileUser, logoChangeClient, deleteLogoClient } from '../../../redux/Landing/userSlice/actions';
 //ELEMENTOS DEL COMPONENTE
 import NavBarClient from '../../../components/PanelTopDriveGroup/01NavBarTopDriveGroup/NavBarTopDriveGroup';
 import SideBarPanelClient from '../../../components/PanelUser/SideBarPanelClient/SideBarPanelClient';
-import Footer from '../../../components/LandingEcommerce/Footer/Footer';
+import Footer from '../../../components/Landing/Footer/Footer';
 import { IClient } from '../../../types/client.types';
 import { BsPencil } from 'react-icons/bs';
 import styles from './styles.module.css';

@@ -5,10 +5,10 @@ import { useTranslation } from 'react-i18next';
 //REDUX
 import { useDispatch } from 'react-redux';
 import type { AppDispatch } from '../../../redux/store';
-import { logoutUser } from '../../../redux/LandingEcommerce/userSlice/actions';
+import { logoutUser } from '../../../redux/Landing/userSlice/actions';
 //ELEMENTOS DEL COMPONENTE
-import SearchBar from '../../LandingEcommerce/01NavBar/02SearchBar/SearchBar';
-import TypesFilters from '../../LandingEcommerce/01NavBar/03TypesFilters/TypesFilters';
+import SearchBar from '../../Landing/01NavBar/02SearchBar/SearchBar';
+import TypesFilters from '../../Landing/01NavBar/03TypesFilters/TypesFilters';
 import LogoTopDrive from '../../../assets/TopDriveGroup/LogoTopDrive.svg';
 import { IoClose, IoCartOutline } from "react-icons/io5";
 import { BiWorld } from "react-icons/bi";
