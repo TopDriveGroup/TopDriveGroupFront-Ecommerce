@@ -6,6 +6,7 @@ import PaymentButton from './components/GeneralComponents/ComponentPaymentButton
 import LinkedIn from './components/GeneralComponents/ComponentLinkedIn/LinkedIn';
 import WhatsApp from './components/GeneralComponents/ComponentWhatsApp/WhatsApp';
 import Scroll from './components/GeneralComponents/ComponentScroll/Scroll';
+import ScrollToTop from './components/GeneralComponents/ScrollToTop/ScrollToTop';
 import SessionManager from './SessionManager';
 
 // LANDINGPAGE
@@ -97,6 +98,7 @@ function App() {
                 <LinkedIn />
                 <WhatsApp />
                 <Scroll />
+                <ScrollToTop />
                 <SessionManager />
                 <Routes>
                     <Route path="/" element={<Navigate to="/ecommerce" replace />} />

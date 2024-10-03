@@ -13,7 +13,7 @@ import NavBarTopDriveGroup from '../../../components/PanelTopDriveGroup/01NavBar
 import Footer from '../../../components/LandingEcommerce/Footer/Footer';
 import SideBarPanelTopDriveGroup from '../../../components/PanelTopDriveGroup/SideBarTopDriveGroup/SideBarPanelTopDriveGroup';
 import ConfirmDeleteProduct from '../../../components/PanelUser/UserPlatform/ConfirmDeleteProduct/ConfirmDeleteProduct';
-import Paginated from '../../../components/ComponentPaginated/Paginated';
+import Paginated from '../../../components/GeneralComponents/ComponentPaginated/Paginated';
 import { formatNumber } from '../../../helpers/FormatNumber/FormatNumber';
 import { IoGridSharp } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa6";

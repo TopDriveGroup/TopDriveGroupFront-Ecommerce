@@ -7,7 +7,7 @@ import { sendEmailPasswordChangeClient } from '../../../../../../redux/LandingEc
 //ELEMENTOS DEL COMPONENTE
 import NavBar from '../../../../../../components/LandingEcommerce/01NavBar/NavBar';
 import Footer from '../../../../../../components/LandingEcommerce/Footer/Footer';
-import Loading from '../../../../../../components/ComponentLoading/Loading';
+import Loading from '../../../../../../components/GeneralComponents/ComponentLoading/Loading';
 import styles from './styles.module.css';
 
 function SendEmailResetPassword() {
