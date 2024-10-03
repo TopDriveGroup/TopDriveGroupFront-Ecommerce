@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 //ELEMENTOS DEL COMPONENTE
-import TermsAndConditions from '../../../../public/TÉRMINOS Y CONDICIONES GENERALES DE VENTA TOP DRIVE GROUP Julio 2024.pdf';
-import PrivacyPolicy from '../../../../public/GGE-PO-006-V4 POLÍTICA  PRIVACIDAD Y TRATAMIENTO DE DATOS PERSONALES.pdf';
+import TermsAndConditions from '../../../../public/TERMINOS_Y_CONDICIONES_GENERALES_DE_VENTA_TOP_DRIVE_GROUP_JUL_2024.pdf';
+import PrivacyPolicy from '../../../../public/GGE-PO-006-V4_POLITICA _PRIVACIDAD_Y_TRATAMIENTO_DE_DATOS_PERSONALES.pdf';
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { GrInstagram } from "react-icons/gr";
