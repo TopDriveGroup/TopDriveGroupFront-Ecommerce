@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../redux/store';
+import { clearUserErrors } from '../../../../../redux/Landing/userSlice/userSlice';
 import { loginUser } from '../../../../../redux/Landing/userSlice/actions';
 //ELEMENTOS DEL COMPONENTE
 import { IUserLogin } from '../../../../../types/userLogin.types';
@@ -29,6 +30,11 @@ function LoginPage() {
     const dispatch: AppDispatch = useDispatch();
     const userErrors = useSelector((state: RootState) => state.user.userErrors);
     const isAuthenticated = useSelector((state: RootState) => state.user.isAuthenticated);
+
+    // LIMPIA ERRORES CUENDO EL COMPONENTE SE MONTA, ESTO DADO QUE LA NAVBAR HACE UN "getProfileUser" PARA MOSTRAR OCIONES DE NAVEGACION DIFERENTES DE ACUERDO A SI ESTA O NO LOGUEADO EL CLIENTE
+    useEffect(() => {
+        dispatch(clearUserErrors());
+    }, [dispatch]);
 
     const { register, formState: { errors }, handleSubmit } = useForm<IUserLogin>();
     const [loading, setLoading] = useState(false);
