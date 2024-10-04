@@ -34,7 +34,6 @@ const userSlice = createSlice({
         registerUserStart: (state, action: PayloadAction<IClient | null>) => {
             state.loading = true;
             state.user = action.payload;
-            state.user = action.payload;
             state.userErrors = null;
         },
         isAuthenticatedStatus: (state, action: PayloadAction<boolean>) => {
@@ -69,8 +68,12 @@ const userSlice = createSlice({
         deleteLogo: (state) => {
             state.loading = false;
         },
+        clearUserErrors: (state) => {
+            state.loading = false;
+            state.userErrors = null;
+        },
     },
 });
 
-export const { setUserData, setUserErrors, registerUserStart, isAuthenticatedStatus, loginStart, profileStart, sendEmailPasswordChangeRequest, passwordChange, accountUnlocking, logoChange, deleteLogo } = userSlice.actions;
+export const { setUserData, setUserErrors, registerUserStart, isAuthenticatedStatus, loginStart, profileStart, sendEmailPasswordChangeRequest, passwordChange, accountUnlocking, logoChange, deleteLogo, clearUserErrors } = userSlice.actions;
 export default userSlice.reducer;

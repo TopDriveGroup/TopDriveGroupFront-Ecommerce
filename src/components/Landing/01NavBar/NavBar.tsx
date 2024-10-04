@@ -145,16 +145,16 @@ function NavBarEcommerce() {
 
                     <div className={`${styles.container__Links_PreNavBar} d-flex`}>
                         <Link to="https://micrositios.goupagos.com.co/top-drive-ma" target="blank" rel="noopener noreferrer" className={`${styles.online__Payments} ${location.pathname === 'https://micrositios.goupagos.com.co/top-drive-ma' ? styles.active : ''} p-3 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBar.online__Payments')} {/* Pagos en línea */}
+                            {t('navBar.online__Payments')}
                         </Link>
                         <Link to="/portfolio" className={`${styles.portfolio} ${location.pathname === '/portfolio' ? styles.active : ''} p-2 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBar.portfolio')} {/* Portafolio */}
+                            {t('navBar.portfolio')}
                         </Link>
                         <Link to="/ecommerce/quotation" className={`${styles.quotation} ${location.pathname === '/ecommerce/quotation' ? styles.active : ''} p-2 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBar.quotations')} {/* Cotiza */}
+                            {t('navBar.quotations')}
                         </Link>
                         <Link to="/ecommerce/contact-us" className={`${styles.contactUs} ${location.pathname === '/ecommerce/contact-us' ? styles.active : ''} px-2 d-flex align-items-center justify-content-end text-decoration-none`} >
-                            {t('navBar.contactUs')} {/* Contacto */}
+                            {t('navBar.contactUs')}
                         </Link>
                     </div>
                 </div>
@@ -198,30 +198,30 @@ function NavBarEcommerce() {
                                 {typeRole === 'Superadmin' && (
                                     <Link to="/panel-user/profile" className={`${styles.panel} px-2 d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} >
                                         <AiOutlineUser className={styles.icon__User_Panel} />
-                                        {t('navBar.panel')} {/* PANEL DE CLIENTE*/}
+                                        {t('navBar.panel')}
                                     </Link>
                                 )}
                                 {((typeRole === 'CEO') || (typeRole === 'CTO') || (typeRole === 'Director') || (typeRole === 'Programador') || (typeRole === 'Validador') || (typeRole === 'Contador') || (typeRole === 'Auxiliar de contabilidad')) && (
                                     <Link to="/panel-top-drive-group/configuration/user-management" className={`${styles.panel} ${location.pathname === '/panel-top-drive-group/configuration' ? styles.active : ''} d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} >
                                         <AiOutlineUser className={styles.icon__User_Panel} />
-                                        {t('navBar.panel')} {/* PANEL COLABORADOR TOP DRIVE */}
+                                        {t('navBar.panel')}
                                     </Link>
                                 )}
                                 <div className={`${styles.logout} px-2 d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} onClick={logout} >
-                                    {t('navBar.exit')} {/* SALIR */}
+                                    {t('navBar.exit')}
                                 </div>
                             </div>
                         ): (
                             <div className='d-flex'>
                                 {!isAuthenticated && (
                                     <Link to="/register" className={`${styles.register} px-2 d-flex align-items-center justify-content-center text-center text-decoration-none`} >
-                                        {t('navBar.signUp')} {/* REGISTRATE */}
+                                        {t('navBar.signUp')}
                                     </Link>
                                 )}
                                 {!isAuthenticated && (
                                     <Link to="/login" className={`${styles.login} px-2 d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} >
                                         <AiOutlineUser className={styles.icon__User} />
-                                        {t('navBar.signIn')} {/* LOGIN */}
+                                        {t('navBar.signIn')}
                                     </Link>
                                 )}
                             </div>
