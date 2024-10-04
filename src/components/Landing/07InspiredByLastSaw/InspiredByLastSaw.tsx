@@ -97,7 +97,7 @@ function InspiredByLastSaw() {
     return (
         <div className={`${styles.container} mb-5 mt-5`}>
             <div>
-                <h4 className={`${styles.main__Title} mt-4 mx-4`}>{t('bestSellingProducts.inspiredByLastSaw')}</h4>
+                <h4 className={`${styles.main__Title} mt-4 mx-4`}>{t('inspiredByLastSaw.inspired__By_Last_Saw')}</h4>
             </div>
             
             <Slider {...settings} className="d-flex gap-4">
