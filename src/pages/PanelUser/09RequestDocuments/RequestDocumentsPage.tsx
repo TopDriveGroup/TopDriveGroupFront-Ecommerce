@@ -48,13 +48,13 @@ function RequestDocumentsPage() {
     
 
     //SETEA EL TIPO DE DOCUMENTO A SOLICITAR POR PARTE DEL CLIENTE
-    const [typeDocumentRequest, setTypeDocumentRequest] = useState('NIT');
+    const [typeDocumentRequest, setTypeDocumentRequest] = useState('Rete ICA');
     const handleTypeDocumentRequest = (event: { target: { value: SetStateAction<string> }}) => {
         setTypeDocumentRequest(event.target.value);
     };
     
     //SETEA EL AÑO FISCAL DEL DOCUMENTO
-    const [DocumentFiscalYear, setDocumentFiscalYear] = useState('NIT');
+    const [DocumentFiscalYear, setDocumentFiscalYear] = useState('2023');
     const handleDocumentFiscalYear = (event: { target: { value: SetStateAction<string> }}) => {
         setDocumentFiscalYear(event.target.value);
     };
@@ -98,8 +98,8 @@ function RequestDocumentsPage() {
                                     className={`${styles.input} mb-4 p-2 border rounded`}
                                     onChange={handleTypeDocumentRequest}
                                 >
-                                    <option value='Rete IVA'>Rete IVA</option>
                                     <option value='Rete ICA'>Rete ICA</option>
+                                    <option value='Rete IVA'>Rete IVA</option>
                                 </select>
                                 {errors.documentRequest && (
                                     <p className={`${styles.text__Danger} text-danger position-absolute`}>El tipo de documento del usuario es requerido</p>
