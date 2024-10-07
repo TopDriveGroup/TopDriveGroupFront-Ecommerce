@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
-import { postAddressClient, getAddressClient } from '../../../../redux/Landing/addressSlice/actions';
 import type { RootState, AppDispatch } from '../../../../redux/store';
+import { postAddressClient, getAddressClient } from '../../../../redux/Landing/addressSlice/actions';
 //ELEMENTOS DEL COMPONENTE
 import { IAddress } from '../../../../types/address.types';
 import Countries from '../../../../helpers/Countries/Countries';
@@ -16,9 +16,8 @@ interface ModalNewAddressProps {
 }
 
 function ModalNewAddress({token, onCreateComplete}: ModalNewAddressProps) {
+    // REDUX
     const dispatch: AppDispatch = useDispatch();
-
-    // Utiliza useSelector para obtener la información del usuario del estado de Redux
     const error = useSelector((state: RootState) => state.address.error);
 
     const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm<IAddress>();
@@ -26,21 +25,21 @@ function ModalNewAddress({token, onCreateComplete}: ModalNewAddressProps) {
 
     // SELECCION DEL PAIS
     const [selectedCountry, setSelectedCountry] = useState<string>('');
-    const [selectedCallSign, setSelectedCallSign] = useState<string>(''); // Añadir estado para el indicativo
+    const [selectedCallSign, setSelectedCallSign] = useState<string>('');
     const [resetCountry, setResetCountry] = useState(false);
 
     // FUNCION PARA MANEJAR LOS DATOS SELECCIONADOS DEL PAIS
-    const handleSelectCountry = (country: string, callSign: string) => { // Añadir callSign a los parámetros
+    const handleSelectCountry = (country: string, callSign: string) => {
         setSelectedCountry(country);
-        setSelectedCallSign(callSign); // Establecer el indicativo
-        setValue('callsign', callSign); // Actualizar el valor del input de indicativo
+        setSelectedCallSign(callSign);
+        setValue('callsign', callSign);
     };
 
     const [selectedDepartment, setSelectedDepartment] = useState('');
     const [selectedCity, setSelectedCity] = useState('');
     const [selectedCodeDane, setSelectedCodeDane] = useState('');
     const [selectedSubregionCode, setSelectedSubregionCode] = useState('');
-    const [resetDepartmenAndCity, setResetDepartmenAndCity] = useState(false);    //Estado para resetear el componente "DepartmentAndCity" luego de crear el registro
+    const [resetDepartmenAndCity, setResetDepartmenAndCity] = useState(false);
     // Función para manejar los datos seleccionados del departamento y los municipios
     const handleSelectDepartmentCity = (department: string, city: string, codeDane: string, subregionCodeDane: string) => {
         setSelectedDepartment(department);
@@ -60,7 +59,6 @@ function ModalNewAddress({token, onCreateComplete}: ModalNewAddressProps) {
                 subregionCodeDane: selectedSubregionCode,
                 callsign: selectedCallSign,
             } as IAddress;
-            // Simulamos un delay de la API
             await new Promise(resolve => setTimeout(resolve, 500));
             dispatch(postAddressClient(formData, token));
             setFormSubmitted(true);    
@@ -74,7 +72,7 @@ function ModalNewAddress({token, onCreateComplete}: ModalNewAddressProps) {
                     setResetCountry(false);
                     setResetDepartmenAndCity(false);
                     onCreateComplete();
-                }, 10); // Se reinicia después de un corto período para asegurarse de que el reset haya tenido efecto
+                }, 10);
             }, 1500);
         } catch (error) {
             throw new Error('Error en el envío del formulario');
@@ -88,12 +86,12 @@ function ModalNewAddress({token, onCreateComplete}: ModalNewAddressProps) {
                 <Countries
                     onSelect={handleSelectCountry}
                     reset={resetCountry}
-                    initialCountry={selectedCountry} // Pasar el valor inicial si es necesario
-                    />
+                    initialCountry={selectedCountry}
+                />
 
                 <DepartmentAndCity
                     onSelect={handleSelectDepartmentCity}
-                    reset={resetDepartmenAndCity} // Pasar el estado de reset al componente DepartmentAndCity
+                    reset={resetDepartmenAndCity}
                 />
 
                 <div className={`${styles.container__Info} d-flex align-items-center justify-content-center gap-3`}>

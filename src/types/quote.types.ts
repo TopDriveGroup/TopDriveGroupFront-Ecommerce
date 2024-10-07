@@ -1,5 +1,6 @@
 export interface IQuote {
-    typeApplicant?: 'Natural Person' | 'Legal Entity';
+    typeDocumentId?: 'NIT' | 'Cedula de Ciudadania' | 'Cedula de Extranjeria' | 'Pasaporte';
+    documentId?: string;
     userName?: string;
     lastName?: string;
     corporateName?: string;
@@ -12,11 +13,11 @@ export interface IQuote {
     dateQuoteCreation?: string;
     typeQuote: 'Product' | 'Service';
     products?: {
+        productId: string,
         description: string;
         brand: string;
         quantity: number;
         sellingPriceDistributorFinalUser: number;
-        productId: string,
     }[];
     service?: {
         description: string;

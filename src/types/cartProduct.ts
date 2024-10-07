@@ -18,3 +18,8 @@ export interface ICartProduct extends Partial<IProduct> {
     iva: number;
     subtotal: number;
 }
+
+export interface IProductsOrder {
+    products: ICartProduct[];
+    total: number;
+}
