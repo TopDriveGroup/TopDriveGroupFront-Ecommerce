@@ -1,0 +1,118 @@
+.container {
+    width: 100%;
+}
+.form {
+    width: 800px;
+}
+.label {
+    margin-bottom: 2px;
+}
+.required__Information {
+    color: #e4002b;
+}
+.input {
+    width: 100%;
+}
+.input:focus, .textarea:focus {
+    outline-color: #e4002b;
+}
+.text__Danger {
+    top: 60px;
+}
+.container__Inputs {
+    width: 100%;
+}
+
+/* TABLA DE PRODUCTOS */
+.container__Table {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    width: 100%;
+    overflow-x: auto;
+}
+.container__Head {
+    height: 50px;
+    width: 100%;
+    font-weight: 600;
+}
+.container__Tr{
+    flex-wrap: nowrap;
+    height: 50px;
+}
+.description {
+    height: 50px;
+    width: 300px;
+}
+.manufacturer {
+    height: 50px;
+    width: 150px;
+}
+.quantity {
+    height: 50px;
+    width: 100px;
+}
+.total__Price {
+    height: 50px;
+    width: 150px;
+}
+.container__Body {
+    width: 100%;
+}
+.text__Ellipsis {
+    opacity: 0.75;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* COMENTARIOS */
+.continer__Comments {
+    width: 100%;
+}
+.container__Textarea {
+    width: 100%;
+}
+.textarea {
+    max-height: 200px;
+    width: 100%;
+}
+.chars__Remaining {
+    width: 100%;
+}
+.text__Danger_Textarea {
+    width: 600px;
+}
+.alert__Danger {
+    color: #e63946;
+    border-radius: 5px;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    padding: 5px 10px;
+    z-index: 1;
+}
+.alert__Success {
+    color: #4c956c;
+    border-radius: 5px;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    padding: 5px 10px;
+    z-index: 1;
+    font-weight: 600;
+}
+.link {
+    font-weight: 600;
+    color: #e4002b;
+}
+.checkbox {
+    height: 35px;
+    max-width: 35px;
+}
+.checkbox:hover {
+    cursor: pointer;
+}
+.button__Submit {
+    background: #888b8d;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+}

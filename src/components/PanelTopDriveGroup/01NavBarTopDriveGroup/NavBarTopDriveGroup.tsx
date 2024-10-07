@@ -20,7 +20,7 @@ import styles from './styles.module.css';
 
 function NavBarClient() {
     const location = useLocation();
-    const { t, i18n } = useTranslation('navBarEcommerce');
+    const { t, i18n } = useTranslation('navBar');
     const dispatch: AppDispatch = useDispatch();
 
     const [showModal, setShowModal] = useState(false);
@@ -74,8 +74,8 @@ function NavBarClient() {
                 setCountCartProducts(0);
             }
         };
-        updateCartCount();                                          // Initialize cart count on component mount
-        window.addEventListener('storage', updateCartCount);        // Update cart count when localStorage changes
+        updateCartCount();
+        window.addEventListener('storage', updateCartCount);
         return () => {
             window.removeEventListener('storage', updateCartCount);
         };
@@ -99,7 +99,7 @@ function NavBarClient() {
                                 <BiWorld />
                             </div>
                             <div className={`${styles.text__Language} mx-1 p-0`}>
-                                {t('navBarEcommerce.language')}
+                                {t('navBar.language')}
                             </div>
                             {languageMenuVisible && (
                                 <div ref={languageMenuRef} className={`${styles.dropdown__Language} p-3 d-flex flex-column position-absolute overflow-hidden`}>
@@ -111,26 +111,23 @@ function NavBarClient() {
 
                         <div className={`${styles.container__Phone_Lines} px-3 d-flex align-items-center justify-content-center gap-2`}>
                             <FaPhone />
-                            <span>{t('navBarEcommerce.national')} +57 (601) 8966199</span>
+                            <span>{t('navBar.national')} +57 (601) 8966199</span>
                         </div>
 
                         <Link to="/" className={`${styles.home} p-3 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.home')}
+                            {t('navBar.home')}
                         </Link>
                     </div>
 
                     <div className={`${styles.container__Links_PreNavBar} d-flex`}>
                         <Link to="https://micrositios.goupagos.com.co/top-drive-ma" target="blank" rel="noopener noreferrer" className={`${styles.online__Payments} p-3 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.online__Payments')} {/* Pagos en línea */}
+                            {t('navBar.online__Payments')}
                         </Link>
                         <Link to="/portfolio" className={`${styles.portfolio} ${location.pathname === '/portfolio' ? styles.active : ''} p-2 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.portfolio')} {/* Portafolio */}
-                        </Link>
-                        <Link to="/ecommerce/quotation" className={`${styles.quotation} ${location.pathname === '/ecommerce/quotation' ? styles.active : ''} p-2 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.quotations')} {/* Cotiza */}
+                            {t('navBar.portfolio')}
                         </Link>
                         <Link to="/ecommerce/contact-us" className={`${styles.contactUs} ${location.pathname === '/ecommerce/contact-us' ? styles.active : ''} px-2 d-flex align-items-center justify-content-end text-decoration-none`} >
-                            {t('navBarEcommerce.contactUs')} {/* Contacto */}
+                            {t('navBar.contactUs')}
                         </Link>
                     </div>
                 </div>
@@ -141,7 +138,7 @@ function NavBarClient() {
                     </Link>
 
                     <div className={`${styles.container__Menu} d-flex align-items-center justify-content-center`} onClick={toggleModal}>
-                        <LuMenu className={styles.icon__Menu} /> <span className={styles.text__Menu}>{t('navBarEcommerce.menu')}</span>
+                        <LuMenu className={styles.icon__Menu} /> <span className={styles.text__Menu}>{t('navBar.menu')}</span>
                     </div>
 
                     {showModal && (
@@ -171,10 +168,10 @@ function NavBarClient() {
                     <div className={`${styles.links__Nemu_Interactions} d-flex`}>
                         <Link to="/panel-user/profile" className={`${styles.panel} ${location.pathname === '/panel-top-drive-group/configuration' ? styles.active : ''} d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} >
                             <AiOutlineUser className={styles.icon__User_Panel} />
-                            {t('navBarEcommerce.panel')} {/* PANEL COLABORADOR TOP DRIVE */}
+                            {t('navBar.panel')}
                         </Link>
                         <div className={`${styles.logout} px-2 d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} onClick={logout} >
-                            {t('navBarEcommerce.exit')} {/* SALIR */}
+                            {t('navBar.exit')}
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
         "identification__Number": "Número de identificación",
         "identification__Number_Error": "El número de identidad es requerido",
         "identification__Number_Alert": "El número de identidad debe contener entre 1 y 10 dígitos",
-        "identification__Number_Placeholder": "¿Cuál es tu número de identificación?'",
+        "identification__Number_Placeholder": "¿Cuál es tu número de identificación?",
         
         "digit__Verification": "Dígito de verificación",
         "digit__Verification_Placeholder": "Dígito de verificación si lo tiene",

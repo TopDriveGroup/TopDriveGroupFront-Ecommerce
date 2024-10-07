@@ -54,7 +54,6 @@ function ModalLogin({onLoginComplete}: ModalLoginProps) {
         if (isAuthenticated) {
             let decodedToken: DecodedToken | null = null;
             if (token) {
-                // Se decodifica el token para redirigir al usuario a su panel respectivo
                 decodedToken = jwtDecode<DecodedToken>(token);
                 if(decodedToken.typeRole === 'Superadmin') {
                     navigate("/panel-user/profile");
