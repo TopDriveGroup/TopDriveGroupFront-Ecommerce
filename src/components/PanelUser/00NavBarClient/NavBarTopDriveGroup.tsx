@@ -74,8 +74,8 @@ function NavBarTopDriveGroup() {
                 setCountCartProducts(0);
             }
         };
-        updateCartCount();                                          // Initialize cart count on component mount
-        window.addEventListener('storage', updateCartCount);        // Update cart count when localStorage changes
+        updateCartCount();
+        window.addEventListener('storage', updateCartCount);
         return () => {
             window.removeEventListener('storage', updateCartCount);
         };
@@ -121,16 +121,13 @@ function NavBarTopDriveGroup() {
 
                     <div className={`${styles.container__Links_PreNavBar} d-flex`}>
                         <Link to="/ecommerce/online-payments" className={`${styles.online__Payments} ${location.pathname === '/ecommerce/online-payments' ? styles.active : ''} p-3 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.online__Payments')} {/* Pagos en línea */}
+                            {t('navBarEcommerce.online__Payments')}
                         </Link>
                         <Link to="/portfolio" className={`${styles.portfolio} ${location.pathname === '/portfolio' ? styles.active : ''} p-2 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.portfolio')} {/* Portafolio */}
-                        </Link>
-                        <Link to="/ecommerce/quotation" className={`${styles.quotation} ${location.pathname === '/ecommerce/quotation' ? styles.active : ''} p-2 d-flex align-items-center justify-content-center text-decoration-none`} >
-                            {t('navBarEcommerce.quotations')} {/* Cotiza */}
+                            {t('navBarEcommerce.portfolio')}
                         </Link>
                         <Link to="/ecommerce/contact-us" className={`${styles.contactUs} ${location.pathname === '/ecommerce/contact-us' ? styles.active : ''} px-2 d-flex align-items-center justify-content-end text-decoration-none`} >
-                            {t('navBarEcommerce.contactUs')} {/* Contacto */}
+                            {t('navBarEcommerce.contactUs')}
                         </Link>
                     </div>
                 </div>
@@ -171,10 +168,10 @@ function NavBarTopDriveGroup() {
                     <div className={`${styles.links__Nemu_Interactions} d-flex`}>
                         <Link to="/panel-top-drive-group/configuration" className={`${styles.panel} ${location.pathname === '/panel-top-drive-group/configuration' ? styles.active : ''} d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} >
                             <AiOutlineUser className={styles.icon__User_Panel} />
-                            {t('navBarEcommerce.panel')} {/* PANEL COLABORADOR TOP DRIVE */}
+                            {t('navBarEcommerce.panel')}
                         </Link>
                         <div className={`${styles.logout} px-2 d-flex align-items-center justify-content-end text-center text-decoration-none gap-1`} onClick={logout} >
-                            {t('navBarEcommerce.exit')} {/* SALIR */}
+                            {t('navBarEcommerce.exit')}
                         </div>
                     </div>
                 </div>

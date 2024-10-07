@@ -68,7 +68,6 @@ const resources = {
         trackingOrders: enTrackingOrders,
         returnsAndExchangesEcommerce: enReturnsAndExchanges,
         footer: enFooter,
-        
         // HELPERS
         departmentAndCity: enDepartmentAndCity,
     },
@@ -94,7 +93,6 @@ const resources = {
         trackingOrders: esTrackingOrders,
         returnsAndExchangesEcommerce: esReturnsAndExchanges,
         footer: esFooter,
-
         // HELPERS
         departmentAndCity: esDepartmentAndCity,
     }
@@ -113,7 +111,6 @@ i18n.use(initReactI18next).init({
         'meansPaymentEcommerce',
         'producTrackingEcommerce',
         'returnsAndExchangesEcommerce',
-
         // HELPES
         'departmentAndCity',
     ],

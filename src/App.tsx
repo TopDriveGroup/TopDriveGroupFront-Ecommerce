@@ -19,7 +19,6 @@ import ResetPasswordPage from './pages/Landing/01NavBar/02NavBar/04Login/ResetPa
 import LandingEcommerce from './pages/Landing/LandingEcommerce';
 
 // NAVBAR ECOMMERCE
-import QuotationEcommercePage from './pages/Landing/01NavBar/01PreNavBar/03QuotationEcommercePage/QuotationEcommercePage';
 import ContactUsEcommercePage from './pages/Landing/01NavBar/01PreNavBar/06ContactUsEcommerce/ContactUsPageEcommerce';
 import ShoppingCartPage from './pages/Landing/01NavBar/02NavBar/01ShoppingCart/ShoppingCartPage';
 import CheckoutPage from './pages/Landing/01NavBar/02NavBar/01ShoppingCart/Checkout/CheckoutPage';
@@ -104,7 +103,6 @@ function App() {
                     <Route path="/" element={<Navigate to="/ecommerce" replace />} />
                     <Route path="/ecommerce" element={<LandingEcommerce />} />
                     {/* ----------NAVBAR ECOMMERCE---------- */}
-                    <Route path='/ecommerce/quotation' element={<QuotationEcommercePage />} />
                     <Route path='/ecommerce/contact-us' element={<ContactUsEcommercePage />} />
                     <Route path='/ecommerce/shopping-cart' element={<ShoppingCartPage />} />
                     <Route path='/ecommerce/shopping-cart/checkout/:transactionId' element={<CheckoutPage/>} />

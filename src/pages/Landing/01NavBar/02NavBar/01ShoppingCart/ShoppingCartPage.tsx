@@ -13,19 +13,16 @@ import { IClient } from '../../../../../types/client.types';
 import { IAddress } from '../../../../../types/address.types';
 import { IGouOrderRequest } from '../../../../../types/gouOrder.types';
 import ModalNewAddress from '../../../../../components/PanelUser/Address/ModalNewAddress/ModalNewAddress';
+import ModalQuotation from '../../../../../components/Landing/01NavBar/ShoppingCart/ModalQuotation/ModalQuotation';
 import ModalLogin from '../../../../../components/Landing/01NavBar/04ModalLogin/ModalLogin';
 import NavBar from '../../../../../components/Landing/01NavBar/NavBar';
 import Footer from '../../../../../components/Landing/Footer/Footer';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
+import { IProductsOrder } from '../../../../../types/cartProduct';
 import { ICartProduct } from '../../../../../types/cartProduct';
 import { HiMiniPlus, HiMiniMinus } from "react-icons/hi2";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import styles from './styles.module.css';
-
-interface IProductsOrder {
-    products: ICartProduct[];
-    total: number;
-}
 
 export interface AddressResponse {
     result: IAddress[];
@@ -34,7 +31,7 @@ export interface AddressResponse {
 function ShoppingCartPage() {
     const token = jsCookie.get('token') || '';
 
-        // REDUX
+    // REDUX
     const dispatch: AppDispatch = useDispatch();
     const user = useSelector((state: RootState) => state.user.user) as IClient;
     const order = useSelector((state: RootState) => state.orders.orders);
@@ -86,7 +83,7 @@ function ShoppingCartPage() {
         if (!productId || !productsOrder.products) return;
         const updatedProducts = productsOrder.products.map(product => {
             if (product.productId === productId) {
-                const newQuantity = Math.max(product.quantity - 1, 1); // Mínimo de 1
+                const newQuantity = Math.max(product.quantity - 1, 1);
                 return {
                     ...product,
                     quantity: newQuantity,
@@ -102,9 +99,7 @@ function ShoppingCartPage() {
         const updatedOrder = { products: updatedProducts, total: calculateTotalPurchase(updatedProducts), client: 'idUser' };
         if (updatedProducts.length === 0) {
             localStorage.removeItem('order');
-        } else {
-            localStorage.setItem('order', JSON.stringify(updatedOrder));
-        }
+        } else localStorage.setItem('order', JSON.stringify(updatedOrder));
         setProductsOrder(updatedOrder);
     };
 
@@ -130,13 +125,19 @@ function ShoppingCartPage() {
         setShowNotAddress(false);
     };
 
-    //Abre el Modal para crear la dirección
+    //ABRE EL MODAL PARA LA DIRECCION
     const [showCancelNewAddressModal, setShowCancelNewAddressModal] = useState(false);
     const onCloseNewAddressModal = () => {
         setShowCancelNewAddressModal(false);
     };
 
-    //Abre el Modal para login
+    //ABRE EL MODAL PARA CONFIRMAR LA COTIZACION
+    const [showCancelModalQuotation, setShowCancelModalQuotation] = useState(false);
+    const onCloseModalQuotation = () => {
+        setShowCancelModalQuotation(false);
+    };
+
+    //ABRE EL MODAL PARA EL LOGIN
     const [showCancelLoginModal, setShowCancelLoginModal] = useState(false);
     const onCloseLoginModal = () => {
         setShowCancelLoginModal(false);
@@ -146,9 +147,7 @@ function ShoppingCartPage() {
     const [showConfirmModal, setShowConfirmModal] = useState(false);
     const handleConfirmModalClose = (confirm: boolean) => {
         setShowConfirmModal(false);
-        if (confirm) {
-            onSubmit();
-        }
+        if (confirm) onSubmit();
     };
 
     //CREA LA ORDEN
@@ -167,16 +166,13 @@ function ShoppingCartPage() {
         const surname = user.lastName || 'No aplica';
         const phone = typeof user.phone === 'number' ? user.phone : 0;
         const phoneAddress = user.phone || '';
-        
-        // Define el documentType basado en user.typeDocumentId
+
         let documentType: string;
         if (user.typeDocumentId === 'NIT') {
             documentType = 'NIT';
         } else if (user.typeDocumentId === 'Cedula de Ciudadania') {
             documentType = 'CC';
-        } else {
-            documentType = 'CE';
-        }
+        } else documentType = 'CE';
         try {
             const formData: IGouOrderRequest = {
                 locale: savedLanguage === 'es' ? 'es_CO' : 'en_US',
@@ -232,9 +228,7 @@ function ShoppingCartPage() {
     const handleSubmitClick = () => {
         if (ordersPending && ordersPending.length > 0) {
             setShowConfirmModal(true);
-        } else {
-            onSubmit();
-        }
+        } else onSubmit();
     };
 
     return (
@@ -252,7 +246,7 @@ function ShoppingCartPage() {
                             <div className={`${styles.column__Price} text-center`}>Precio</div>
                             <div className={`${styles.column__Quantity} text-center`}>Cantidad</div>
                             <div className={`${styles.column__Total} text-center`}>Total</div>
-                            <div className={`${styles.column_Delete} text-center`}></div>
+                            <div className={`${styles.column__Delete} text-center`}></div>
                         </div>
 
                         {Array.isArray(productsOrder.products) && productsOrder.products.map((product) => (
@@ -283,10 +277,10 @@ function ShoppingCartPage() {
                                     </div>
 
                                     <div className={`${styles.info__Column_Total} d-flex align-items-center justify-content-center text-center`}>
-                                        <p className={`${styles.subtotal__Product} m-0`}>$ {formatNumber(product.subtotal)} und</p>
+                                        <p className={`${styles.subtotal__Product} m-0`}>$ {formatNumber(product.subtotal)}</p>
                                     </div>
                                     <div className={`${styles.info__Column_Delete} d-flex align-items-center justify-content-center text-center`} onClick={() => handleDeleteProduct(product.productId)}>
-                                        <RiDeleteBin6Line className={`${styles.icon_Delete} `} />
+                                        <RiDeleteBin6Line className={`${styles.icon__Delete} `} />
                                     </div>
                                 </div>
                             </div>
@@ -335,7 +329,7 @@ function ShoppingCartPage() {
                                         onCreateComplete={() => {
                                             onCloseNewAddressModal();
                                         }}
-                                        />
+                                    />
                                 </Modal.Body>
                             </Modal>
 
@@ -353,20 +347,39 @@ function ShoppingCartPage() {
                             </div>
                         </div>
 
-                        <div className={`${styles.container__Submit} mb-4 d-flex flex-column align-items-center justify-content-center position-relative`}>
-                            <button
-                                onClick={handleSubmitClick}
-                                className={`${styles.button__Submit} border-0 rounded text-decoration-none`}
-                            >
-                                Proceder a pagar con <img src={'https://placetopay-static-prod-bucket.s3.us-east-2.amazonaws.com/goupagos-com-co/logos/logo_2.svg'} alt="Place To Pay" className={`${styles.image__Place_to_Pay} `} />
-                            </button>
-                            <a href="https://drive.google.com/file/d/1IZayUSGA6CMru3RhcRI0sjTNJSxOKsUR/view" target="blank" rel="noopener noreferrer" className={`${styles.link} m-2 text-decoration-none`}>¿Qué es GOU?</a>
-                            {showNotAddress && (
-                                <div className={`${styles.error__Message} position-absolute`}>
-                                    <p>Por favor, selecciona una dirección antes de proceder con el pago.</p>
-                                </div>
-                            )}
+                        <div className={`${styles.container__Submit} mb-4 d-flex align-items-start justify-content-center gap-5 position-relative`}>
+                            <button className={`${styles.button__Quote} border-0 rounded`} onClick={() => { setShowCancelModalQuotation(true) }}>Corizar</button>
+                            <div className='d-flex flex-column align-items-center justify-content-center position-relative'>
+                                <button
+                                    onClick={handleSubmitClick}
+                                    className={`${styles.button__Submit} border-0 rounded`}
+                                >
+                                    Proceder a pagar con <img src={'https://placetopay-static-prod-bucket.s3.us-east-2.amazonaws.com/goupagos-com-co/logos/logo_2.svg'} alt="Place To Pay" className={`${styles.image__Place_to_Pay} `} />
+                                </button>
+                                <a href="https://drive.google.com/file/d/1IZayUSGA6CMru3RhcRI0sjTNJSxOKsUR/view" target="blank" rel="noopener noreferrer" className={`${styles.link} m-2 text-decoration-none`}>¿Qué es GOU?</a>
+                                {showNotAddress && (
+                                    <div className={`${styles.error__Message} position-absolute`}>
+                                        <p>Selecciona una dirección antes de proceder con el pago.</p>
+                                    </div>
+                                )}
+                            </div>
                         </div>
+
+                        <Modal show={showCancelModalQuotation} onHide={() => setShowCancelModalQuotation(false)} size="lg" backdrop="static" keyboard={false} >
+                            <Modal.Header closeButton onClick={() => setShowCancelModalQuotation(false)}>
+                                <Modal.Title>Cotizaciones</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <ModalQuotation
+                                    user={user}
+                                    productsOrder={productsOrder}
+                                    showAddress={showAddress}
+                                    onQuotationComplete={() => {
+                                        onCloseModalQuotation();
+                                    }}
+                                />
+                            </Modal.Body>
+                        </Modal>
 
                         <Modal show={showConfirmModal} onHide={() => setShowConfirmModal(false)} backdrop="static" keyboard={false}>
                             <Modal.Header closeButton>
