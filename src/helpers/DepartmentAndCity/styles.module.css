@@ -14,7 +14,6 @@
 /* ---------- RESPONSIVE (700 PX) ---------- */
 @media screen and (max-width: 700px) {
     .container {
-        border: 1px solid red;
         display: flex;
         flex-direction: column;
     }

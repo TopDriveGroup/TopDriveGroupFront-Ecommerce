@@ -220,7 +220,6 @@ function ShoppingCartPage() {
         }
     };
 
-    // Redirigir después de recibir la respuesta de la API
     useEffect(() => {
         if (order && order.processUrl) window.open(order.processUrl, '_blank', 'noopener,noreferrer');
     }, [order]);

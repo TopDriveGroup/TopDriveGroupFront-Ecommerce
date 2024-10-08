@@ -13,6 +13,7 @@ import TermsAndConditions from '../../../../../../public/TERMINOS_Y_CONDICIONES_
 import PrivacyPolicy from '../../../../../../public/GGE-PO-006-V4_POLITICA _PRIVACIDAD_Y_TRATAMIENTO_DE_DATOS_PERSONALES.pdf';
 import DepartmentAndCity from '../../../../../helpers/DepartmentAndCity/DepartmentAndCity';
 import { formatNumber } from '../../../../../helpers/FormatNumber/FormatNumber';
+import Loading from '../../../../GeneralComponents/ComponentLoading/Loading';
 import styles from './styles.module.css';
 
 interface ModalQuotationProps {
@@ -27,8 +28,9 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
     const dispatch: AppDispatch = useDispatch();
     const error = useSelector((state: RootState) => state.quotes.errorQuotes);
 
-    const { register, handleSubmit, formState: { errors }, reset } = useForm<IQuote>();
+    const { register, handleSubmit, formState: { errors }, reset, watch } = useForm<IQuote>();
     const [formSubmitted, setFormSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [acceptedPolicy, setAcceptedPolicy] = useState(false);
     const [message, setMessage] = useState('');
     const [charsRemaining, setCharsRemaining] = useState(1000);
@@ -41,21 +43,24 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
     const [selectedDepartment, setSelectedDepartment] = useState('');
     const [selectedCity, setSelectedCity] = useState('');
     const [resetDepartmenAndCity, setResetDepartmenAndCity] = useState(false);
-
-    // Si hay una dirección existente, actualiza el estado de department y city
+    
+    // SETEA EL DEPARTAMENTO Y LA CIUDAD EN CASO DE QUE EXISTA
     useEffect(() => {
         if (showAddress) {
             setSelectedDepartment(showAddress.department || '');
             setSelectedCity(showAddress.city || '');
         }
     }, [showAddress]);
-
+    
     const handleSelectDepartmentCity = (department: string, city: string) => {
         setSelectedDepartment(department);
         setSelectedCity(city);
     };
-
-    // Define la cantidad máxima de caracteres en el envío de los comentarios
+    
+    // OBSERVA EL VALOR DE "address" PARA SETARLA CUANDO NO SE RECIBE POR PROPS
+    const addressValue = watch('address');
+    
+    // DEFINE LA CANIDAD MAXIMA DE CARACTERES DE LOS COMENTARIOS
     const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         const newValue = event.target.value;
         if (newValue.length <= 1000) {
@@ -63,8 +68,9 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
             setCharsRemaining(1000 - newValue.length);
         }
     };
-
+    
     const onSubmit = async (values: IQuote) => {
+        setLoading(true);
         try {
             if (!acceptedPolicy) return;
             const formData = {
@@ -74,7 +80,7 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
                 typeQuote: 'Product',
                 email: user?.email,
                 phone: user?.phone,
-                address: showAddress?.street,
+                address: showAddress?.street || addressValue,
                 products: productsOrder.products.map(product => ({
                     productId: product.productId,
                     description: product.description,
@@ -104,6 +110,8 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
             }, 1500);
         } catch (error) {
             throw new Error('Error en el envío del formulario');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -111,7 +119,7 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
         <div className="position-relative">
             <div className={`${styles.container} p-4 d-flex align-items-center justify-content-center`}>
                 <form onSubmit={handleSubmit(onSubmit)} className={`${styles.form} position-relative`} >
-                    {!showAddress && (
+                    {!user && (
                         <div>
                             <div className={`${styles.container__Inputs} mb-3 d-flex flex-column align-items-start justify-content-start position-relative`}>
                                 <h6 className={styles.label}><span className={`${styles.required__Information} `}>*</span> Tipo de documento de identidad</h6>
@@ -201,7 +209,11 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
                                     <p className={`${styles.text__Danger} text-danger position-absolute`}>{errors.documentId.message}</p>
                                 )}
                             </div>
+                        </div>
+                    )}
 
+                    {!showAddress && (
+                        <div>
                             <DepartmentAndCity
                                 onSelect={handleSelectDepartmentCity}
                                 reset={resetDepartmenAndCity}
@@ -239,7 +251,6 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
                                         <p className={`${styles.text__Danger} text-danger position-absolute`}>{errors.email.message}</p>
                                     )}
                                 </div>
-
                                 <div className={`${styles.container__Inputs} mb-3 d-flex flex-column align-items-start justify-content-start position-relative`}>
                                     <h6 className={styles.label}><span className={`${styles.required__Information} `}>*</span> Número de celular o teléfono</h6>
                                     <input
@@ -280,7 +291,6 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
                                     <th className={`${styles.total__Price} d-flex align-items-center justify-content-center text-center`}>Precio total</th>
                                 </tr>
                             </thead>
-                            
                             <tbody className={`${styles.container__Body} `}>
                                 {Array.isArray(productsOrder.products) && productsOrder.products.length > 0 && (
                                     productsOrder.products.map((product) => (
@@ -306,21 +316,19 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
 
                     <div className={`${styles.continer__Comments} d-flex flex-column align-items-start justify-content-start position-relative`}>
                         <h6 className={styles.label}>Comantarios para la cotización</h6>
-                        <div className={styles.container__Textarea}>
-                            <textarea
-                                {...register('comments', { required: true })}
-                                className={`${styles.textarea} p-2 border rounded`}
-                                placeholder={`Deja acá tus comentarios`}
-                                cols={10}
-                                rows={5}
-                                value={message}
-                                onChange={handleTextareaChange}
-                            ></textarea>
-                            <p className={`${styles.chars__Remaining} m-0 text-muted`}>{charsRemaining} caracteres restantes</p>
-                            {errors.comments && (
-                                <p className={`${styles.text__Danger_Textarea} text-danger position-absolute`}>Los comentarios son requeridos</p>
-                            )}
-                        </div>
+                        <textarea
+                            {...register('comments', { required: true })}
+                            className={`${styles.textarea} p-2 border rounded`}
+                            placeholder={`Deja acá tus comentarios`}
+                            cols={10}
+                            rows={5}
+                            value={message}
+                            onChange={handleTextareaChange}
+                        ></textarea>
+                        <p className={`${styles.chars__Remaining} mt-3 text-muted`}>{charsRemaining} caracteres restantes</p>
+                        {errors.comments && (
+                            <p className={`${styles.text__Danger_Textarea} text-danger position-absolute`}>Los comentarios son requeridos</p>
+                        )}
                     </div>
 
                     <div className={`${styles.container__Accepted_Policy} mb-5 d-flex align-items-center justify-content-center position-relative`}>
@@ -345,7 +353,11 @@ function ModalQuotation({user, productsOrder, showAddress, onQuotationComplete}:
                     )}
 
                     <div className="d-flex">
-                        <button className={`${styles.button__Submit} m-auto border-0 text-decoration-none`} type='submit' >Enviar</button>
+                        {loading ? 
+                            <div className={`${styles.container__Loading} `}><Loading /></div>
+                        :
+                            <button type="submit" className={`${styles.button__Submit} m-auto border-0 rounded text-decoration-none`}  disabled={loading}>Enviar</button>
+                        }
                     </div>
                 </form>
             </div>
