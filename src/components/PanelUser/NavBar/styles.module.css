@@ -22,7 +22,6 @@
 
 /* PRE NAVBAR */
 .container__Links_PreNavBar {
-    /* border: 1px solid red; */
     height: 40px;
     width: 580px;
 }
@@ -43,7 +42,6 @@
     width: 60px;
 }
 .onlinePayments {
-    /* border: 1px solid red; */
     font-weight: 400;
     color: #495057;
     width: 120px;

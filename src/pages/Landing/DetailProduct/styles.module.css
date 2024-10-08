@@ -4,9 +4,6 @@
     margin: 110px auto 0 auto;
     max-width: 1200px;
 }
-.container__Loading {
-    border: 1px solid red;
-}
 .info_Data {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     height: 450px;
