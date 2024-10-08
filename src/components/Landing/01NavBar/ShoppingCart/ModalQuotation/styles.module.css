@@ -67,9 +67,6 @@
 .continer__Comments {
     width: 100%;
 }
-.container__Textarea {
-    width: 100%;
-}
 .textarea {
     max-height: 200px;
     width: 100%;
@@ -79,6 +76,22 @@
 }
 .text__Danger_Textarea {
     width: 600px;
+    top: 160px;
+}
+
+/* POLITICA DE DATOS */
+.text__Accepted_Policy {
+    max-width: 450px;
+}
+.checkbox {
+    height: 35px;
+    max-width: 35px;
+}
+.checkbox:hover {
+    cursor: pointer;
+}
+.text__Danger_Accepted_Policy {
+    top: 42px;
 }
 .alert__Danger {
     color: #e63946;
@@ -103,12 +116,8 @@
     font-weight: 600;
     color: #e4002b;
 }
-.checkbox {
-    height: 35px;
-    max-width: 35px;
-}
-.checkbox:hover {
-    cursor: pointer;
+.container__Loading {
+    width: 100%;
 }
 .button__Submit {
     background: #888b8d;
