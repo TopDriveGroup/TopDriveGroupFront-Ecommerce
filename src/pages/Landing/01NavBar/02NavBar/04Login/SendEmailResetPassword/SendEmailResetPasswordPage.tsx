@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 //REDUX
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../../../../../../redux/store';
+import { clearUserErrors } from '../../../../../../redux/Landing/userSlice/userSlice';
 import { sendEmailPasswordChangeClient } from '../../../../../../redux/Landing/userSlice/actions';
 //ELEMENTOS DEL COMPONENTE
 import NavBar from '../../../../../../components/Landing/01NavBar/NavBar';
 import Footer from '../../../../../../components/Landing/Footer/Footer';
-import Loading from '../../../../../../components/GeneralComponents/ComponentLoading/Loading';
 import styles from './styles.module.css';
 
 function SendEmailResetPasswordPage() {
@@ -16,89 +16,105 @@ function SendEmailResetPasswordPage() {
     // REDUX
     const dispatch: AppDispatch = useDispatch();
     const userErrors = useSelector((state: RootState) => state.user.userErrors);
-    const loading = useSelector((state: RootState) => state.user.loading);
 
-    const [emailResetPassword, setEmailResetPassword] = useState('');
-    const [errorSendEmail, setErrorSendEmail] = useState('');
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
     const [success, setSuccess] = useState(false);
-    const [ savingData, setSavingData ] = useState(false);
+    const [loading, setLoading] = useState(false);
 
+    // VALIDA EL FORMATO DEL EMAIL
     const validateEmail = (email: string) => {
-        const re = /\S+@\S+\.\S+/;
-        return re.test(email);
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            setEmailError('El formato del email no es válido');
+        } else {
+            setEmailError('');
+        }
     };
 
-    useEffect(() => {
-        setSuccess(false);
-    }, [emailResetPassword]);
-
-    const handleSend = () => {
+    const handleReturn = async () => {
         try {
-            setSavingData(true);
+            dispatch(clearUserErrors());
+            setEmail('');
             setSuccess(false);
-            if (!emailResetPassword || !validateEmail(emailResetPassword)) {
-                setErrorSendEmail(t('sendEmailResetPassword.email__Error'));
-                setSuccess(false);
-                return;
-            }
-            dispatch(sendEmailPasswordChangeClient(emailResetPassword));
-            setErrorSendEmail('');
-            setEmailResetPassword('');
-            setTimeout(() => {
+            setLoading(false);
+        } catch (error) {
+            throw new Error('Error en la solicitud de cambio de contraseña');
+        }
+    };
+
+    const onSubmit = async () => {
+        if (!emailError) {
+            setLoading(true);
+            try {
+                await dispatch(sendEmailPasswordChangeClient(email));
                 setSuccess(true);
-                setSavingData(false);
-            }, 1000);
-        } catch (userErrors) {
-            setErrorSendEmail(t('sendEmailResetPassword.email__Alert'));
-            setTimeout(() => {
-                setErrorSendEmail('');
-            }, 5000);
+            } catch (error) {
+                throw new Error('Error en la solicitud de cambio de contraseña');
+            } finally {
+                setLoading(false);
+            }
         }
     };
 
     return (
         <div>
-            <NavBar />
-            <div className={`${styles.container} d-flex flex-column`}>
-                <h1 className={`${styles.main__Title} m-0 text-center`}>{t('sendEmailResetPassword.main__Title')}</h1>
-                <p className='text-center'>{t('sendEmailResetPassword.introduction_Section')}</p>
-                
-                <div className="d-flex flex-column align-items-center justify-content-center">
-                    <h5 className='text-center'>{t('sendEmailResetPassword.label__Email')}</h5>
-                    <div className={`d-flex align-items-center justify-content-center gap-3 position-relative`}>
-                        <input
-                            type="text"
-                            placeholder={t('sendEmailResetPassword.label__Email_Placeholder')}
-                            value={emailResetPassword}
-                            className={`${styles.input} p-2 border rounded`}
-                            onChange={(e) => setEmailResetPassword(e.target.value)}
-                        />
-                        <button className={`${styles.button__Submit} border-0`} onClick={handleSend}>{t('sendEmailResetPassword.button__Send')}</button>
-                        {errorSendEmail && <p className={`${styles.text__Danger} m-0 text-danger position-absolute`}>{errorSendEmail}</p>}
-                    </div>
-                </div>
-                
-                {(success === true && !userErrors) && (
-                    <div className={`${styles.message} d-flex align-items-center justify-content-center`}>
-                        <p className='m-0 text-success'>Excelente, hemos enviado a tu correo {emailResetPassword} un link para que recuperes tu contraseña</p>
-                    </div>
-                )}
+            <header><NavBar /></header>
+            <main className={`${styles.container} d-flex flex-column`}>
+                <section>
+                    <h2 className={`${styles.main__Title} m-0 text-center`}>{t('sendEmailResetPassword.main__Title')}</h2>
+                    <p className='text-center'>{t('sendEmailResetPassword.introduction_Section')}</p>
 
-                {userErrors && 
-                    <div className={`${styles.message} d-flex align-items-center justify-content-center`}>
-                        <p className='m-0 text-danger'>{userErrors}</p>
-                    </div>
-                }
+                    <form className="d-flex flex-column align-items-center justify-content-center position-relative" onSubmit={(e) => e.preventDefault()}>
+                        <fieldset className="mb-3 d-flex flex-column align-items-center justify-content-center">
+                            <legend className='text-center'>Introduce tu dirección de correo electrónico</legend>
+                            <div className={`d-flex align-items-center justify-content-center gap-3`}>
+                                <input
+                                    type="email"
+                                    placeholder="Tu email aquí"
+                                    value={email}
+                                    className={`${styles.input} p-2 border rounded ${emailError ? 'is-invalid' : ''}`}
+                                    onChange={(e) => {
+                                        setEmail(e.target.value);
+                                        validateEmail(e.target.value);
+                                    }}
+                                    required
+                                />
+                                {loading ? 
+                                    <button className={`${styles.button__Submit} border-0 rounded m-auto text-decoration-none`} disabled>
+                                        <span className="spinner-border spinner-border-sm" role="status"></span> Enviando...
+                                    </button>
+                                :
+                                    <button className={`${styles.button__Submit} border-0 rounded m-auto text-decoration-none`} onClick={onSubmit} disabled={!!emailError}>Enviar</button>
+                                }
+                            </div>
+                            {emailError && (
+                                <div className="text-danger">{emailError}</div>
+                            )}
+                        </fieldset>
 
-                <div className={`${styles.container__Loading} d-flex align-items-center justify-content-center`}>
-                    {loading || savingData && (
-                        <div className="position-absolute">
-                            <Loading />
-                        </div>
-                    )}
-                </div>
-            </div>
-            <Footer />
+                        {Array.isArray(userErrors) && userErrors.map((error, i) => (
+                            <article key={i} className={`${styles.alert__Danger} text-center position-absolute alert-danger`}>{error}</article>
+                        ))}
+
+                        {success && !userErrors && (
+                            <article className={`${styles.info} d-flex flex-column align-items-center justify-content-center`}>
+                                <p>Excelente, hemos enviado a tu correo {email} un link para que recuperes tu contraseña</p>
+                            </article>
+                        )}
+
+                        {userErrors && (
+                            <article className="d-flex flex-column align-items-center justify-content-center">
+                                <p className='text-danger'>{userErrors}</p>
+                                <p>¡Te equivocaste con el correo electrónico?</p>
+                                <button className={`${styles.button__Return} border-0 rounded`} onClick={handleReturn}>Clic acá para intentar de nuevo</button>
+                            </article>
+                        )}
+                    </form>
+                </section>
+            </main>
+
+            <footer><Footer /></footer>
         </div>
     );
 }

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './styles.css';
 
@@ -8,6 +9,7 @@ import WhatsApp from './components/GeneralComponents/ComponentWhatsApp/WhatsApp'
 import Scroll from './components/GeneralComponents/ComponentScroll/Scroll';
 import ScrollToTop from './components/GeneralComponents/ScrollToTop/ScrollToTop';
 import SessionManager from './SessionManager';
+import Notification from './components/Notifications/Notification';
 
 // LANDINGPAGE
 import RegisterPage from './pages/Landing/01NavBar/02NavBar/03Register/00RegisterPage';
@@ -89,6 +91,15 @@ import ElectronicInvoicesTopDriveGroupPage from './pages/PanelTopDriveGroup/09El
 import Error404 from './pages/Error404/Error404';
 
 function App() {
+    const [notifications, setNotifications] = useState<{ id: number; type: 'success' | 'delete' | 'blocked' | 'error'; message: string }[]>([]);
+
+    const addNotification = (type: 'success' | 'delete' | 'blocked' | 'error', message: string) => {
+      const id = Date.now();
+      setNotifications([...notifications, { id, type, message }]);
+      setTimeout(() => {
+        setNotifications((notifications) => notifications.filter(notification => notification.id !== id));
+      }, 5000);
+    };
 
     return (
         <div>
@@ -99,6 +110,11 @@ function App() {
                 <Scroll />
                 <ScrollToTop />
                 <SessionManager />
+                <div className="notification__Container">
+                    {notifications.map(({ id, type, message }) => (
+                        <Notification key={id} type={type} message={message} onClose={() => setNotifications(notifications.filter(notification => notification.id !== id))} />
+                    ))}
+                </div>
                 <Routes>
                     <Route path="/" element={<Navigate to="/ecommerce" replace />} />
                     <Route path="/ecommerce" element={<LandingEcommerce />} />
@@ -109,9 +125,9 @@ function App() {
                     <Route path='/ecommerce/favorites' element={<Favorites />} />
 
                     <Route path='/register' element={<RegisterPage />} />
-                    <Route path='/login' element={<LoginPage />} />
+                    <Route path='/login' element={<LoginPage addNotification={addNotification} />} />
                     <Route path='/reset-password' element={<SendEmailResetPasswordPage />} />
-                    <Route path='/reset-password/complete/:idUser/:passwordResetCode' element={<ResetPasswordPage />} />
+                    <Route path='/reset-password/complete/:idParams/:passwordResetCode' element={<ResetPasswordPage />} />
                     {/* ----------BANNER ECOMMERCE---------- */}
                     <Route path='/ecommerce/first' element={<BannerFirstPage />} />
                     <Route path='/ecommerce/second' element={<BannerSecondPage />} />
