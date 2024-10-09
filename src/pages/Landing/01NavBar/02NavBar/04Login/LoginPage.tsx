@@ -17,11 +17,15 @@ import { RiEyeFill, RiEyeOffFill } from 'react-icons/ri';
 import { PiWarningCircle } from 'react-icons/pi';
 import styles from './styles.module.css';
 
+interface ConsultBranchPageProps {
+    addNotification: (type: 'blocked' | 'error', message: string) => void;
+}
+
 interface DecodedToken {
     typeRole: string;
 }
 
-function LoginPage() {
+function LoginPage({ addNotification }: ConsultBranchPageProps) {
     const { t } = useTranslation('login');
     const token = jsCookie.get("token");
     const navigate = useNavigate();
@@ -31,7 +35,6 @@ function LoginPage() {
     const userErrors = useSelector((state: RootState) => state.user.userErrors);
     const isAuthenticated = useSelector((state: RootState) => state.user.isAuthenticated);
 
-    // LIMPIA ERRORES CUENDO EL COMPONENTE SE MONTA, ESTO DADO QUE LA NAVBAR HACE UN "getProfileUser" PARA MOSTRAR OCIONES DE NAVEGACION DIFERENTES DE ACUERDO A SI ESTA O NO LOGUEADO EL CLIENTE
     useEffect(() => {
         dispatch(clearUserErrors());
     }, [dispatch]);
@@ -47,8 +50,8 @@ function LoginPage() {
     const onSubmit = async (loginData: IUserLogin) => {
         setLoading(true);
         try {
-            dispatch(loginUser(loginData));
-        } catch (userErrors) {
+            await dispatch(loginUser(loginData));
+        } catch (error) {
             throw new Error('Error al iniciar sesión');
         } finally {
             setLoading(false);
@@ -56,19 +59,22 @@ function LoginPage() {
     };
 
     useEffect(() => {
-        if (isAuthenticated) {
-            let decodedToken: DecodedToken | null = null;
-            if (token) {
-                // Se decodifica el token para redirigir al usuario a su panel respectivo
-                decodedToken = jwtDecode<DecodedToken>(token);
-                if(decodedToken.typeRole === 'Superadmin') {
-                    navigate("/panel-user/profile");
-                } else {
-                    navigate("/panel-top-drive-group/configuration/user-management");
-                }
-            }
+        if (typeof userErrors === 'string' && userErrors === 'Has bloqueado tu cuenta') {
+            addNotification('blocked', 'Has bloqueado tu cuenta');
+        } else if (Array.isArray(userErrors) && userErrors.includes('Has bloqueado tu cuenta')) {
+            addNotification('blocked', 'Has bloqueado tu cuenta');
         }
-    }, [ isAuthenticated ]);
+    }, [userErrors]);  
+
+    useEffect(() => {
+        if (isAuthenticated && token) {
+            const decodedToken = jwtDecode<DecodedToken>(token);
+            const redirectPath = decodedToken.typeRole === 'Superadmin' 
+                ? "/panel-user/profile" 
+                : "/panel-top-drive-group/configuration/user-management";
+            navigate(redirectPath);
+        }
+    }, [isAuthenticated, token, navigate]);
 
     return (
         <div className="d-flex align-items-center justify-content-center">

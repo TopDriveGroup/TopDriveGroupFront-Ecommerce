@@ -8,9 +8,8 @@ import bestSellingProductsReducer from './Landing/productSlice/productSlice';
 import pqrfReducer from './Landing/pqrf/pqrfSlice';
 import quotesReducer from './Landing/quotesSlice/quotesSlice';
 import orderReducer from './Landing/ordersSlice/ordersSlice';
-import { socketMiddleware } from './Landing/ordersSlice/socketMiddleware';
+import { socketMiddleware } from './Socket.io/socketMiddleware';
 
-// Define RootState
 export type RootState = ReturnType<typeof store.getState>;
 
 export const store = configureStore({
