@@ -16,6 +16,7 @@ import RegisterPage from './pages/Landing/01NavBar/02NavBar/03Register/00Registe
 import LoginPage from './pages/Landing/01NavBar/02NavBar/04Login/LoginPage';
 import SendEmailResetPasswordPage from './pages/Landing/01NavBar/02NavBar/04Login/SendEmailResetPassword/SendEmailResetPasswordPage';
 import ResetPasswordPage from './pages/Landing/01NavBar/02NavBar/04Login/ResetPassword/ResetPasswordPage';
+import UnblockingAccountPage from './pages/Landing/01NavBar/02NavBar/04Login/UnblockingAccount/UnblockingAccountPage';
 
 // LANDINGPAGE ECOMMERCE
 import LandingEcommerce from './pages/Landing/LandingEcommerce';
@@ -128,6 +129,7 @@ function App() {
                     <Route path='/login' element={<LoginPage addNotification={addNotification} />} />
                     <Route path='/reset-password' element={<SendEmailResetPasswordPage />} />
                     <Route path='/reset-password/complete/:idParams/:passwordResetCode' element={<ResetPasswordPage />} />
+                    <Route path='/unblocking-account-user/complete/:idParams' element={<UnblockingAccountPage />} />
                     {/* ----------BANNER ECOMMERCE---------- */}
                     <Route path='/ecommerce/first' element={<BannerFirstPage />} />
                     <Route path='/ecommerce/second' element={<BannerSecondPage />} />
