@@ -31,7 +31,7 @@ function CheckoutPage() {
     const isRejected = status === 'REJECTED';
     const isPending = status === 'PENDING';
 
-    if (isApproved) localStorage.clear();           // Cuando se aprueba la compra, el localStorage se debe de borrar
+    if (isApproved) localStorage.clear();
     
     return (
         <div>
