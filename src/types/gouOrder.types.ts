@@ -184,7 +184,7 @@ export interface IGouOrderResult {
             status: string;
             reason: string;
             message: string;
-            date: string; // ISO 8601 formatted date
+            date: string;
         };
         request: {
             locale: string;
@@ -238,7 +238,7 @@ export interface IGouOrderResult {
             returnUrl: string;
             ipAddress: string;
             userAgent: string;
-            expiration: string; // ISO 8601 formatted date
+            expiration: string;
         };
         payment: Array<{
             amount: {
@@ -253,7 +253,7 @@ export interface IGouOrderResult {
                 factor: number;
             };
             status: {
-                date: string; // ISO 8601 formatted date
+                date: string;
                 reason: string;
                 status: string;
                 message: string;

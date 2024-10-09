@@ -3,7 +3,6 @@ import { AppDispatch } from '../../store';
 import axiosInstance from '../../../api/axios';
 import { IGouOrderRequest } from '../../../types/gouOrder.types';
 import { setErrorOrder, postGouPaymentOrderStart, getConsultTransactionIdStart, getOrdersHistoryStart, getConsultTransactionsPendingStart, setPaymentsPendingStatusStart, getPaymentsPendingStatusStart } from './ordersSlice';
-// import { setErrorOrder, postGouPaymentOrderStart, postStatusConsultSessionServiceStart, getConsultTransactionIdStart } from './ordersSlice';
 
 //CREA UNA SESION DE PAGO PARA LA ORDEN
 export const postGouPaymentOrder = (formData: IGouOrderRequest, token: string) => async (dispatch: AppDispatch) => {
@@ -91,7 +90,7 @@ export const getPaymentsPendingStatus = (token: string) => async (dispatch: AppD
                 "Content-Type": "application/json",
             },
         });
-        dispatch(getPaymentsPendingStatusStart(response.data.result)); // Enviar los datos y detener la carga
+        dispatch(getPaymentsPendingStatusStart(response.data.result));
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setErrorOrder([error.response?.data.message]));
