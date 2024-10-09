@@ -97,7 +97,7 @@ export const passwordChangeClient = (idUser: string, passwordResetCode: string, 
 export const accountUnlockingClient = (idUser: string, formData: IResetPasswordBlocked) => async (dispatch: AppDispatch) => {
     try {
         dispatch(accountUnlocking());
-        return await axiosInstance.put(`/client/resetPasswordBlocked/${idUser}`, formData);
+        return await axiosInstance.put(`/client/reset-password-blocked/${idUser}`, formData);
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setUserErrors(error.response?.data));
