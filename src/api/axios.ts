@@ -5,9 +5,7 @@ const instance = axios.create({
     withCredentials: true,
 });
 
-// Interceptor para realizar un seguimiento de las solicitudes salientes
 instance.interceptors.request.use(config => {
-    // Imprime las cookies antes de enviar la solicitud
     // console.log('Cookies interceptadas y enviadas:', document.cookie);
     return config;
 }, error => {
