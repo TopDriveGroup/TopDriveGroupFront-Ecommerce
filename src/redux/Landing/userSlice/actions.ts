@@ -83,7 +83,7 @@ export const sendEmailPasswordChangeClient = (email: string) => async (dispatch:
 export const passwordChangeClient = (idUser: string, passwordResetCode: string, formData: IResetPassword) => async (dispatch: AppDispatch) => {
     try {
         dispatch(passwordChange());
-        return await axiosInstance.put(`/client/resetPassword/${idUser}/${passwordResetCode}`, formData);
+        return await axiosInstance.put(`/client/reset-password/${idUser}/${passwordResetCode}`, formData);
     } catch (error: any) {
         if (error.response && error.response.status === 500) {
             dispatch(setUserErrors(error.response?.data));
